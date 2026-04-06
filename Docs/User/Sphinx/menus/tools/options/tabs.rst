@@ -1,4 +1,4 @@
-﻿Tabs
+Tabs
 ----
 
 .. image:: /_static/images/nav/options-tabs.png

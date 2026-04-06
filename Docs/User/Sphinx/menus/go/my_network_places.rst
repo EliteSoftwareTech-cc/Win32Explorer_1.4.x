@@ -1,4 +1,4 @@
-﻿My Network Places
+My Network Places
 -----------------
 
 This is a *virtual folder* which displays frequently visited network

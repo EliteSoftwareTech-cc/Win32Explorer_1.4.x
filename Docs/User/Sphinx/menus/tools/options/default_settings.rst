@@ -1,4 +1,4 @@
-﻿Default Settings
+Default Settings
 ----------------
 
 .. image:: /_static/images/nav/options-default_settings.png

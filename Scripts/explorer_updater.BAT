@@ -1,7 +1,7 @@
-﻿@ECHO OFF
+@ECHO OFF
 REM # encoding: IBM850
 : DATE: 28/04/2020 12:36
-: FUNC: Update Win32Explorer (explorerplusplus.com) and log it in explorer_updater.log 
+: FUNC: Update Win32Explorer (win32explorer.elitesoftwaretech.cc) and log it in explorer_updater.log 
 : Needs '7za' tool (7-zip.org) in the path
 
 ECHO ===========================================================

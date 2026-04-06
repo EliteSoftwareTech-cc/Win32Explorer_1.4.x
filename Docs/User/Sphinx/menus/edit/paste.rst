@@ -1,4 +1,4 @@
-﻿Paste
+Paste
 -----
 
 :kbd:`Ctrl` + :kbd:`V`

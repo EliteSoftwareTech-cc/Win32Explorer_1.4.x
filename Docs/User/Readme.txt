@@ -1,4 +1,4 @@
-﻿Win32Explorer
+Win32Explorer
 ----------
 
 Copyright (c) 2005-2011 David Erceg
@@ -6,7 +6,7 @@ Copyright (c) 2005-2011 David Erceg
 Win32Explorer is free software released under
 the GNU General Public License.
 
-www.explorerplusplus.com
+win32explorer.elitesoftwaretech.cc
 
 
 About Win32Explorer
@@ -28,4 +28,4 @@ Reporting Problems
 ------------------
 Please send any bugs or problems to:
 
-david@explorerplusplus.com
+support@elitesoftwaretech.cc

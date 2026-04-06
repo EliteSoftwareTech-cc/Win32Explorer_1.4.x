@@ -75,8 +75,12 @@ void AppearanceOptionsPage::InitializeControls()
 		themeItems.emplace_back(theme, GetThemeText(theme, m_resourceLoader));
 	}
 
+	/* Dark mode support has been removed. Force System default theme. */
 	AddItemsToComboBox(GetDlgItem(GetDialog(), IDC_OPTIONS_THEME), themeItems,
-		m_config->theme.get());
+		Theme::System);
+
+	EnableWindow(GetDlgItem(GetDialog(), IDC_OPTIONS_THEME_LABEL), false);
+	EnableWindow(GetDlgItem(GetDialog(), IDC_OPTIONS_THEME), false);
 }
 
 std::wstring AppearanceOptionsPage::GetIconSetText(IconSet iconSet)

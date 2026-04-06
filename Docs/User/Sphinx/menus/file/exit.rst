@@ -1,4 +1,4 @@
-﻿Exit
+Exit
 ----
 
 This menu item exits **Win32Explorer**. Prior to closing, **Win32Explorer**

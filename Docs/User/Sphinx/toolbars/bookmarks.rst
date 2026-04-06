@@ -1,4 +1,4 @@
-﻿Bookmarks Toolbar
+Bookmarks Toolbar
 -----------------
 
 For general information about **Win32Explorer**'s toolbars, ie. moving, resizing, customizing, etc., see the toolbars :doc:`Overview <index>`.

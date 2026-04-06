@@ -1,7 +1,7 @@
-﻿Back
+Back
 ----
 
-:kbd:`Alt` + :kbd:`â†`
+:kbd:`Alt` + :kbd:`←`
 
 **Win32Explorer** maintains a list of previous locations, or history, for
 each tab. The **Back** (and :doc:`Forward <forward>`) items on the

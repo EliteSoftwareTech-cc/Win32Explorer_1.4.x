@@ -1,4 +1,4 @@
-﻿Tab bar
+Tab bar
 -------
 
 The **Tab bar** displays tabs which are currently available for use;

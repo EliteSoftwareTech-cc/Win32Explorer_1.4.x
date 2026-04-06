@@ -1,4 +1,4 @@
-﻿Paste Hard Link
+Paste Hard Link
 ---------------
 
 This menu item pastes Windows *hard links* to the files currently on the

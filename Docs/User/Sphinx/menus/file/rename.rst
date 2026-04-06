@@ -1,4 +1,4 @@
-﻿Rename
+Rename
 ------
 
 :kbd:`F2`

@@ -1,4 +1,4 @@
-﻿Copy File Paths
+Copy File Paths
 ---------------
 
 This function places the full (ie. *fully qualified*) paths to all

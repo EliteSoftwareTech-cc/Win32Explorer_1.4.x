@@ -1,4 +1,4 @@
-﻿Clone Window
+Clone Window
 ------------
 
 This operation opens a new **Win32Explorer** window (instance), complete

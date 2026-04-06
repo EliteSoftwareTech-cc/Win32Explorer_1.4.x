@@ -1,4 +1,4 @@
-﻿Drives Toolbar
+Drives Toolbar
 --------------
 
 For general information about **Win32Explorer**'s toolbars, ie. moving,

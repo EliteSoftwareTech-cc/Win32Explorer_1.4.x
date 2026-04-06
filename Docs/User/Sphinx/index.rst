@@ -1,4 +1,4 @@
-﻿Welcome to Win32Explorer's documentation!
+Welcome to Win32Explorer's documentation!
 ======================================
 
 .. toctree::

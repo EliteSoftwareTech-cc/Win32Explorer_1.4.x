@@ -1,4 +1,4 @@
-﻿Group By
+Group By
 --------
 
 .. image:: /_static/images/nav/mnu-view-group_by.png

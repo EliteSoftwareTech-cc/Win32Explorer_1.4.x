@@ -1,4 +1,4 @@
-﻿Address Bar
+Address Bar
 -----------
 
 :kbd:`Alt` + :kbd:`D`

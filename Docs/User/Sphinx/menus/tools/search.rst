@@ -1,4 +1,4 @@
-﻿Search...
+Search...
 ---------
 
 :kbd:`Ctrl` + :kbd:`F`
@@ -81,7 +81,7 @@ The state of this checkbox determines whether text case (i.e. *UPPER* or
   *lower* case are considered the same. Searching for "gif", for
   example, will also find "GIF" and "Gif".
 - **not checked** - searches are case sensitive and the target and
-  results case must match exactly, that is, "gif" â‰  "GIF" â‰  "Gif".
+  results case must match exactly, that is, "gif" ≠ "GIF" ≠ "Gif".
 
 Search Subfolders
 ~~~~~~~~~~~~~~~~~

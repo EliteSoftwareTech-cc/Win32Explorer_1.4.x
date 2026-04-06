@@ -1,4 +1,4 @@
-﻿Files and Folders
+Files and Folders
 -----------------
 
 .. image:: /_static/images/nav/options-files_and_folders.png

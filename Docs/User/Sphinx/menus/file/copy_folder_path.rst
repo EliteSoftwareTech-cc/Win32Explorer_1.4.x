@@ -1,4 +1,4 @@
-﻿Copy Folder Path
+Copy Folder Path
 ----------------
 
 :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`P`
@@ -28,7 +28,7 @@ Example
 
 ::
 
-    H:\Projects\Win32Explorer\html\mnu_file\New ÃŸ Folder
+    H:\Projects\Win32Explorer\html\mnu_file\New ß Folder
 
 .. note::
 

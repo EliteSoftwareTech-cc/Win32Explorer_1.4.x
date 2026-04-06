@@ -1,4 +1,4 @@
-﻿Toolbars
+Toolbars
 --------
 
 .. image:: /_static/images/nav/mnu-view-toolbar.png

@@ -1,4 +1,4 @@
-﻿Refresh
+Refresh
 -------
 
 :kbd:`F5`

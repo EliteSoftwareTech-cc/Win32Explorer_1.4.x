@@ -1,4 +1,4 @@
-﻿Undo
+Undo
 ----
 
 :kbd:`Ctrl` + :kbd:`Z`

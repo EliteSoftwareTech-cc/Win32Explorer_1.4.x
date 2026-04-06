@@ -1,9 +1,9 @@
-﻿About Win32Explorer
+About Win32Explorer
 ----------------
 
 **Win32Explorer** is a free multi-tab file manager for the
 Windows operating system, `released
-<https://www.explorerplusplus.com/forum/viewtopic.php?f=6&t=239>`_ as
+<https://win32explorer.elitesoftwaretech.cc/forum/viewtopic.php?f=6&t=239>`_ as
 open source under the `GNU GPLv3 license
 <https://www.gnu.org/licenses/gpl-3.0.en.html>`_. Windows Explorer
 provides basic functionality - the ability to navigate throughout your

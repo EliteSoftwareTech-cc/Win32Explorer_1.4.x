@@ -1,4 +1,4 @@
-﻿View Modes
+View Modes
 ----------
 
 The Files pane may present files and folders using a variety of display

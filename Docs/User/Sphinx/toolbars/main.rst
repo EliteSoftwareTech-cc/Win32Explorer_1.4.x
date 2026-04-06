@@ -1,4 +1,4 @@
-﻿Main Toolbar
+Main Toolbar
 ------------
 
 For general information about **Win32Explorer**'s toolbars, ie. moving,

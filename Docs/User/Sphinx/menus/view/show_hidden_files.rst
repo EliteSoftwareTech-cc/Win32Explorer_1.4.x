@@ -1,4 +1,4 @@
-﻿Show Hidden Files
+Show Hidden Files
 -----------------
 
 :kbd:`Ctrl` + :kbd:`H`

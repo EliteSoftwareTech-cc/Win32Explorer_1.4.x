@@ -1,4 +1,4 @@
-﻿Sort By
+Sort By
 -------
 
 .. image:: /_static/images/nav/mnu-view-sort_by.png

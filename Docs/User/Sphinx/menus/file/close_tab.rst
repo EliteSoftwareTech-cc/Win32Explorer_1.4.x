@@ -1,4 +1,4 @@
-﻿Close Tab
+Close Tab
 ---------
 
 :kbd:`Ctrl` + :kbd:`W`

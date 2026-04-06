@@ -1,4 +1,4 @@
-﻿Toolbars
+Toolbars
 ========
 
 **Win32Explorer** has 5 internal toolbars, any of which may be enabled
@@ -70,7 +70,7 @@ Toolbar positions are preserved by **Win32Explorer** for the next session.
 |chevron| |arrow_right| |chevron_list|
 
 If there is insufficient room to display all toolbar items, a *chevron*
-symbol (Â») is used; clicking on the *chevron* opens the rest of the
+symbol (») is used; clicking on the *chevron* opens the rest of the
 toolbar, as a menu.
 
 .. |chevron| image:: /_static/images/toolbars/chevron.png

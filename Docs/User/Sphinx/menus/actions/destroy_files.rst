@@ -1,4 +1,4 @@
-﻿Destroy File(s)...
+Destroy File(s)...
 ------------------
 
 .. image:: /_static/images/mnu_actions/destroy.png
@@ -137,28 +137,28 @@ for reference and comparison:
     - Drive 1
 
       Drive 2
-    - Â± 2.1 sec
+    - ± 2.1 sec
 
-      Â± 1.8 sec
-    - Â± 19.6 sec
+      ± 1.8 sec
+    - ± 19.6 sec
 
-      Â± 16.0 sec
-    - Â± 3.2 min
+      ± 16.0 sec
+    - ± 3.2 min
 
-      Â± 2.6 min
+      ± 2.6 min
   * - **3-pass**
     - Drive 1
 
       Drive 2
-    - Â± 9.9 sec
+    - ± 9.9 sec
 
-      Â± 8.5 sec
-    - Â± 1.6 min
+      ± 8.5 sec
+    - ± 1.6 min
 
-      Â± 1.4 min
-    - Â± 16.0 min
+      ± 1.4 min
+    - ± 16.0 min
 
-      Â± 14.0 min
+      ± 14.0 min
 
 The times for the USB drive are shorter, I believe, owing to the larger
 drive capacity (shorter seek time). To put these times into
@@ -168,7 +168,7 @@ deletion times as
 - 2 seconds/megabyte for 1-pass, and
 - 10 seconds/megabyte for 3-pass.
 
-This means that deleting a DVD image file (Â± 4 Gb), for example, using
+This means that deleting a DVD image file (± 4 Gb), for example, using
 3-pass secure deletion, could take as long as 11.5 hours! Sleep on it!
 
 Early termination

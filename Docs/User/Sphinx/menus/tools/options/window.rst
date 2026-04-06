@@ -1,4 +1,4 @@
-﻿Window
+Window
 ------
 
 .. image:: /_static/images/nav/options-window.png

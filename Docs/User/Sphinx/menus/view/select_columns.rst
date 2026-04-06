@@ -1,4 +1,4 @@
-﻿Select Columns...
+Select Columns...
 -----------------
 
 .. image:: /_static/images/mnu_view/sel_col.png
@@ -89,9 +89,9 @@ Control Panel
 +------------+----------+---------------------------------------+
 | Def        | Column   | Description                           |
 +------------+----------+---------------------------------------+
-| âœ“ 1        | Name     | *applet* name                         |
+| ✓ 1        | Name     | *applet* name                         |
 +------------+----------+---------------------------------------+
-| âœ“ 2        | Comments | brief description of applet's purpose |
+| ✓ 2        | Comments | brief description of applet's purpose |
 +------------+----------+---------------------------------------+
 
 General
@@ -104,16 +104,16 @@ types.
 | Def                   | Column                | Description or        |
 |                       |                       | Comment               |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 1                   | Name                  | file or folder name   |
+| ✓ 1                   | Name                  | file or folder name   |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 2                   | Type                  | Windows associated    |
+| ✓ 2                   | Type                  | Windows associated    |
 |                       |                       | descriptive file type |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 3                   | Size                  | file size or folder   |
+| ✓ 3                   | Size                  | file size or folder   |
 |                       |                       | contents size (if     |
 |                       |                       | enabled)              |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 4                   | Date Modified         | date of last          |
+| ✓ 4                   | Date Modified         | date of last          |
 |                       |                       | file/folder           |
 |                       |                       | modification. Some    |
 |                       |                       | applications may      |
@@ -325,18 +325,18 @@ My Computer
 +-----------------------+-----------------------+-----------------------+
 | Def                   | Column                | Description           |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 1                   | Name                  | drive name (and       |
+| ✓ 1                   | Name                  | drive name (and       |
 |                       |                       | letter) or special    |
 |                       |                       | folder name           |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 2                   | Type                  | Local Disk, CD Drive, |
+| ✓ 2                   | Type                  | Local Disk, CD Drive, |
 |                       |                       | Removable Disk,       |
 |                       |                       | Folder, etc.          |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 3                   | Total Size            | size available on     |
+| ✓ 3                   | Total Size            | size available on     |
 |                       |                       | drive                 |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 4                   | Free Space            | unused drive space    |
+| ✓ 4                   | Free Space            | unused drive space    |
 |                       |                       | available (bytes, GB, |
 |                       |                       | etc.)                 |
 +-----------------------+-----------------------+-----------------------+
@@ -354,13 +354,13 @@ Network Connections
 +-------------+--------+-----------------------------------------------+
 | Def         | Column | Description                                   |
 +-------------+--------+-----------------------------------------------+
-| âœ“ 1         | Name   | name of connection, eg. Local Area Connection |
+| ✓ 1         | Name   | name of connection, eg. Local Area Connection |
 +-------------+--------+-----------------------------------------------+
-| âœ“ 2         | Type   | n/a (future feature?)                         |
+| ✓ 2         | Type   | n/a (future feature?)                         |
 +-------------+--------+-----------------------------------------------+
-| âœ“ 3         | Status | n/a (future feature?)                         |
+| ✓ 3         | Status | n/a (future feature?)                         |
 +-------------+--------+-----------------------------------------------+
-| âœ“ 4         | Owner  | n/a (future feature?)                         |
+| ✓ 4         | Owner  | n/a (future feature?)                         |
 +-------------+--------+-----------------------------------------------+
 
 My Network Places
@@ -369,9 +369,9 @@ My Network Places
 +-------------+----------+-------------------------------+
 | Def         | Column   | Description                   |
 +-------------+----------+-------------------------------+
-| âœ“ 1         | Name     | name of tool or applet        |
+| ✓ 1         | Name     | name of tool or applet        |
 +-------------+----------+-------------------------------+
-| âœ“ 2         | Comments | description of tool or applet |
+| ✓ 2         | Comments | description of tool or applet |
 +-------------+----------+-------------------------------+
 
 Printers and Faxes
@@ -380,26 +380,26 @@ Printers and Faxes
 +-----------------------+-----------------------+-----------------------+
 | Def                   | Column                | Description           |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 1                   | Name                  | device or driver name |
+| ✓ 1                   | Name                  | device or driver name |
 |                       |                       | (descriptive name,    |
 |                       |                       | not file name)        |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 2                   | Documents             | number of documents   |
+| ✓ 2                   | Documents             | number of documents   |
 |                       |                       | in queue (ready for   |
 |                       |                       | printing)             |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 3                   | Status                | Ready, Printing,      |
+| ✓ 3                   | Status                | Ready, Printing,      |
 |                       |                       | error status, etc. -  |
 |                       |                       | driver dependent      |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 4                   | Comments              | user assigned, or     |
+| ✓ 4                   | Comments              | user assigned, or     |
 |                       |                       | place there by        |
 |                       |                       | installation          |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 5                   | Location              | user assigned?        |
+| ✓ 5                   | Location              | user assigned?        |
 |                       |                       | network?              |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 6                   | Model                 | brand name, model     |
+| ✓ 6                   | Model                 | brand name, model     |
 |                       |                       | name                  |
 +-----------------------+-----------------------+-----------------------+
 
@@ -409,22 +409,22 @@ Recycle Bin
 +-----------------------+-----------------------+-----------------------+
 | Def                   | Column                | Description           |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 1                   | Name                  | file or folder name   |
+| ✓ 1                   | Name                  | file or folder name   |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 2                   | Original Location     | original file or      |
+| ✓ 2                   | Original Location     | original file or      |
 |                       |                       | folder location       |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 3                   | Date Deleted          | date the file or      |
+| ✓ 3                   | Date Deleted          | date the file or      |
 |                       |                       | folder was deleted    |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 4                   | Size                  | file size or folder   |
+| ✓ 4                   | Size                  | file size or folder   |
 |                       |                       | contents size (if     |
 |                       |                       | enabled)              |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 5                   | Type                  | Windows associated    |
+| ✓ 5                   | Type                  | Windows associated    |
 |                       |                       | descriptive file type |
 +-----------------------+-----------------------+-----------------------+
-| âœ“ 6                   | Date Modified         | date of last          |
+| ✓ 6                   | Date Modified         | date of last          |
 |                       |                       | file/folder           |
 |                       |                       | modification          |
 +-----------------------+-----------------------+-----------------------+

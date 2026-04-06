@@ -1,4 +1,4 @@
-﻿Help
+Help
 ----
 
 :kbd:`F1`
@@ -20,7 +20,7 @@ if that is the case, extract it first, then follow the next steps:
 - the help file must be located in the installation directory, i.e. the
   directory housing the executable (**Win32Explorer.exe**). Move it to that
   location.
-- You may need to "*Unblock*" (i.e.. right-click file â†’ Properties â†’
+- You may need to "*Unblock*" (i.e.. right-click file → Properties →
   Unblock) the help file after extracting. The file may be blocked from
   usage by Windows' security routines. It is a **safe** file.
 

@@ -1,4 +1,4 @@
-﻿General
+General
 -------
 
 .. image:: /_static/images/nav/options-general.png
@@ -162,7 +162,7 @@ etc. in a different language. The DLLs are not shipped with
 **Win32Explorer**, but may be downloaded from the translation page of
 **Win32Explorer**'s site at
 
-https://www.explorerplusplus.com/translations
+https://win32explorer.elitesoftwaretech.cc/translations
 
 Once the DLLs are placed in the **Win32Explorer** installation folder, the
 languages will appear as choices on the language drop-down (or drop-\
