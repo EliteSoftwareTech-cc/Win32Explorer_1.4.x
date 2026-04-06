@@ -1,4 +1,4 @@
-# Pull requests
+﻿# Pull requests
 
 - When submitting a pull request, only include a single high-level change. Don't include multiple unrelated changes in the same pull request.
 
@@ -7,7 +7,7 @@
 - When adding a new .cpp/.h file, add the following license header at the top:
 
   ```cpp
-  // Copyright (C) Explorer++ Project
+  // Copyright (C) Win32Explorer Project
   // SPDX-License-Identifier: GPL-3.0-only
   // See LICENSE in the top level directory
   ```
@@ -22,11 +22,11 @@
 
 - When feasible, unit tests should be included. Generally speaking, code that interacts with the filesystem or UI is going to be more difficult to test. However, code that's more isolated from the external environment can absolutely be tested. For example, the code that's involved in command line parsing is very testable. Therefore, deciding whether code can be tested requires judgement, but the long-term goal is to test as much of the code as possible. So, tests should be added if at all feasible.
 
-- If tests are appropriate, add them to the `TestExplorer++` project. If testing code in a new file that has been added, a new test file should also be added. That test file should match the name of the original file, but should have `Test` appended to the name. For example, `HistoryModelTest.cpp` tests the code contained within `HistoryModel.cpp`. A test file should also be added if an existing file has been changed and that file doesn't have an associated test file yet.
+- If tests are appropriate, add them to the `TestWin32Explorer` project. If testing code in a new file that has been added, a new test file should also be added. That test file should match the name of the original file, but should have `Test` appended to the name. For example, `HistoryModelTest.cpp` tests the code contained within `HistoryModel.cpp`. A test file should also be added if an existing file has been changed and that file doesn't have an associated test file yet.
 
 # Documentation
 
-- Documentation changes are greatly appreciated. Currently, the documentation (stored under `Documentation\User\Sphinx` and hosted on [Read the Docs](https://explorerplusplus.readthedocs.io/en/latest)) is severely out of date. Work needs to be done to update the documentation to reflect the current behavior of Explorer++.
+- Documentation changes are greatly appreciated. Currently, the documentation (stored under `Documentation\User\Sphinx` and hosted on [Read the Docs](https://explorerplusplus.readthedocs.io/en/latest)) is severely out of date. Work needs to be done to update the documentation to reflect the current behavior of Win32Explorer.
 
 - Targeted documentation updates would also be very helpful. For example, if you notice that a particular documentation page is inaccurate, submitting a pull request for just that page is still beneficial.
 
@@ -35,3 +35,4 @@
 - To update an existing translation, please sign up to [Crowdin](https://crowdin.com/) and make the desired changes within the [explorerplusplus](https://crowdin.com/project/explorerplusplus) project there.
 
 - To request a new translation, please create a GitHub issue that states the language that you'd like to work on. That's necessary, since adding a new language requires a set of coordinated changes to be made on Crowdin as well in this repository.
+

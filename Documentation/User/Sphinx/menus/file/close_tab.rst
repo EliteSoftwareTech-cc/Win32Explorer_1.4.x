@@ -1,4 +1,4 @@
-Close Tab
+﻿Close Tab
 ---------
 
 :kbd:`Ctrl` + :kbd:`W`
@@ -12,5 +12,5 @@ except using normal methods for a :doc:`new tab <new_tab>`.
 .. note::
 
   Starting with version 1.2, closing the last tab can close
-  **Explorer++**, as an :ref:`option <menus/tools/options/tabs:Close the
+  **Win32Explorer**, as an :ref:`option <menus/tools/options/tabs:Close the
   main window when closing the last tab>`.

@@ -1,4 +1,4 @@
-Paste
+﻿Paste
 -----
 
 :kbd:`Ctrl` + :kbd:`V`
@@ -6,7 +6,7 @@ Paste
 This menu item takes data from the clipboard and pastes it into the
 files pane, or the folders pane if it has the focus. If files or folders
 were :doc:`cut <cut>` in order to place them on the clipboard, then they
-are deleted at this time. **Explorer++** handles various types of data,
+are deleted at this time. **Win32Explorer** handles various types of data,
 and the pasting method, differently, according to the following table:
 
     +-----------------------+-----------------------+-----------------------+

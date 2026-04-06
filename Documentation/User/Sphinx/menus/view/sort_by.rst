@@ -1,4 +1,4 @@
-Sort By
+﻿Sort By
 -------
 
 .. image:: /_static/images/nav/mnu-view-sort_by.png
@@ -7,7 +7,7 @@ This menu selects a sort order for display of files and folders in the
 Files pane.
 
 Selecting a **Sort By** order cancels a :doc:`Group By <group_by>`
-order. The **Sort By** menu is built by **Explorer++** based on the
+order. The **Sort By** menu is built by **Win32Explorer** based on the
 columns currently enabled in :ref:`Details
 <menus/view/view_modes:Details>` view; your menu may differ from the one
 shown here. Selecting an item in this menu has the same effect as
@@ -28,7 +28,7 @@ column may yield results which are essentially unusable, since likely
 all files have the same owner.
 
 Following is a list of just a few common sorting targets available in
-the current version of **Explorer++**. See :doc:`Select Columns...
+the current version of **Win32Explorer**. See :doc:`Select Columns...
 <select_columns>` for a more complete list.
 
 +-------------------+-------------------------------------------------+

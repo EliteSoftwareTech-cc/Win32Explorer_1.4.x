@@ -1,4 +1,4 @@
-Rename
+﻿Rename
 ------
 
 :kbd:`F2`
@@ -12,7 +12,7 @@ Single item
 
 .. image:: /_static/images/mnu_file/rename_single_item.png
 
-**Explorer++** allows you to edit the name in an *in-place* edit box, keeping
+**Win32Explorer** allows you to edit the name in an *in-place* edit box, keeping
 the extension the same. The extension may be edited, but must be deleted then
 re-typed or selected then over-written.
 

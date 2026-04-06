@@ -1,11 +1,11 @@
-Refresh
+﻿Refresh
 -------
 
 :kbd:`F5`
 
 :kbd:`Ctrl` + :kbd:`R`
 
-In the files pane, all files (depending on **Explorer++** setup) are
+In the files pane, all files (depending on **Win32Explorer** setup) are
 displayed and sorted. Using **Refresh** updates the display; the files
 are re-sorted and re-displayed, subject to current settings (ie.
 :doc:`Sort By <sort_by>`, :doc:`Group By <group_by>`, :doc:`Show Hidden

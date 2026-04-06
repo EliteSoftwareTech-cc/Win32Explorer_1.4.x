@@ -1,4 +1,4 @@
-version: 1.5.0.{build}
+﻿version: 1.5.0.{build}
 image: Visual Studio 2022
 
 configuration:
@@ -77,7 +77,7 @@ install:
 
     git submodule update
 
-    .\Explorer++\ThirdParty\vcpkg\bootstrap-vcpkg.bat
+    .\Win32Explorer\ThirdParty\vcpkg\bootstrap-vcpkg.bat
 
     nuget install secure-file -ExcludeVersion
 
@@ -94,7 +94,7 @@ before_build:
     }
 
 build:
-  project: Explorer++\Explorer++.sln
+  project: Win32Explorer\Win32Explorer.sln
   verbosity: minimal
 
 after_build:
@@ -124,10 +124,10 @@ before_deploy:
     $releaseBuildVersion = $versionComponents -join '.'
 
     if ($env:APPVEYOR_REPO_TAG_NAME -match '-beta(-\d)?$') {
-      $env:RELEASE_TITLE = "Explorer++ $releaseBuildVersion beta"
+      $env:RELEASE_TITLE = "Win32Explorer $releaseBuildVersion beta"
       $env:PRERELEASE = $true
     } else {
-      $env:RELEASE_TITLE = "Explorer++ $releaseBuildVersion"
+      $env:RELEASE_TITLE = "Win32Explorer $releaseBuildVersion"
       $env:PRERELEASE = $false
     }
 

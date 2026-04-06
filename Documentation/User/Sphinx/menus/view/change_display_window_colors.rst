@@ -1,4 +1,4 @@
-Change Display Window Colors...
+﻿Change Display Window Colors...
 -------------------------------
 
 This dialog allow you to customize the colors and font of the Display
@@ -17,7 +17,7 @@ gradient - a single point in the top-left corner of the **Display
 Window** ; the **Surrounding color** is the *final* color, located in
 the bottom-right corner. The gradient is *drawn diagonally* from
 top-left to bottom-right, but also in a pseudo-complementary (ie. at
-90°) direction. The end result is a pleasing diagonal gradient with
+90Â°) direction. The end result is a pleasing diagonal gradient with
 colors on the left generally close to the **Center color** and colors to
 the right generally close to the **Surrounding color**. The algorithm
 behind drawing the gradient is not useful; the colors should just be
@@ -42,7 +42,7 @@ color>`.
 Restore Defaults
 ~~~~~~~~~~~~~~~~
 
-This button restores **Explorer++**'s built-in defaults for the Display
+This button restores **Win32Explorer**'s built-in defaults for the Display
 Window, that is
 
 - Center color = RGB (0,0,0)

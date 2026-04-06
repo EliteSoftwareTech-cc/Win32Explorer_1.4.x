@@ -1,6 +1,6 @@
-files:
-  - source: /Explorer++/Explorer++/Explorer++.rc
-    translation: /Translations/Explorer++%two_letters_code%/Explorer++.rc
+﻿files:
+  - source: /Win32Explorer/Win32Explorer/Win32Explorer.rc
+    translation: /Translations/Win32Explorer%two_letters_code%/Win32Explorer.rc
     languages_mapping:
       two_letters_code:
         ca: CA
@@ -26,3 +26,4 @@ files:
         uk: UK
         vi: VI
         zh-CN: ZH
+

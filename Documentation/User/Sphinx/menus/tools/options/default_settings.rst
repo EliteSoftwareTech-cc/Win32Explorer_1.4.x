@@ -1,4 +1,4 @@
-Default Settings
+﻿Default Settings
 ----------------
 
 .. image:: /_static/images/nav/options-default_settings.png
@@ -24,7 +24,7 @@ About Default Columns and Column Widths
 
 .. note::
 
-  **Explorer++** keeps 2 different sets of *default* columns for use,
+  **Win32Explorer** keeps 2 different sets of *default* columns for use,
   each with its own column order, visibility and column widths for the 7
   different :ref:`types of folders <menus/view/select_columns:Folder
   type>`.

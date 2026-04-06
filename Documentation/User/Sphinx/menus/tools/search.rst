@@ -1,4 +1,4 @@
-Search...
+﻿Search...
 ---------
 
 :kbd:`Ctrl` + :kbd:`F`
@@ -81,7 +81,7 @@ The state of this checkbox determines whether text case (i.e. *UPPER* or
   *lower* case are considered the same. Searching for "gif", for
   example, will also find "GIF" and "Gif".
 - **not checked** - searches are case sensitive and the target and
-  results case must match exactly, that is, "gif" ≠ "GIF" ≠ "Gif".
+  results case must match exactly, that is, "gif" â‰  "GIF" â‰  "Gif".
 
 Search Subfolders
 ~~~~~~~~~~~~~~~~~
@@ -138,7 +138,7 @@ header) for convenience when numerous results are visible.
 
   The Microsoft .NET framework, when present on a system, creates a
   subfolder in the Windows folder called "*assembly*". The nature of the
-  .NET installation may interfere with **Explorer++** (Windows
+  .NET installation may interfere with **Win32Explorer** (Windows
   Explorer's exploration is *modified*) successfully browsing this
   folder. If this folder is included in your search (usually by virtue
   of using the :ref:`Search Subfolders <menus/tools/search:Search

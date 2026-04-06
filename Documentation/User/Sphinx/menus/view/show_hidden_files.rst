@@ -1,4 +1,4 @@
-Show Hidden Files
+﻿Show Hidden Files
 -----------------
 
 :kbd:`Ctrl` + :kbd:`H`
@@ -15,7 +15,7 @@ their accompanying icons *ghosted* (ie. *washed out*).
 The *Control Panel/Folder Options/View* setting - **Show (Do not show)
 hidden files and folders** - has no effect on display of hidden items
 (see :ref:`here <menus/tools/options/general:Default new tab folder>`);
-**Explorer++** controls hidden visibility for itself.
+**Win32Explorer** controls hidden visibility for itself.
 
 .. _superhidden_tip:
 
@@ -27,12 +27,12 @@ hidden files and folders** - has no effect on display of hidden items
   and folders to be affected by this function, you must uncheck the
   *"Hide protected operating system files"* setting in the :doc:`Files
   and Folders tab <../tools/options/files_and_folders>` of
-  **Explorer++**'s options.
+  **Win32Explorer**'s options.
 
   Display of *superhidden* files is contingent on a Windows system
   setting being enabled; you must uncheck the *"Hide protected operating
   system files"* setting in the **Folder Options** applet (*View* tab).
   The **Folder Options** applet is found in the **Control Panel**. Note
-  that **Explorer++** can control visiblility of *ordinary* hidden files
+  that **Win32Explorer** can control visiblility of *ordinary* hidden files
   (Hidden attribute, but **not** System attribute) **without** enabling
   the "*Show hidden files and folders*" option in the **Control Panel**.

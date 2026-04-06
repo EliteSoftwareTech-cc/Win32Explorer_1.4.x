@@ -1,4 +1,4 @@
-Save Directory Listing...
+﻿Save Directory Listing...
 -------------------------
 
 This menu item performs a simple directory (folder) listing and saves it
@@ -18,7 +18,7 @@ Example
 
   Directory
   ---------
-  H:\Projects\Explorer++\html\mnu_file
+  H:\Projects\Win32Explorer\html\mnu_file
 
   Date
   ----

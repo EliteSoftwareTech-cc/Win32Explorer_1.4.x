@@ -1,13 +1,13 @@
-Main Toolbar
+﻿Main Toolbar
 ------------
 
-For general information about **Explorer++**'s toolbars, ie. moving,
+For general information about **Win32Explorer**'s toolbars, ie. moving,
 resizing, customizing, etc., see the toolbars :doc:`Overview <index>`.
 
 .. image:: /_static/images/toolbars/main_toolbar.png
 
 The **Main** toolbar provides access to some commonly used
-**Explorer++** functions. The following buttons are available on the
+**Win32Explorer** functions. The following buttons are available on the
 **Main** toolbar, using the :doc:`Customize <customize>` dialog; your
 toolbar may not contain all buttons. The table below shows the buttons
 *loosely* organized by function; your toolbar may have buttons in any

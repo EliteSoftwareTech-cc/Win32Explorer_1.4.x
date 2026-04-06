@@ -1,9 +1,9 @@
-Select Columns...
+﻿Select Columns...
 -----------------
 
 .. image:: /_static/images/mnu_view/sel_col.png
 
-**Explorer++** allows you to set data column visibility for folder
+**Win32Explorer** allows you to set data column visibility for folder
 listings on a **tab-by-tab** basis. Columns available also depends on
 the current tab's :ref:`folder type <menus/view/select_columns:Folder
 type>`. The settings here apply only to the current tab; future (new)
@@ -80,7 +80,7 @@ Default <save_column_layout>` menu item.
 .. admonition:: Incomplete
 
   Columns marked as "**n/a**" (not available) may not be implemented as
-  of this version of **Explorer++**, ie. they may be present but contain
+  of this version of **Win32Explorer**, ie. they may be present but contain
   no data.
 
 Control Panel
@@ -89,9 +89,9 @@ Control Panel
 +------------+----------+---------------------------------------+
 | Def        | Column   | Description                           |
 +------------+----------+---------------------------------------+
-| ✓ 1        | Name     | *applet* name                         |
+| âœ“ 1        | Name     | *applet* name                         |
 +------------+----------+---------------------------------------+
-| ✓ 2        | Comments | brief description of applet's purpose |
+| âœ“ 2        | Comments | brief description of applet's purpose |
 +------------+----------+---------------------------------------+
 
 General
@@ -104,16 +104,16 @@ types.
 | Def                   | Column                | Description or        |
 |                       |                       | Comment               |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 1                   | Name                  | file or folder name   |
+| âœ“ 1                   | Name                  | file or folder name   |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 2                   | Type                  | Windows associated    |
+| âœ“ 2                   | Type                  | Windows associated    |
 |                       |                       | descriptive file type |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 3                   | Size                  | file size or folder   |
+| âœ“ 3                   | Size                  | file size or folder   |
 |                       |                       | contents size (if     |
 |                       |                       | enabled)              |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 4                   | Date Modified         | date of last          |
+| âœ“ 4                   | Date Modified         | date of last          |
 |                       |                       | file/folder           |
 |                       |                       | modification. Some    |
 |                       |                       | applications may      |
@@ -325,18 +325,18 @@ My Computer
 +-----------------------+-----------------------+-----------------------+
 | Def                   | Column                | Description           |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 1                   | Name                  | drive name (and       |
+| âœ“ 1                   | Name                  | drive name (and       |
 |                       |                       | letter) or special    |
 |                       |                       | folder name           |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 2                   | Type                  | Local Disk, CD Drive, |
+| âœ“ 2                   | Type                  | Local Disk, CD Drive, |
 |                       |                       | Removable Disk,       |
 |                       |                       | Folder, etc.          |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 3                   | Total Size            | size available on     |
+| âœ“ 3                   | Total Size            | size available on     |
 |                       |                       | drive                 |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 4                   | Free Space            | unused drive space    |
+| âœ“ 4                   | Free Space            | unused drive space    |
 |                       |                       | available (bytes, GB, |
 |                       |                       | etc.)                 |
 +-----------------------+-----------------------+-----------------------+
@@ -354,13 +354,13 @@ Network Connections
 +-------------+--------+-----------------------------------------------+
 | Def         | Column | Description                                   |
 +-------------+--------+-----------------------------------------------+
-| ✓ 1         | Name   | name of connection, eg. Local Area Connection |
+| âœ“ 1         | Name   | name of connection, eg. Local Area Connection |
 +-------------+--------+-----------------------------------------------+
-| ✓ 2         | Type   | n/a (future feature?)                         |
+| âœ“ 2         | Type   | n/a (future feature?)                         |
 +-------------+--------+-----------------------------------------------+
-| ✓ 3         | Status | n/a (future feature?)                         |
+| âœ“ 3         | Status | n/a (future feature?)                         |
 +-------------+--------+-----------------------------------------------+
-| ✓ 4         | Owner  | n/a (future feature?)                         |
+| âœ“ 4         | Owner  | n/a (future feature?)                         |
 +-------------+--------+-----------------------------------------------+
 
 My Network Places
@@ -369,9 +369,9 @@ My Network Places
 +-------------+----------+-------------------------------+
 | Def         | Column   | Description                   |
 +-------------+----------+-------------------------------+
-| ✓ 1         | Name     | name of tool or applet        |
+| âœ“ 1         | Name     | name of tool or applet        |
 +-------------+----------+-------------------------------+
-| ✓ 2         | Comments | description of tool or applet |
+| âœ“ 2         | Comments | description of tool or applet |
 +-------------+----------+-------------------------------+
 
 Printers and Faxes
@@ -380,26 +380,26 @@ Printers and Faxes
 +-----------------------+-----------------------+-----------------------+
 | Def                   | Column                | Description           |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 1                   | Name                  | device or driver name |
+| âœ“ 1                   | Name                  | device or driver name |
 |                       |                       | (descriptive name,    |
 |                       |                       | not file name)        |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 2                   | Documents             | number of documents   |
+| âœ“ 2                   | Documents             | number of documents   |
 |                       |                       | in queue (ready for   |
 |                       |                       | printing)             |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 3                   | Status                | Ready, Printing,      |
+| âœ“ 3                   | Status                | Ready, Printing,      |
 |                       |                       | error status, etc. -  |
 |                       |                       | driver dependent      |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 4                   | Comments              | user assigned, or     |
+| âœ“ 4                   | Comments              | user assigned, or     |
 |                       |                       | place there by        |
 |                       |                       | installation          |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 5                   | Location              | user assigned?        |
+| âœ“ 5                   | Location              | user assigned?        |
 |                       |                       | network?              |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 6                   | Model                 | brand name, model     |
+| âœ“ 6                   | Model                 | brand name, model     |
 |                       |                       | name                  |
 +-----------------------+-----------------------+-----------------------+
 
@@ -409,22 +409,22 @@ Recycle Bin
 +-----------------------+-----------------------+-----------------------+
 | Def                   | Column                | Description           |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 1                   | Name                  | file or folder name   |
+| âœ“ 1                   | Name                  | file or folder name   |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 2                   | Original Location     | original file or      |
+| âœ“ 2                   | Original Location     | original file or      |
 |                       |                       | folder location       |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 3                   | Date Deleted          | date the file or      |
+| âœ“ 3                   | Date Deleted          | date the file or      |
 |                       |                       | folder was deleted    |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 4                   | Size                  | file size or folder   |
+| âœ“ 4                   | Size                  | file size or folder   |
 |                       |                       | contents size (if     |
 |                       |                       | enabled)              |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 5                   | Type                  | Windows associated    |
+| âœ“ 5                   | Type                  | Windows associated    |
 |                       |                       | descriptive file type |
 +-----------------------+-----------------------+-----------------------+
-| ✓ 6                   | Date Modified         | date of last          |
+| âœ“ 6                   | Date Modified         | date of last          |
 |                       |                       | file/folder           |
 |                       |                       | modification          |
 +-----------------------+-----------------------+-----------------------+

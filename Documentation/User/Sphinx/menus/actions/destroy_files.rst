@@ -1,4 +1,4 @@
-Destroy File(s)...
+﻿Destroy File(s)...
 ------------------
 
 .. image:: /_static/images/mnu_actions/destroy.png
@@ -137,28 +137,28 @@ for reference and comparison:
     - Drive 1
 
       Drive 2
-    - ± 2.1 sec
+    - Â± 2.1 sec
 
-      ± 1.8 sec
-    - ± 19.6 sec
+      Â± 1.8 sec
+    - Â± 19.6 sec
 
-      ± 16.0 sec
-    - ± 3.2 min
+      Â± 16.0 sec
+    - Â± 3.2 min
 
-      ± 2.6 min
+      Â± 2.6 min
   * - **3-pass**
     - Drive 1
 
       Drive 2
-    - ± 9.9 sec
+    - Â± 9.9 sec
 
-      ± 8.5 sec
-    - ± 1.6 min
+      Â± 8.5 sec
+    - Â± 1.6 min
 
-      ± 1.4 min
-    - ± 16.0 min
+      Â± 1.4 min
+    - Â± 16.0 min
 
-      ± 14.0 min
+      Â± 14.0 min
 
 The times for the USB drive are shorter, I believe, owing to the larger
 drive capacity (shorter seek time). To put these times into
@@ -168,19 +168,19 @@ deletion times as
 - 2 seconds/megabyte for 1-pass, and
 - 10 seconds/megabyte for 3-pass.
 
-This means that deleting a DVD image file (± 4 Gb), for example, using
+This means that deleting a DVD image file (Â± 4 Gb), for example, using
 3-pass secure deletion, could take as long as 11.5 hours! Sleep on it!
 
 Early termination
 ~~~~~~~~~~~~~~~~~
 
 On the :ref:`hardware <destroy_files_hardware>` listed above, the
-Windows Task Manager reports that **Explorer++** is using between 95%
+Windows Task Manager reports that **Win32Explorer** is using between 95%
 and 99% of the CPU time during a **Destroy File(s)** operation, despite
 the fact that the process is operating at *Normal* priority. The effect
 of this is that
 
-- the appearance of **Explorer++** (not the **Destroy File(s)** dialog)
+- the appearance of **Win32Explorer** (not the **Destroy File(s)** dialog)
   is that of a program that has "stopped responding to the system", and
 - attempting to switch to another application (via the taskbar) and do
   something else is a waste of time.
@@ -190,15 +190,15 @@ If **Destroy File(s)** is launched in error on a large file (see
 terminated using the Task Manager by
 
 #. opening the Task Manager using **Ctrl+Alt+Delete**
-#. selecting the process **Explorer++.exe**
+#. selecting the process **Win32Explorer.exe**
 #. clicking *End Process*
 #. agreeing to the warning dialog
 
-The effect of this is to forcefully close **Explorer++** and, of course,
+The effect of this is to forcefully close **Win32Explorer** and, of course,
 the **Destroy File(s)** dialog (a child window), freeing up your system
 resources. However, take note that
 
-- settings for **Explorer++** (ie. open tabs, views, etc.) may not have
+- settings for **Win32Explorer** (ie. open tabs, views, etc.) may not have
   been saved, and
 - the file(s) targeted for secure deletion were, in all likelihood,
   damaged (partially overwritten), but not fully deleted.
@@ -207,7 +207,7 @@ Disclaimer
 ~~~~~~~~~~
 
 Although the **Destroy File(s)** action is deemed to be secure,
-**Explorer++** is released under the GNU General Public `License
+**Win32Explorer** is released under the GNU General Public `License
 <https://www.gnu.org/licenses/gpl-3.0.en.html>`_ and no warranty as to
 suitability is offered. Section 15 of the GNU license states that the
 program is provided "as-is" without warranty of any kind.

@@ -1,4 +1,4 @@
-Undo
+﻿Undo
 ----
 
 :kbd:`Ctrl` + :kbd:`Z`
@@ -11,7 +11,7 @@ be undone as a single operation.
 
 .. caution::
 
-  **Explorer++**'s **Undo** cannot undo a file cut, move or delete.
+  **Win32Explorer**'s **Undo** cannot undo a file cut, move or delete.
 
 .. note::
 

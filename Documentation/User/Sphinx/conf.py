@@ -1,4 +1,4 @@
-# Configuration file for the Sphinx documentation builder.
+﻿# Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
@@ -6,8 +6,8 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Explorer++'
-copyright = '2023, Explorer++'
+project = 'Win32Explorer'
+copyright = '2023, Win32Explorer'
 author = 'Allen Titley'
 version = '1.4.0'
 release = '1.4.0'
@@ -47,3 +47,4 @@ def setup(app):
 # -- Options for autosectionlabel extension ----------------------------------
 
 autosectionlabel_prefix_document = True
+

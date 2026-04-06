@@ -1,14 +1,14 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/ggvn28se8xhes3x3/branch/master?svg=true)](https://ci.appveyor.com/project/derceg/explorerplusplus/branch/master)
+﻿[![Build status](https://ci.appveyor.com/api/projects/status/ggvn28se8xhes3x3/branch/master?svg=true)](https://ci.appveyor.com/project/derceg/explorerplusplus/branch/master)
 [![Documentation Status](https://readthedocs.org/projects/explorerplusplus/badge/?version=latest)](https://explorerplusplus.readthedocs.io/en/latest/?badge=latest)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/explorerplusplus/localized.svg)](https://crowdin.com/project/explorerplusplus)
 
-# Explorer++
+# Win32Explorer
 
-Explorer++ is a lightweight and fast file manager for Windows.
+Win32Explorer is a lightweight and fast file manager for Windows.
 
 ## Features
 
-* With the option to save to the registry or a configuration file, Explorer++ is __completely portable__
+* With the option to save to the registry or a configuration file, Win32Explorer is __completely portable__
 * __Tabbed browsing__ for easy management of multiple folders
 * Display window shows previews of files as they are selected
 * __Easy-to-remember keyboard shortcuts__ for quick navigation
@@ -42,9 +42,9 @@ Explorer++ is a lightweight and fast file manager for Windows.
 
 For a full list of builds, see https://explorerplusplus.com/builds.
 
-## Building Explorer++
+## Building Win32Explorer
 
-For instructions on how to build Explorer++, see [BUILDING.md](BUILDING.md).
+For instructions on how to build Win32Explorer, see [BUILDING.md](BUILDING.md).
 
 ## Documentation
 
@@ -53,3 +53,4 @@ Documentation is available online at [Read the Docs](https://explorerplusplus.re
 ## Translations
 
 Translations are managed with [Crowdin](https://crowdin.com/project/explorerplusplus). To contribute to a translation, sign up with Crowdin, then edit the file corresponding to your language. If your language isn't listed, use the contact link shown on the project page to request it.
+

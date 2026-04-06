@@ -1,4 +1,4 @@
----
+﻿---
 name: Bug report
 about: Create a bug report to help us improve
 title: ''
@@ -24,8 +24,9 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Version (please complete the following information):**
- - Explorer++ version: [e.g. 1.4.0.1616 dev (64-bit build)]
+ - Win32Explorer version: [e.g. 1.4.0.1616 dev (64-bit build)]
  - OS: [e.g. Windows 10]
 
 **Additional context**
 Add any other context about the problem here.
+

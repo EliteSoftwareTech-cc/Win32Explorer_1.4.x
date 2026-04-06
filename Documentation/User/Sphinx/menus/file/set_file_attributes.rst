@@ -1,4 +1,4 @@
-Set File Attributes...
+﻿Set File Attributes...
 ----------------------
 
 .. image:: /_static/images/mnu_file/chg_attributes.png
@@ -69,7 +69,7 @@ Hidden
 
 Assigning the hidden attribute flags a file or folder to prevent it from
 :doc:`being shown <../view/show_hidden_files>` during normal file
-listings, providing **Explorer++** (or Windows Explorer) is not set to
+listings, providing **Win32Explorer** (or Windows Explorer) is not set to
 view hidden files. Command line operations (eg. :command:`Dir`) also obey
 the setting of the hidden attribute.
 

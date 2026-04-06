@@ -1,10 +1,10 @@
-Exit
+﻿Exit
 ----
 
-This menu item exits **Explorer++**. Prior to closing, **Explorer++**
+This menu item exits **Win32Explorer**. Prior to closing, **Win32Explorer**
 
 - saves settings to an XML file (config.xml) in the same folder as
-  *Explorer++.exe*, or
+  *Win32Explorer.exe*, or
 - saves settings to the Windows registry,
 
 depending on the setting for :ref:`portable

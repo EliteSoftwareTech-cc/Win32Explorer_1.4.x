@@ -1,4 +1,4 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 
 function Get-AsanDllPath {
     # See https://github.com/microsoft/vswhere/wiki/Find-VC#powershell.
@@ -41,16 +41,16 @@ if ($env:configuration -eq "Debug-Asan") {
     $env:Path = $asanDllPath + ";" + $env:Path
 }
 
-Set-Location $env:APPVEYOR_BUILD_FOLDER\Explorer++\TestExplorer++\$env:platform\$env:configuration
+Set-Location $env:APPVEYOR_BUILD_FOLDER\Win32Explorer\TestWin32Explorer\$env:platform\$env:configuration
 
 # Run the tests.
-.\TestExplorer++.exe --gtest_output=xml:TestExplorer++Output.xml
+.\TestWin32Explorer.exe --gtest_output=xml:TestWin32ExplorerOutput.xml
 
 $testExitCode = $LASTEXITCODE
 
 # Upload results to AppVeyor.
 $wc = New-Object "System.Net.WebClient"
-$wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\TestExplorer++Output.xml))
+$wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\TestWin32ExplorerOutput.xml))
 
 if ($testExitCode -ne 0) {
     throw "Tests failed"
