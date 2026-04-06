@@ -2,9 +2,9 @@
 // SPDX-License-Identifier: GPL-3.0-only
 // See LICENSE in the top level directory
 
-#define MAJOR_VERSION 1
-#define MINOR_VERSION 5
-#define MICRO_VERSION 0
+#define MAJOR_VERSION 26
+#define MINOR_VERSION 0
+#define MICRO_VERSION 3
 
 #ifdef ENVIRONMENT_BUILD_NUMBER
 	#define BUILD_VERSION ENVIRONMENT_BUILD_NUMBER

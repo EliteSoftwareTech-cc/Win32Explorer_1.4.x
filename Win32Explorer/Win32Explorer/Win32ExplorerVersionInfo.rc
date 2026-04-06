@@ -69,7 +69,7 @@ BEGIN
             VALUE "FileDescription", "Win32Explorer"
             VALUE "FileVersion", VERSION_STRING
             VALUE "InternalName", "Win32Explorer"
-            VALUE "LegalCopyright", "(C) 2005-2011 David Erceg"
+            VALUE "LegalCopyright", "(C) 2026 Zachary Whiteman - EliteSoftwareTech Co."
             VALUE "OriginalFilename", "Win32Explorer.exe"
             VALUE "ProductName", "Win32Explorer"
             VALUE "ProductVersion", VERSION_STRING

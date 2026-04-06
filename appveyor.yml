@@ -1,4 +1,4 @@
-﻿version: 1.5.0.{build}
+﻿version: 26.0.3.{build}
 image: Visual Studio 2022
 
 configuration:
@@ -152,7 +152,7 @@ deploy:
       secure: C7kIRfyPAfkKkpF7Gh7BqEvqZVMMi2Ps0+iGFgCTiKE=
     secret_access_key:
       secure: agLWDF321Coa4wU5Wa07pwLm0QLQ2KPj9M0Ys5vVlOQID3+TDUtrvRX2R47yZbFJ
-    bucket: explorerplusplus-builds
+    bucket: win32explorer-builds
     region: us-east-1
     folder: dev/$(APPVEYOR_BUILD_VERSION)
     artifact: /.*\.zip|.*\.msi/
@@ -167,7 +167,7 @@ deploy:
       secure: C7kIRfyPAfkKkpF7Gh7BqEvqZVMMi2Ps0+iGFgCTiKE=
     secret_access_key:
       secure: agLWDF321Coa4wU5Wa07pwLm0QLQ2KPj9M0Ys5vVlOQID3+TDUtrvRX2R47yZbFJ
-    bucket: explorerplusplus-builds
+    bucket: win32explorer-builds
     region: us-east-1
     folder: dev
     artifact: latest_version.txt

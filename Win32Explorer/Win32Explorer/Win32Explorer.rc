@@ -29,8 +29,8 @@ FONT 8, "MS Shell Dlg", 400, 0, 0x1
 BEGIN
     DEFPUSHBUTTON   "OK",IDOK,212,149,50,14
     ICON            105,IDC_ABOUT_STATIC_IMAGE,121,10,20,20
-    LTEXT           "Created by David Erceg",IDC_STATIC,4,82,259,8
-    CONTROL         "<a href=""https://explorerplusplus.com"">https://explorerplusplus.com</a>",IDC_SITELINK,
+    LTEXT           "Created by Zachary Whiteman - EliteSoftwareTech Co.",IDC_STATIC,4,82,259,8
+    CONTROL         "<a href=""https://win32explorer.elitesoftwaretech.cc"">https://win32explorer.elitesoftwaretech.cc</a>",IDC_SITELINK,
                     "SysLink",WS_TABSTOP,5,96,101,12
     CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,5,112,259,20
     LTEXT           "This program is freeware and released under the GNU General Public License",IDC_STATIC,4,121,259,8
@@ -510,7 +510,7 @@ BEGIN
     LTEXT           "Current Version:",IDC_STATIC,7,8,54,8
     LTEXT           "",IDC_STATIC_CURRENT_VERSION,64,8,112,8
     LTEXT           "",IDC_STATIC_UPDATE_STATUS,7,24,169,8
-    CONTROL         "<a href=""https://explorerplusplus.com/download"">Go to the download page</a>",IDC_SYSLINK_DOWNLOAD,
+    CONTROL         "<a href=""https://win32explorer.elitesoftwaretech.cc/download"">Go to the download page</a>",IDC_SYSLINK_DOWNLOAD,
                     "SysLink",WS_TABSTOP,48,39,86,12
 END
 

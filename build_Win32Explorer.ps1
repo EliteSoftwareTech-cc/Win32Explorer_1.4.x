@@ -64,13 +64,13 @@ Log-Message "Relocating build artifacts to project root..."
 $outputBase = "Win32Explorer"
 if ($Platform -eq "x64") {
     $exeDir = Join-Path $outputBase "Win32Explorer\x64\$Configuration"
-    $dllDir = Join-Path $outputBase "x64\$Configuration"
+    $dllDir = Join-Path $outputBase "Win32\Release" # Translations seem to always go to Win32\Release in this solution
 } elseif ($Platform -eq "Win32") {
     $exeDir = Join-Path $outputBase "Win32Explorer\$Configuration"
-    $dllDir = Join-Path $outputBase "$Configuration"
+    $dllDir = Join-Path $outputBase "Win32\Release"
 } else {
     $exeDir = Join-Path $outputBase "Win32Explorer\$Platform\$Configuration"
-    $dllDir = Join-Path $outputBase "$Platform\$Configuration"
+    $dllDir = Join-Path $outputBase "Win32\Release"
 }
 
 $root = (Get-Location).FullName
