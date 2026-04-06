@@ -28,7 +28,7 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_AUS
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_MAIN                ICON                    "res\\Win32Explorer.ico"
+IDI_MAIN                ICON                    "res\\Win32Explorer_ICON.ico"
 
 IDI_DISPLAYWINDOW       ICON                    "res\\Display Window.ico"
 

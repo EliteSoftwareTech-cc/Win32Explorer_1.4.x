@@ -226,34 +226,9 @@ void App::SaveSettings()
 
 void App::SetUpLanguageResourceInstance()
 {
-	auto languageResult = LanguageHelper::MaybeLoadTranslationDll(m_commandLineSettings, &m_config);
-	LanguageHelper::LanguageInfo languageInfo;
-
-	if (std::holds_alternative<LanguageHelper::LanguageInfo>(languageResult))
-	{
-		languageInfo = std::get<LanguageHelper::LanguageInfo>(languageResult);
-	}
-	else
-	{
-		auto errorCode = std::get<LanguageHelper::LoadError>(languageResult);
-
-		if (errorCode == LanguageHelper::LoadError::VersionMismatch)
-		{
-			std::wstring versionMismatchMessage = ResourceHelper::LoadString(
-				GetModuleHandle(nullptr), IDS_GENERAL_TRANSLATION_DLL_VERSION_MISMATCH);
-			MessageBox(nullptr, versionMismatchMessage.c_str(), App::APP_NAME, MB_ICONWARNING);
-		}
-
-		languageInfo = { LanguageHelper::DEFAULT_LANGUAGE, GetModuleHandle(nullptr) };
-	}
-
-	m_config.language = languageInfo.language;
-	m_resourceInstance = languageInfo.resourceInstance;
-
-	if (LanguageHelper::IsLanguageRTL(m_config.language))
-	{
-		SetProcessDefaultLayout(LAYOUT_RTL);
-	}
+	/* All translations have been removed in favor of a single English version. */
+	m_config.language = LanguageHelper::DEFAULT_LANGUAGE;
+	m_resourceInstance = GetModuleHandle(nullptr);
 
 	m_resourceLoader = std::make_unique<Win32ResourceLoader>(m_resourceInstance, m_config.iconSet,
 		&m_darkModeManager, &m_themeManager);

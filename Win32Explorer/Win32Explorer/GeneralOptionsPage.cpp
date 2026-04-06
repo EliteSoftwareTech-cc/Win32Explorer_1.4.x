@@ -122,52 +122,14 @@ void GeneralOptionsPage::SetNewTabDirectory(HWND hEdit, PCIDLIST_ABSOLUTE pidl)
 
 void GeneralOptionsPage::AddLanguages()
 {
-	HWND hLanguageComboBox;
-	WIN32_FIND_DATA wfd;
-	HANDLE hFindFile;
-	TCHAR szImageDirectory[MAX_PATH];
-	TCHAR szNamePattern[MAX_PATH];
-	WORD wLanguage;
-	int iIndex = 1;
-	int iSel = 0;
+	HWND hLanguageComboBox = GetDlgItem(GetDialog(), IDC_OPTIONS_LANGUAGE);
 
-	hLanguageComboBox = GetDlgItem(GetDialog(), IDC_OPTIONS_LANGUAGE);
-
-	/* English will always be added to the combox, and will
-	always be the first item. */
-	SendMessage(hLanguageComboBox, CB_ADDSTRING, 0, (LPARAM) _T("English"));
-
-	GetProcessImageName(GetCurrentProcessId(), szImageDirectory, std::size(szImageDirectory));
-	PathRemoveFileSpec(szImageDirectory);
-	StringCchCopy(szNamePattern, std::size(szNamePattern), szImageDirectory);
-	PathAppend(szNamePattern, L"Win32Explorer*.dll");
-
-	hFindFile = FindFirstFile(szNamePattern, &wfd);
-
-	/* Enumerate all the possible language DLL's. */
-	if (hFindFile != INVALID_HANDLE_VALUE)
-	{
-		do
-		{
-			BOOL bRet = AddLanguageToComboBox(hLanguageComboBox, szImageDirectory, wfd.cFileName,
-				&wLanguage);
-
-			if (bRet)
-			{
-				if (wLanguage == m_config->language)
-				{
-					iSel = iIndex;
-				}
-
-				iIndex++;
-			}
-		} while (FindNextFile(hFindFile, &wfd));
-
-		FindClose(hFindFile);
-	}
-
-	/* Now, select the current language. */
-	SendMessage(hLanguageComboBox, CB_SETCURSEL, iSel, 0);
+	/* English is now the only supported language. */
+	SendMessage(hLanguageComboBox, CB_ADDSTRING, 0, (LPARAM)_T("English"));
+	SendMessage(hLanguageComboBox, CB_SETCURSEL, 0, 0);
+	
+	/* Disable the language combo box since there's only one option. */
+	EnableWindow(hLanguageComboBox, FALSE);
 }
 
 BOOL GeneralOptionsPage::AddLanguageToComboBox(HWND hComboBox, const TCHAR *szImageDirectory,

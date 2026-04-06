@@ -14,8 +14,8 @@
 
 - Clone this repo with submodules enabled:
 ```
-git clone --recurse-submodules https://github.com/derceg/explorerplusplus.git
-cd explorerplusplus
+git clone --recurse-submodules https://github.com/EliteSoftwareTech/win32explorer.git
+cd win32explorer
 ```
 - Run the vcpkg bootstrapper:
     - cmd/PowerShell: `.\Win32Explorer\ThirdParty\vcpkg\bootstrap-vcpkg.bat`

@@ -1,56 +1,56 @@
-﻿[![Build status](https://ci.appveyor.com/api/projects/status/ggvn28se8xhes3x3/branch/master?svg=true)](https://ci.appveyor.com/project/derceg/explorerplusplus/branch/master)
-[![Documentation Status](https://readthedocs.org/projects/explorerplusplus/badge/?version=latest)](https://explorerplusplus.readthedocs.io/en/latest/?badge=latest)
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/explorerplusplus/localized.svg)](https://crowdin.com/project/explorerplusplus)
-
 # Win32Explorer
+
+[![Build status](https://ci.appveyor.com/api/projects/status/ggvn28se8xhes3x3/branch/master?svg=true)](https://ci.appveyor.com/project/EliteSoftwareTech/win32explorer/branch/master)
+[![Documentation Status](https://readthedocs.org/projects/win32explorer/badge/?version=latest)](https://win32explorer.readthedocs.io/en/latest/?badge=latest)
 
 Win32Explorer is a lightweight and fast file manager for Windows.
 
+This is a complete fork entirely separate from the original version, maintained by Zachary Whiteman - EliteSoftwareTech Co.
+
 ## Features
 
-* With the option to save to the registry or a configuration file, Win32Explorer is __completely portable__
-* __Tabbed browsing__ for easy management of multiple folders
+* Tabbed browsing for easy management of multiple folders
 * Display window shows previews of files as they are selected
-* __Easy-to-remember keyboard shortcuts__ for quick navigation
+* Easy-to-remember keyboard shortcuts for quick navigation
 * Customizable user interface
-* Full drag-and-drop support with other applications, including Windows Explorer
-* Advanced file operations such as merging and splitting supported
-* Change file dates and attributes
-* Save a directory listing
-* Bookmark tabs
-* __Search__ for files using their name and attributes
-* Switch between icon, list, detail, thumbnail and tile view
-* Filter files
+* Full support for drag-and-drop with other applications, including Windows Explorer
+* File operations such as filtering, sorting, and renaming are all supported
+* Advanced features like splitting and merging files
 
-## Latest Builds
+## Latest Version (26.0.3.0)
 
-### 32-bit
+The latest build for each platform is available here:
 
-[explorerpp_x86.zip](https://download.explorerplusplus.com/dev/latest/explorerpp_x86.zip)
+### 32-bit (x86)
 
-### 64-bit
+[win32explorer_x86.zip](https://win32explorer.elitesoftwaretech.cc/download/win32explorer_x86.zip)
 
-[explorerpp_x64.zip](https://download.explorerplusplus.com/dev/latest/explorerpp_x64.zip)
+### 64-bit (x64)
 
-### ARM64
+[win32explorer_x64.zip](https://win32explorer.elitesoftwaretech.cc/download/win32explorer_x64.zip)
 
-[explorerpp_arm64.zip](https://download.explorerplusplus.com/dev/latest/explorerpp_arm64.zip)
+### 64-bit (ARM64)
+
+[win32explorer_arm64.zip](https://win32explorer.elitesoftwaretech.cc/download/win32explorer_arm64.zip)
 
 ### Translations
 
-[explorerpp_translations.zip](https://download.explorerplusplus.com/dev/latest/explorerpp_translations.zip)
+[win32explorer_translations.zip](https://win32explorer.elitesoftwaretech.cc/download/win32explorer_translations.zip)
 
-For a full list of builds, see https://explorerplusplus.com/builds.
+For a full list of builds, see https://win32explorer.elitesoftwaretech.cc/builds.
 
-## Building Win32Explorer
+## Support
 
-For instructions on how to build Win32Explorer, see [BUILDING.md](BUILDING.md).
+For support, please contact support@elitesoftwaretech.cc or visit our website at https://win32explorer.elitesoftwaretech.cc.
 
 ## Documentation
 
-Documentation is available online at [Read the Docs](https://explorerplusplus.readthedocs.io/en/latest/).
+Documentation is available online at [Read the Docs](https://win32explorer.readthedocs.io/en/latest/).
 
 ## Translations
 
-Translations are managed with [Crowdin](https://crowdin.com/project/explorerplusplus). To contribute to a translation, sign up with Crowdin, then edit the file corresponding to your language. If your language isn't listed, use the contact link shown on the project page to request it.
+Translations are managed at https://win32explorer.elitesoftwaretech.cc/translations.
 
+## License
+
+Win32Explorer is released under the GNU General Public License (GPL). See [LICENSE](LICENSE) for more information.

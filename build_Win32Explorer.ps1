@@ -64,13 +64,10 @@ Log-Message "Relocating build artifacts to project root..."
 $outputBase = "Win32Explorer"
 if ($Platform -eq "x64") {
     $exeDir = Join-Path $outputBase "Win32Explorer\x64\$Configuration"
-    $dllDir = Join-Path $outputBase "Win32\Release" # Translations seem to always go to Win32\Release in this solution
 } elseif ($Platform -eq "Win32") {
     $exeDir = Join-Path $outputBase "Win32Explorer\$Configuration"
-    $dllDir = Join-Path $outputBase "Win32\Release"
 } else {
     $exeDir = Join-Path $outputBase "Win32Explorer\$Platform\$Configuration"
-    $dllDir = Join-Path $outputBase "Win32\Release"
 }
 
 $root = (Get-Location).FullName
@@ -82,17 +79,6 @@ if (Test-Path $exePath) {
     Copy-Item -Path $exePath -Destination $root -Force
 } else {
     Log-Message "WARNING: EXE not found at $exePath"
-}
-
-# Copy Translation DLLs
-$dlls = Get-ChildItem -Path $dllDir -Filter "*.dll" -ErrorAction SilentlyContinue
-if ($dlls) {
-    Log-Message "Copying $($dlls.Count) translation DLLs to $root"
-    foreach ($dll in $dlls) {
-        Copy-Item -Path $dll.FullName -Destination $root -Force
-    }
-} else {
-    Log-Message "WARNING: No translation DLLs found in $dllDir"
 }
 
 Log-Message "Build artifacts successfully relocated to root."
