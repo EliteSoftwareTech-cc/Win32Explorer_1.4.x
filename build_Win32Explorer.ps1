@@ -24,7 +24,7 @@ if (-not (Test-Path $msbuildPath)) {
 Log-Message "Found MSBuild: $msbuildPath"
 
 # 2. Bootstrap vcpkg if needed
-$vcpkgRoot = Join-Path (Get-Location) "Win32Explorer\ThirdParty\vcpkg"
+$vcpkgRoot = Join-Path (Get-Location) "External_Dependencies\vcpkg"
 $vcpkgExe = Join-Path $vcpkgRoot "vcpkg.exe"
 
 if (-not (Test-Path $vcpkgExe)) {
@@ -39,7 +39,7 @@ if (-not (Test-Path $vcpkgExe)) {
 }
 
 # 3. Build Solution
-$solutionFile = "Win32Explorer\Win32Explorer.sln"
+$solutionFile = "Project_Core\Win32Explorer.sln"
 Log-Message "Building $solutionFile ($Configuration|$Platform)..."
 
 $msbuildArgs = @(
@@ -61,13 +61,13 @@ if ($LASTEXITCODE -ne 0) {
 Log-Message "Relocating build artifacts to project root..."
 
 # Identify artifact locations based on Platform/Configuration
-$outputBase = "Win32Explorer"
+# MSBuild output paths relative to SolutionDir usually
 if ($Platform -eq "x64") {
-    $exeDir = Join-Path $outputBase "Win32Explorer\x64\$Configuration"
+    $exeDir = Join-Path (Get-Location) "App_Source\x64\$Configuration"
 } elseif ($Platform -eq "Win32") {
-    $exeDir = Join-Path $outputBase "Win32Explorer\$Configuration"
+    $exeDir = Join-Path (Get-Location) "App_Source\$Configuration"
 } else {
-    $exeDir = Join-Path $outputBase "Win32Explorer\$Platform\$Configuration"
+    $exeDir = Join-Path (Get-Location) "App_Source\$Platform\$Configuration"
 }
 
 $root = (Get-Location).FullName

@@ -41,7 +41,7 @@ if ($env:configuration -eq "Debug-Asan") {
     $env:Path = $asanDllPath + ";" + $env:Path
 }
 
-Set-Location $env:APPVEYOR_BUILD_FOLDER\Win32Explorer\TestWin32Explorer\$env:platform\$env:configuration
+Set-Location $env:APPVEYOR_BUILD_FOLDER\Testing_Suite\\TestWin32Explorer\\$env:platform\$env:configuration
 
 # Run the tests.
 .\TestWin32Explorer.exe --gtest_output=xml:TestWin32ExplorerOutput.xml
@@ -55,3 +55,4 @@ $wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JO
 if ($testExitCode -ne 0) {
     throw "Tests failed"
 }
+

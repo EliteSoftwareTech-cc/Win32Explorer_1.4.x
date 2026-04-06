@@ -1,0 +1,14 @@
+﻿// Copyright (C) Win32Explorer Project
+// SPDX-License-Identifier: GPL-3.0-only
+// See LICENSE in the top level directory
+
+#pragma once
+
+#include "ColorRule.h"
+#include "../Shared_Libraries/MovableModel.h"
+
+class ColorRuleModel : public MovableModel<ColorRule>
+{
+};
+
+

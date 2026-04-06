@@ -77,7 +77,7 @@ install:
 
     git submodule update
 
-    .\Win32Explorer\ThirdParty\vcpkg\bootstrap-vcpkg.bat
+    .\External_Dependencies\\vcpkg\bootstrap-vcpkg.bat
 
     nuget install secure-file -ExcludeVersion
 
@@ -94,7 +94,7 @@ before_build:
     }
 
 build:
-  project: Win32Explorer\Win32Explorer.sln
+  project: Project_Core\\Win32Explorer.sln
   verbosity: minimal
 
 after_build:
@@ -177,3 +177,4 @@ deploy:
       platform: ARM64
       configuration: Release
       branch: master
+
