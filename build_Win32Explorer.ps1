@@ -52,9 +52,49 @@ $msbuildArgs = @(
 
 & $msbuildPath $msbuildArgs | Tee-Object -FilePath $logFile -Append
 
-if ($LASTEXITCODE -eq 0) {
-    Log-Message "Build SUCCESSFUL."
-} else {
+if ($LASTEXITCODE -ne 0) {
     Log-Message "Build FAILED with exit code $LASTEXITCODE."
     exit $LASTEXITCODE
 }
+
+# 4. Relocate output to root
+Log-Message "Relocating build artifacts to project root..."
+
+# Identify artifact locations based on Platform/Configuration
+$outputBase = "Win32Explorer"
+if ($Platform -eq "x64") {
+    $exeDir = Join-Path $outputBase "Win32Explorer\x64\$Configuration"
+    $dllDir = Join-Path $outputBase "x64\$Configuration"
+} elseif ($Platform -eq "Win32") {
+    $exeDir = Join-Path $outputBase "Win32Explorer\$Configuration"
+    $dllDir = Join-Path $outputBase "$Configuration"
+} else {
+    $exeDir = Join-Path $outputBase "Win32Explorer\$Platform\$Configuration"
+    $dllDir = Join-Path $outputBase "$Platform\$Configuration"
+}
+
+$root = (Get-Location).FullName
+
+# Copy EXE
+$exePath = Join-Path $exeDir "Win32Explorer.exe"
+if (Test-Path $exePath) {
+    Log-Message "Copying $exePath to $root"
+    Copy-Item -Path $exePath -Destination $root -Force
+} else {
+    Log-Message "WARNING: EXE not found at $exePath"
+}
+
+# Copy Translation DLLs
+$dlls = Get-ChildItem -Path $dllDir -Filter "*.dll" -ErrorAction SilentlyContinue
+if ($dlls) {
+    Log-Message "Copying $($dlls.Count) translation DLLs to $root"
+    foreach ($dll in $dlls) {
+        Copy-Item -Path $dll.FullName -Destination $root -Force
+    }
+} else {
+    Log-Message "WARNING: No translation DLLs found in $dllDir"
+}
+
+Log-Message "Build artifacts successfully relocated to root."
+Log-Message "Build SUCCESSFUL."
+
