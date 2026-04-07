@@ -202,23 +202,6 @@ void StartupOptionsPage::OnEraseDialogBackground(HDC hdc)
 	DCHECK(res);
 	auto fillRes = FillRect(hdc, &rect, brush);
 	DCHECK(fillRes);
-
-	HWND listView = GetDlgItem(GetDialog(), IDC_STARTUP_CUSTOM_FOLDERS_LIST);
-
-	// As noted above, if a listview control has the LVS_EX_TRANSPARENTBKGND style set, its
-	// background will be sourced from the parent control. Therefore, when the startup folders
-	// listview is disabled, the rectangle drawn below is what will be used as the listview
-	// background.
-	if (m_darkModeManager->IsDarkModeEnabled() && !IsWindowEnabled(listView))
-	{
-		RECT listViewRect;
-		res = GetClientRect(listView, &listViewRect);
-		DCHECK(res);
-		MapWindowRect(listView, GetDialog(), &listViewRect);
-
-		fillRes = FillRect(hdc, &listViewRect, m_listViewDisabledBackgroundBrush.get());
-		DCHECK(fillRes);
-	}
 }
 
 LRESULT StartupOptionsPage::ListViewWndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)

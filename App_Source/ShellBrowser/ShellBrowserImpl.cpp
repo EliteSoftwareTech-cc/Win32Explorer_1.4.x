@@ -7,7 +7,6 @@
 #include "App.h"
 #include "BrowserWindow.h"
 #include "ClipboardOperations.h"
-#include "ColorRuleModel.h"
 #include "ColumnDataRetrieval.h"
 #include "Config.h"
 #include "DialogHelper.h"
@@ -218,16 +217,6 @@ void ShellBrowserImpl::InitializeListView()
 	m_windowSubclasses.push_back(std::make_unique<WindowSubclass>(GetParent(m_listView),
 		std::bind_front(&ShellBrowserImpl::ListViewParentProc, this)));
 
-	m_connections.push_back(m_app->GetColorRuleModel()->AddItemAddedObserver(
-		std::bind(&ShellBrowserImpl::OnColorRulesUpdated, this)));
-	m_connections.push_back(m_app->GetColorRuleModel()->AddItemUpdatedObserver(
-		std::bind(&ShellBrowserImpl::OnColorRulesUpdated, this)));
-	m_connections.push_back(m_app->GetColorRuleModel()->AddItemMovedObserver(
-		std::bind(&ShellBrowserImpl::OnColorRulesUpdated, this)));
-	m_connections.push_back(m_app->GetColorRuleModel()->AddItemRemovedObserver(
-		std::bind(&ShellBrowserImpl::OnColorRulesUpdated, this)));
-	m_connections.push_back(m_app->GetColorRuleModel()->AddAllItemsRemovedObserver(
-		std::bind(&ShellBrowserImpl::OnColorRulesUpdated, this)));
 
 	if (m_folderSettings.showInGroups)
 	{
@@ -1519,5 +1508,6 @@ boost::signals2::connection ShellBrowserImpl::AddDestroyedObserver(
 {
 	return m_destroyedSignal.connect(observer);
 }
+
 
 

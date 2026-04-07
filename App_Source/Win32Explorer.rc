@@ -1019,7 +1019,6 @@ BEGIN
         MENUITEM "Select &Columns...",          IDM_VIEW_SELECTCOLUMNS
         MENUITEM "Auto&size Columns",           IDM_VIEW_AUTOSIZECOLUMNS
         MENUITEM "Sa&ve Column Layout as Default", IDM_VIEW_SAVECOLUMNLAYOUTASDEFAULT
-        MENUITEM "Change Dis&play Window Colors...", IDM_VIEW_CHANGEDISPLAYCOLOURS
         MENUITEM SEPARATOR
         POPUP "&Filter"
         BEGIN
@@ -1048,7 +1047,6 @@ BEGIN
     POPUP "&Tools"
     BEGIN
         MENUITEM "&Search...",                  IDM_TOOLS_SEARCH
-        MENUITEM "&Customize Colors...",        IDM_TOOLS_CUSTOMIZECOLORS
         MENUITEM SEPARATOR
         MENUITEM "Run Script...",               IDM_TOOLS_RUNSCRIPT
         MENUITEM "&Options...",                 IDM_TOOLS_OPTIONS

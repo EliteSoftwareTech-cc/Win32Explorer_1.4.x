@@ -1251,12 +1251,7 @@
     <ClCompile Include="BrowserCommandController.cpp" />
     <ClCompile Include="BrowserPane.cpp" />
     <ClCompile Include="ClipboardOperations.cpp" />
-    <ClCompile Include="ColorRule.cpp" />
-    <ClCompile Include="ColorRuleListView.cpp" />
-    <ClCompile Include="ColorRuleModelFactory.cpp" />
-    <ClCompile Include="ColorRuleRegistryStorage.cpp" />
-    <ClCompile Include="ColorRuleXmlStorage.cpp" />
-    <ClCompile Include="ColumnRegistryStorage.cpp" />
+                        <ClCompile Include="ColumnRegistryStorage.cpp" />
     <ClCompile Include="ColumnStorage.cpp" />
     <ClCompile Include="ColumnXmlStorage.cpp" />
     <ClCompile Include="CommandLineSplitter.cpp" />
@@ -1398,14 +1393,11 @@
     <ClCompile Include="Bookmarks\UI\BookmarkListPresenter.cpp" />
     <ClCompile Include="Bookmarks\UI\BookmarkMenu.cpp" />
     <ClCompile Include="Bookmarks\UI\BookmarkTreePresenter.cpp" />
-    <ClCompile Include="ColorRuleEditorDialog.cpp" />
-    <ClCompile Include="Plugins\CommandApi\Events\CommandInvoked.cpp" />
+        <ClCompile Include="Plugins\CommandApi\Events\CommandInvoked.cpp" />
     <ClCompile Include="CommandLine.cpp" />
-    <ClCompile Include="CustomizeColorsDialog.cpp" />
-    <ClCompile Include="DestroyFilesDialog.cpp" />
+        <ClCompile Include="DestroyFilesDialog.cpp" />
     <ClCompile Include="DialogStorageHelper.cpp" />
-    <ClCompile Include="DisplayColoursDialog.cpp" />
-    <ClCompile Include="DisplayWindow.cpp" />
+        <ClCompile Include="DisplayWindow.cpp" />
     <ClCompile Include="DrivesToolbar.cpp" />
     <ClCompile Include="Plugins\Event.cpp" />
     <ClCompile Include="EventSwitcher.cpp" />
@@ -1616,13 +1608,7 @@
     <ClInclude Include="BrowserPane.h" />
     <ClInclude Include="BrowserWindow.h" />
     <ClInclude Include="ClipboardOperations.h" />
-    <ClInclude Include="ColorRule.h" />
-    <ClInclude Include="ColorRuleListView.h" />
-    <ClInclude Include="ColorRuleModel.h" />
-    <ClInclude Include="ColorRuleModelFactory.h" />
-    <ClInclude Include="ColorRuleRegistryStorage.h" />
-    <ClInclude Include="ColorRuleXmlStorage.h" />
-    <ClInclude Include="ColumnRegistryStorage.h" />
+                            <ClInclude Include="ColumnRegistryStorage.h" />
     <ClInclude Include="ColumnStorage.h" />
     <ClInclude Include="ColumnXmlStorage.h" />
     <ClInclude Include="CommandLineSplitter.h" />
@@ -1769,17 +1755,14 @@
     <ClInclude Include="Bookmarks\BookmarkTree.h" />
     <ClInclude Include="Bookmarks\UI\BookmarkTreePresenter.h" />
     <ClInclude Include="Bookmarks\BookmarkXmlStorage.h" />
-    <ClInclude Include="ColorRuleEditorDialog.h" />
-    <ClInclude Include="Plugins\CommandApi\Events\CommandInvoked.h" />
+        <ClInclude Include="Plugins\CommandApi\Events\CommandInvoked.h" />
     <ClInclude Include="CommandLine.h" />
     <ClInclude Include="CoreInterface.h" />
-    <ClInclude Include="CustomizeColorsDialog.h" />
-    <ClInclude Include="DefaultColumns.h" />
+        <ClInclude Include="DefaultColumns.h" />
     <ClInclude Include="DefaultToolbarButtons.h" />
     <ClInclude Include="DestroyFilesDialog.h" />
     <ClInclude Include="DialogConstants.h" />
-    <ClInclude Include="DisplayColoursDialog.h" />
-    <ClInclude Include="DisplayWindow\DisplayWindow.h" />
+        <ClInclude Include="DisplayWindow\DisplayWindow.h" />
     <ClInclude Include="DrivesToolbar.h" />
     <ClInclude Include="Plugins\Event.h" />
     <ClInclude Include="Win32Explorer.h" />
@@ -1952,6 +1935,7 @@
     </VisualStudio>
   </ProjectExtensions>
 </Project>
+
 
 
 

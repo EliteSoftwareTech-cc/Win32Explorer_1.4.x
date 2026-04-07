@@ -7,8 +7,6 @@
 #include "Win32Explorer.h"
 #include "AsyncIconFetcher.h"
 #include "BrowserWindow.h"
-#include "ColorRuleModel.h"
-#include "ColorRuleModelFactory.h"
 #include "ColumnStorage.h"
 #include "ComStaThreadPoolExecutor.h"
 #include "DefaultAccelerators.h"
@@ -47,7 +45,6 @@ App::App(const CommandLine::Settings *commandLineSettings) :
 	m_themeManager(&m_darkModeManager, &m_darkModeColorProvider),
 	m_cachedIcons(std::make_shared<CachedIcons>(MAX_CACHED_ICONS)),
 	m_iconFetcher(std::make_shared<AsyncIconFetcher>(&m_runtime, m_cachedIcons)),
-	m_colorRuleModel(ColorRuleModelFactory::Create()),
 	m_resourceInstance(GetModuleHandle(nullptr)),
 	m_processManager(&m_browserList),
 	m_tabList(&m_tabEvents),
@@ -169,7 +166,6 @@ void App::LoadSettings(std::vector<WindowStorageData> &windows)
 	appStorage->LoadConfig(m_config);
 	windows = appStorage->LoadWindows();
 	appStorage->LoadBookmarks(&m_bookmarkTree);
-	appStorage->LoadColorRules(m_colorRuleModel.get());
 	appStorage->LoadApplications(&m_applicationModel);
 	appStorage->LoadDialogStates();
 	appStorage->LoadDefaultColumns(m_config.globalFolderSettings.folderColumns);
@@ -215,7 +211,6 @@ void App::SaveSettings()
 	appStorage->SaveConfig(m_config);
 	appStorage->SaveWindows(windows);
 	appStorage->SaveBookmarks(&m_bookmarkTree);
-	appStorage->SaveColorRules(m_colorRuleModel.get());
 	appStorage->SaveApplications(&m_applicationModel);
 	appStorage->SaveDialogStates();
 	appStorage->SaveDefaultColumns(m_config.globalFolderSettings.folderColumns);
@@ -395,10 +390,6 @@ BookmarkTree *App::GetBookmarkTree()
 	return &m_bookmarkTree;
 }
 
-ColorRuleModel *App::GetColorRuleModel() const
-{
-	return m_colorRuleModel.get();
-}
 
 Applications::ApplicationModel *App::GetApplicationModel()
 {
@@ -571,5 +562,7 @@ void App::SessionEnding()
 
 	SaveSettings();
 }
+
+
 
 

@@ -6,7 +6,6 @@
 #include "RegistryAppStorage.h"
 #include "ApplicationToolbarRegistryStorage.h"
 #include "Bookmarks/BookmarkRegistryStorage.h"
-#include "ColorRuleRegistryStorage.h"
 #include "ConfigRegistryStorage.h"
 #include "DefaultColumnRegistryStorage.h"
 #include "DialogStorageHelper.h"
@@ -36,10 +35,6 @@ void RegistryAppStorage::LoadBookmarks(BookmarkTree *bookmarkTree)
 	BookmarkRegistryStorage::Load(m_applicationKey.get(), bookmarkTree);
 }
 
-void RegistryAppStorage::LoadColorRules(ColorRuleModel *model)
-{
-	ColorRuleRegistryStorage::Load(m_applicationKey.get(), model);
-}
 
 void RegistryAppStorage::LoadApplications(Applications::ApplicationModel *model)
 {
@@ -76,10 +71,6 @@ void RegistryAppStorage::SaveBookmarks(const BookmarkTree *bookmarkTree)
 	BookmarkRegistryStorage::Save(m_applicationKey.get(), bookmarkTree);
 }
 
-void RegistryAppStorage::SaveColorRules(const ColorRuleModel *model)
-{
-	ColorRuleRegistryStorage::Save(m_applicationKey.get(), model);
-}
 
 void RegistryAppStorage::SaveApplications(const Applications::ApplicationModel *model)
 {
@@ -104,4 +95,6 @@ void RegistryAppStorage::SaveFrequentLocations(const FrequentLocationsModel *fre
 void RegistryAppStorage::Commit()
 {
 }
+
+
 

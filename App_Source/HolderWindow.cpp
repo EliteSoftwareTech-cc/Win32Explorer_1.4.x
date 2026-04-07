@@ -223,14 +223,7 @@ void HolderWindow::PerformPaint(const PAINTSTRUCT &ps)
 {
 	HBRUSH backgroundBrush;
 
-	if (m_darkModeManager->IsDarkModeEnabled())
-	{
-		backgroundBrush = m_darkModeColorProvider->GetBackgroundBrush();
-	}
-	else
-	{
-		backgroundBrush = GetSysColorBrush(COLOR_BTNFACE);
-	}
+	backgroundBrush = GetSysColorBrush(COLOR_BTNFACE);
 
 	FillRect(ps.hdc, &ps.rcPaint, backgroundBrush);
 
@@ -238,10 +231,8 @@ void HolderWindow::PerformPaint(const PAINTSTRUCT &ps)
 	auto selectFont = wil::SelectObject(ps.hdc, m_font);
 	SetBkMode(ps.hdc, TRANSPARENT);
 
-	if (m_darkModeManager->IsDarkModeEnabled())
-	{
-		SetTextColor(ps.hdc, m_darkModeColorProvider->GetTextColor());
-	}
+	/* Use default text color. */
+	SetTextColor(ps.hdc, GetSysColor(COLOR_BTNTEXT));
 
 	RECT toolbarRect;
 	GetWindowRect(m_toolbar, &toolbarRect);

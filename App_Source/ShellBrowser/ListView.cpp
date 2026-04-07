@@ -7,7 +7,6 @@
 #include "App.h"
 #include "BackgroundContextMenuDelegate.h"
 #include "BrowserWindow.h"
-#include "ColorRuleModel.h"
 #include "ColumnHelper.h"
 #include "Config.h"
 #include "FolderView.h"
@@ -1536,61 +1535,9 @@ BOOL ShellBrowserImpl::OnListViewEndLabelEdit(const NMLVDISPINFO *dispInfo)
 	return FALSE;
 }
 
-LRESULT ShellBrowserImpl::OnListViewCustomDraw(NMLVCUSTOMDRAW *listViewCustomDraw)
+LRESULT ShellBrowserImpl::OnListViewCustomDraw(NMLVCUSTOMDRAW * /*listViewCustomDraw*/)
 {
-	switch (listViewCustomDraw->nmcd.dwDrawStage)
-	{
-	case CDDS_PREPAINT:
-		return CDRF_NOTIFYITEMDRAW;
-
-	case CDDS_ITEMPREPAINT:
-	{
-		const auto &itemInfo =
-			GetItemByIndex(static_cast<int>(listViewCustomDraw->nmcd.dwItemSpec));
-
-		for (const auto &colorRule : m_app->GetColorRuleModel()->GetItems())
-		{
-			bool matchedFileName = false;
-			bool matchedAttributes = false;
-
-			if (!colorRule->GetFilterPattern().empty())
-			{
-				if (CheckWildcardMatch(colorRule->GetFilterPattern().c_str(),
-						itemInfo.displayName.c_str(), !colorRule->GetFilterPatternCaseInsensitive())
-					== 1)
-				{
-					matchedFileName = true;
-				}
-			}
-			else
-			{
-				matchedFileName = true;
-			}
-
-			if (colorRule->GetFilterAttributes() != 0)
-			{
-				if (itemInfo.isFindDataValid
-					&& WI_IsAnyFlagSet(itemInfo.wfd.dwFileAttributes,
-						colorRule->GetFilterAttributes()))
-				{
-					matchedAttributes = true;
-				}
-			}
-			else
-			{
-				matchedAttributes = true;
-			}
-
-			if (matchedFileName && matchedAttributes)
-			{
-				listViewCustomDraw->clrText = colorRule->GetColor();
-				return CDRF_NEWFONT;
-			}
-		}
-	}
-	break;
-	}
-
+	/* Custom colors have been disabled. */
 	return CDRF_DODEFAULT;
 }
 
@@ -1626,5 +1573,6 @@ void ShellBrowserImpl::OnOneClickActivateHoverTimeUpdated(UINT newValue)
 	ListViewHelper::ActivateOneClickSelect(m_listView,
 		m_config->globalFolderSettings.oneClickActivate.get(), newValue);
 }
+
 
 

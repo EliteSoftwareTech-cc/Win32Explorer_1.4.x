@@ -440,7 +440,6 @@ private:
 	BOOL OnListViewBeginLabelEdit(const NMLVDISPINFO *dispInfo);
 	BOOL OnListViewEndLabelEdit(const NMLVDISPINFO *dispInfo);
 	LRESULT OnListViewCustomDraw(NMLVCUSTOMDRAW *listViewCustomDraw);
-	void OnColorRulesUpdated();
 	void OnFullRowSelectUpdated(BOOL newValue);
 	void OnCheckBoxSelectionUpdated(BOOL newValue);
 	void OnShowGridlinesUpdated(BOOL newValue);
@@ -715,6 +714,7 @@ private:
 
 	WeakPtrFactory<ShellBrowserImpl> m_weakPtrFactory;
 };
+
 
 
 

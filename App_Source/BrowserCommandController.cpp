@@ -7,7 +7,6 @@
 #include "AboutDialog.h"
 #include "BrowserWindow.h"
 #include "Config.h"
-#include "DisplayColoursDialog.h"
 #include "MainResource.h"
 #include "ShellBrowser/ShellBrowser.h"
 #include "ShellBrowser/ShellNavigationController.h"
@@ -601,9 +600,7 @@ void BrowserCommandController::OnResetMainFontSize()
 
 void BrowserCommandController::OnChangeDisplayColors()
 {
-	auto *displayColoursDialog =
-		DisplayColoursDialog::Create(m_resourceLoader, m_browser->GetHWND(), m_config);
-	displayColoursDialog->ShowModalDialog();
+	/* Custom colors have been disabled. */
 }
 
 void BrowserCommandController::GoBack(OpenFolderDisposition disposition)
@@ -750,5 +747,6 @@ const ShellBrowser *BrowserCommandController::GetActiveShellBrowser() const
 {
 	return m_browser->GetActiveShellBrowser();
 }
+
 
 

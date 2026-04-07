@@ -6,10 +6,7 @@
 #include "DialogStorageHelper.h"
 #include "Bookmarks/UI/AddBookmarkDialog.h"
 #include "Bookmarks/UI/ManageBookmarksDialog.h"
-#include "ColorRuleEditorDialog.h"
-#include "CustomizeColorsDialog.h"
 #include "DestroyFilesDialog.h"
-#include "DisplayColoursDialog.h"
 #include "FilterDialog.h"
 #include "MassRenameDialog.h"
 #include "MergeFilesDialog.h"
@@ -44,8 +41,6 @@ DialogSettings *const DIALOG_SETTINGS[] = {
 	&RenameTabDialogPersistentSettings::GetInstance(),
 	&MassRenameDialogPersistentSettings::GetInstance(),
 	&FilterDialogPersistentSettings::GetInstance(),
-	&ColorRuleEditorDialogPersistentSettings::GetInstance(),
-	&CustomizeColorsDialogPersistentSettings::GetInstance(),
 	&SplitFileDialogPersistentSettings::GetInstance(),
 	&DestroyFilesDialogPersistentSettings::GetInstance(),
 	&MergeFilesDialogPersistentSettings::GetInstance(),
@@ -53,7 +48,6 @@ DialogSettings *const DIALOG_SETTINGS[] = {
 	&SetDefaultColumnsDialogPersistentSettings::GetInstance(),
 	&AddBookmarkDialogPersistentSettings::GetInstance(),
 	&ManageBookmarksDialogPersistentSettings::GetInstance(),
-	&DisplayColoursDialogPersistentSettings::GetInstance(),
 	&UpdateCheckDialogPersistentSettings::GetInstance(),
 	&SearchTabsDialogPersistentSettings::GetInstance()
 };
@@ -180,5 +174,7 @@ void SaveDialogStatesToXML(IXMLDOMDocument *xmlDocument, IXMLDOMNode *rootNode)
 }
 
 }
+
+
 
 

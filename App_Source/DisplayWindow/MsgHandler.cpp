@@ -63,37 +63,27 @@ void DisplayWindow::Draw(HDC hdc, RECT *rc, RECT *updateRect)
 
 void DisplayWindow::DrawBackground(HDC hdcMem, RECT *rc)
 {
-	Gdiplus::Graphics graphics(hdcMem);
-
-	Gdiplus::Rect displayRect(0, 0, rc->right - rc->left, rc->bottom - rc->top);
-
-	Gdiplus::GraphicsPath path;
-	path.AddRectangle(displayRect);
-	Gdiplus::PathGradientBrush pgb(&path);
-	pgb.SetCenterPoint(Gdiplus::Point(0, 0));
-
-	Gdiplus::Color centreColor;
-	centreColor.SetFromCOLORREF(m_config->displayWindowCentreColor.get());
-	pgb.SetCenterColor(centreColor);
-
-	Gdiplus::Color surroundColor;
-	surroundColor.SetFromCOLORREF(m_config->displayWindowSurroundColor.get());
-	INT count = 1;
-	pgb.SetSurroundColors(&surroundColor, &count);
-	graphics.FillRectangle(&pgb, displayRect);
+	HBRUSH backgroundBrush = GetSysColorBrush(COLOR_BTNFACE);
+	FillRect(hdcMem, rc, backgroundBrush);
 
 	/* This draws a separator line across the top edge of the window,
 	so that it is visually separated from other windows. */
-	Gdiplus::Pen newPen(BORDER_COLOUR, 1);
+	HPEN hPen = CreatePen(PS_SOLID, 1, GetSysColor(COLOR_3DSHADOW));
+	HGDIOBJ hOldPen = SelectObject(hdcMem, hPen);
 
 	if (m_bVertical)
 	{
-		graphics.DrawLine(&newPen, 0, 0, 0, rc->bottom);
+		MoveToEx(hdcMem, 0, 0, nullptr);
+		LineTo(hdcMem, 0, rc->bottom);
 	}
 	else
 	{
-		graphics.DrawLine(&newPen, 0, 0, rc->right, 0);
+		MoveToEx(hdcMem, 0, 0, nullptr);
+		LineTo(hdcMem, rc->right, 0);
 	}
+
+	SelectObject(hdcMem, hOldPen);
+	DeleteObject(hPen);
 }
 
 void DisplayWindow::DrawThumbnail(HDC hdcMem)
@@ -276,7 +266,7 @@ void DisplayWindow::PaintText(HDC hdc, unsigned int x)
 	HGDIOBJ hOriginalObject = SelectObject(hdc, m_font.get());
 
 	SetBkMode(hdc, TRANSPARENT);
-	SetTextColor(hdc, m_config->displayWindowTextColor.get());
+	SetTextColor(hdc, GetSysColor(COLOR_BTNTEXT));
 
 	GetClientRect(m_hwnd, &rcClient);
 	xCurrent = x;

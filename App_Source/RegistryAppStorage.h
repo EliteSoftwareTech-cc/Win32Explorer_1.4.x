@@ -17,7 +17,6 @@ public:
 	void LoadConfig(Config &config) override;
 	[[nodiscard]] std::vector<WindowStorageData> LoadWindows() override;
 	void LoadBookmarks(BookmarkTree *bookmarkTree) override;
-	void LoadColorRules(ColorRuleModel *model) override;
 	void LoadApplications(Applications::ApplicationModel *model) override;
 	void LoadDialogStates() override;
 	void LoadDefaultColumns(FolderColumns &defaultColumns) override;
@@ -26,7 +25,6 @@ public:
 	void SaveConfig(const Config &config) override;
 	void SaveWindows(const std::vector<WindowStorageData> &windows) override;
 	void SaveBookmarks(const BookmarkTree *bookmarkTree) override;
-	void SaveColorRules(const ColorRuleModel *model) override;
 	void SaveApplications(const Applications::ApplicationModel *model) override;
 	void SaveDialogStates() override;
 	void SaveDefaultColumns(const FolderColumns &defaultColumns) override;
@@ -36,4 +34,5 @@ public:
 private:
 	const wil::unique_hkey m_applicationKey;
 };
+
 

@@ -41,7 +41,6 @@
 
 class AsyncIconFetcher;
 class CachedIcons;
-class ColorRuleModel;
 class ResourceLoader;
 struct WindowStorageData;
 
@@ -70,7 +69,6 @@ public:
 	BrowserList *GetBrowserList();
 	ModelessDialogList *GetModelessDialogList();
 	BookmarkTree *GetBookmarkTree();
-	ColorRuleModel *GetColorRuleModel() const;
 	Applications::ApplicationModel *GetApplicationModel();
 	HINSTANCE GetResourceInstance() const;
 	ResourceLoader *GetResourceLoader() const;
@@ -131,7 +129,6 @@ private:
 	BrowserList m_browserList;
 	ModelessDialogList m_modelessDialogList;
 	BookmarkTree m_bookmarkTree;
-	std::unique_ptr<ColorRuleModel> m_colorRuleModel;
 	Applications::ApplicationModel m_applicationModel;
 	HINSTANCE m_resourceInstance;
 	std::unique_ptr<ResourceLoader> m_resourceLoader;
@@ -159,5 +156,6 @@ private:
 
 	bool m_exitStarted = false;
 };
+
 
 

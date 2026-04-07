@@ -6,7 +6,6 @@
 #include "XmlAppStorage.h"
 #include "ApplicationToolbarXmlStorage.h"
 #include "Bookmarks/BookmarkXmlStorage.h"
-#include "ColorRuleXmlStorage.h"
 #include "ConfigXmlStorage.h"
 #include "DefaultColumnXmlStorage.h"
 #include "DialogStorageHelper.h"
@@ -42,10 +41,6 @@ void XmlAppStorage::LoadBookmarks(BookmarkTree *bookmarkTree)
 	BookmarkXmlStorage::Load(m_rootNode.get(), bookmarkTree);
 }
 
-void XmlAppStorage::LoadColorRules(ColorRuleModel *model)
-{
-	ColorRuleXmlStorage::Load(m_rootNode.get(), model);
-}
 
 void XmlAppStorage::LoadApplications(Applications::ApplicationModel *model)
 {
@@ -82,10 +77,6 @@ void XmlAppStorage::SaveBookmarks(const BookmarkTree *bookmarkTree)
 	BookmarkXmlStorage::Save(m_xmlDocument.get(), m_rootNode.get(), bookmarkTree);
 }
 
-void XmlAppStorage::SaveColorRules(const ColorRuleModel *model)
-{
-	ColorRuleXmlStorage::Save(m_xmlDocument.get(), m_rootNode.get(), model);
-}
 
 void XmlAppStorage::SaveApplications(const Applications::ApplicationModel *model)
 {
@@ -127,5 +118,7 @@ void XmlAppStorage::Commit()
 	auto destination = wil::make_variant_bstr_failfast(m_configFilePath.c_str());
 	m_xmlDocument->save(destination);
 }
+
+
 
 

@@ -6,7 +6,6 @@
 #include "Win32Explorer.h"
 #include "AddressBar.h"
 #include "App.h"
-#include "ColorRule.h"
 #include "Config.h"
 #include "DarkModeManager.h"
 #include "DisplayWindow/DisplayWindow.h"
@@ -481,20 +480,8 @@ void Explorerplusplus::OnDpiChanged(const RECT *updatedWindowRect)
 		SWP_NOZORDER | SWP_NOACTIVATE);
 }
 
-std::optional<LRESULT> Explorerplusplus::OnCtlColorStatic(HWND hwnd, HDC hdc)
+std::optional<LRESULT> Explorerplusplus::OnCtlColorStatic(HWND /*hwnd*/, HDC /*hdc*/)
 {
-	UNREFERENCED_PARAMETER(hdc);
-
-	if (hwnd == m_tabBacking->GetHWND())
-	{
-		if (!m_app->GetDarkModeManager()->IsDarkModeEnabled())
-		{
-			return std::nullopt;
-		}
-
-		return reinterpret_cast<INT_PTR>(m_tabBarBackgroundBrush.get());
-	}
-
 	return std::nullopt;
 }
 
@@ -838,5 +825,6 @@ bool Explorerplusplus::OnActivate(int activationState, bool minimized)
 
 	return false;
 }
+
 
 
