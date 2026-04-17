@@ -1,0 +1,503 @@
+﻿# App_Source
+
+## Files:
+- **AboutDialog.cpp**: UI dialog implementation/definition for About.
+- **AboutDialog.h**: UI dialog implementation/definition for About.
+- **Accelerator.h**: Implementation/definition for Accelerator.
+- **AcceleratorHelper.cpp**: Implementation/definition for AcceleratorHelper.
+- **AcceleratorHelper.h**: Implementation/definition for AcceleratorHelper.
+- **AcceleratorManager.cpp**: Implementation/definition for AcceleratorManager.
+- **AcceleratorManager.h**: Implementation/definition for AcceleratorManager.
+- **AcceleratorMappings.h**: Implementation/definition for AcceleratorMappings.
+- **AcceleratorUpdater.cpp**: Implementation/definition for AcceleratorUpdater.
+- **AcceleratorUpdater.h**: Implementation/definition for AcceleratorUpdater.
+- **AddressBar.cpp**: Implementation/definition for AddressBar.
+- **AddressBar.h**: Implementation/definition for AddressBar.
+- **AddressBarView.cpp**: UI view implementation/definition for AddressBar.
+- **AddressBarView.h**: UI view implementation/definition for AddressBar.
+- **AddressBarViewDelegate.h**: Implementation/definition for AddressBarViewDelegate.
+- **AdvancedOptionsPage.cpp**: Property page UI for AdvancedOptions.
+- **AdvancedOptionsPage.h**: Property page UI for AdvancedOptions.
+- **App.cpp**: Core application lifecycle and state management.
+- **App.h**: Core application lifecycle and state management.
+- **AppearanceOptionsPage.cpp**: Property page UI for AppearanceOptions.
+- **AppearanceOptionsPage.h**: Property page UI for AppearanceOptions.
+- **Application.cpp**: Implementation/definition for Application.
+- **Application.h**: Implementation/definition for Application.
+- **ApplicationContextMenu.cpp**: Context or drop-down menu for ApplicationContext.
+- **ApplicationContextMenu.h**: Context or drop-down menu for ApplicationContext.
+- **ApplicationContextMenuController.cpp**: Implementation/definition for ApplicationContextMenuController.
+- **ApplicationContextMenuController.h**: Implementation/definition for ApplicationContextMenuController.
+- **ApplicationCrashedDialog.cpp**: UI dialog implementation/definition for ApplicationCrashed.
+- **ApplicationCrashedDialog.h**: UI dialog implementation/definition for ApplicationCrashed.
+- **ApplicationDropper.cpp**: Implementation/definition for ApplicationDropper.
+- **ApplicationDropper.h**: Implementation/definition for ApplicationDropper.
+- **ApplicationEditorDialog.cpp**: UI dialog implementation/definition for ApplicationEditor.
+- **ApplicationEditorDialog.h**: UI dialog implementation/definition for ApplicationEditor.
+- **ApplicationExecutor.h**: Implementation/definition for ApplicationExecutor.
+- **ApplicationExecutorImpl.cpp**: Implementation/definition for ApplicationExecutorImpl.
+- **ApplicationExecutorImpl.h**: Implementation/definition for ApplicationExecutorImpl.
+- **ApplicationHelper.cpp**: Implementation/definition for ApplicationHelper.
+- **ApplicationHelper.h**: Implementation/definition for ApplicationHelper.
+- **ApplicationModel.h**: Data model for Application.
+- **ApplicationToolbar.cpp**: Toolbar UI component for Application.
+- **ApplicationToolbar.h**: Toolbar UI component for Application.
+- **ApplicationToolbarRegistryStorage.cpp**: Settings storage handler for ApplicationToolbarRegistry.
+- **ApplicationToolbarRegistryStorage.h**: Settings storage handler for ApplicationToolbarRegistry.
+- **ApplicationToolbarView.cpp**: UI view implementation/definition for ApplicationToolbar.
+- **ApplicationToolbarView.h**: UI view implementation/definition for ApplicationToolbar.
+- **ApplicationToolbarXmlStorage.cpp**: Settings storage handler for ApplicationToolbarXml.
+- **ApplicationToolbarXmlStorage.h**: Settings storage handler for ApplicationToolbarXml.
+- **AppStorage.h**: Settings storage handler for App.
+- **AsyncIconFetcher.cpp**: Implementation/definition for AsyncIconFetcher.
+- **AsyncIconFetcher.h**: Implementation/definition for AsyncIconFetcher.
+- **BackgroundContextMenuDelegate.cpp**: Implementation/definition for BackgroundContextMenuDelegate.
+- **BackgroundContextMenuDelegate.h**: Implementation/definition for BackgroundContextMenuDelegate.
+- **BaseDialog.cpp**: UI dialog implementation/definition for Base.
+- **BaseDialog.h**: UI dialog implementation/definition for Base.
+- **BrowserCommandController.cpp**: Implementation/definition for BrowserCommandController.
+- **BrowserCommandController.h**: Implementation/definition for BrowserCommandController.
+- **BrowserCommandTarget.h**: Implementation/definition for BrowserCommandTarget.
+- **BrowserCommandTargetManager.cpp**: Implementation/definition for BrowserCommandTargetManager.
+- **BrowserCommandTargetManager.h**: Implementation/definition for BrowserCommandTargetManager.
+- **BrowserList.cpp**: Implementation/definition for BrowserList.
+- **BrowserList.h**: Implementation/definition for BrowserList.
+- **BrowserPane.cpp**: Implementation/definition for BrowserPane.
+- **BrowserPane.h**: Implementation/definition for BrowserPane.
+- **BrowserWindow.cpp**: Implementation/definition for BrowserWindow.
+- **BrowserWindow.h**: Implementation/definition for BrowserWindow.
+- **ChangeNotifyMode.h**: Implementation/definition for ChangeNotifyMode.
+- **ClangCLLibs.cpp**: Implementation/definition for ClangCLLibs.
+- **ClangCLLibs.h**: Implementation/definition for ClangCLLibs.
+- **ClipboardOperations.cpp**: Implementation/definition for ClipboardOperations.
+- **ClipboardOperations.h**: Implementation/definition for ClipboardOperations.
+- **ColorProvider.h**: Implementation/definition for ColorProvider.
+- **ColorRule.cpp**: Implementation/definition for ColorRule.
+- **ColorRule.h**: Implementation/definition for ColorRule.
+- **ColorRuleEditorDialog.cpp**: UI dialog implementation/definition for ColorRuleEditor.
+- **ColorRuleEditorDialog.h**: UI dialog implementation/definition for ColorRuleEditor.
+- **ColorRuleListView.cpp**: UI view implementation/definition for ColorRuleList.
+- **ColorRuleListView.h**: UI view implementation/definition for ColorRuleList.
+- **ColorRuleModel.h**: Data model for ColorRule.
+- **ColorRuleModelFactory.cpp**: Implementation/definition for ColorRuleModelFactory.
+- **ColorRuleModelFactory.h**: Implementation/definition for ColorRuleModelFactory.
+- **ColorRuleRegistryStorage.cpp**: Settings storage handler for ColorRuleRegistry.
+- **ColorRuleRegistryStorage.h**: Settings storage handler for ColorRuleRegistry.
+- **ColorRuleXmlStorage.cpp**: Settings storage handler for ColorRuleXml.
+- **ColorRuleXmlStorage.h**: Settings storage handler for ColorRuleXml.
+- **ColumnRegistryStorage.cpp**: Settings storage handler for ColumnRegistry.
+- **ColumnRegistryStorage.h**: Settings storage handler for ColumnRegistry.
+- **ColumnStorage.cpp**: Settings storage handler for Column.
+- **ColumnStorage.h**: Settings storage handler for Column.
+- **ColumnXmlStorage.cpp**: Settings storage handler for ColumnXml.
+- **ColumnXmlStorage.h**: Settings storage handler for ColumnXml.
+- **CommandLine.cpp**: Implementation/definition for CommandLine.
+- **CommandLine.h**: Implementation/definition for CommandLine.
+- **CommandLineSplitter.cpp**: Implementation/definition for CommandLineSplitter.
+- **CommandLineSplitter.h**: Implementation/definition for CommandLineSplitter.
+- **ComStaThreadPoolExecutor.cpp**: Implementation/definition for ComStaThreadPoolExecutor.
+- **ComStaThreadPoolExecutor.h**: Implementation/definition for ComStaThreadPoolExecutor.
+- **Config.h**: Application configuration structures and defaults.
+- **ConfigRegistryStorage.cpp**: Settings storage handler for ConfigRegistry.
+- **ConfigRegistryStorage.h**: Settings storage handler for ConfigRegistry.
+- **ConfigXmlStorage.cpp**: Settings storage handler for ConfigXml.
+- **ConfigXmlStorage.h**: Settings storage handler for ConfigXml.
+- **CoreInterface.h**: Implementation/definition for CoreInterface.
+- **CrashHandlerHelper.cpp**: Implementation/definition for CrashHandlerHelper.
+- **CrashHandlerHelper.h**: Implementation/definition for CrashHandlerHelper.
+- **CustomFont.cpp**: Implementation/definition for CustomFont.
+- **CustomFont.h**: Implementation/definition for CustomFont.
+- **CustomFontStorage.cpp**: Settings storage handler for CustomFont.
+- **CustomFontStorage.h**: Settings storage handler for CustomFont.
+- **CustomizeColorsDialog.cpp**: UI dialog implementation/definition for CustomizeColors.
+- **CustomizeColorsDialog.h**: UI dialog implementation/definition for CustomizeColors.
+- **DarkModeColorProvider.cpp**: Implementation/definition for DarkModeColorProvider.
+- **DarkModeColorProvider.h**: Implementation/definition for DarkModeColorProvider.
+- **DarkModeManager.cpp**: Implementation/definition for DarkModeManager.
+- **DarkModeManager.h**: Implementation/definition for DarkModeManager.
+- **DefaultAccelerators.cpp**: Implementation/definition for DefaultAccelerators.
+- **DefaultAccelerators.h**: Implementation/definition for DefaultAccelerators.
+- **DefaultColumnRegistryStorage.cpp**: Settings storage handler for DefaultColumnRegistry.
+- **DefaultColumnRegistryStorage.h**: Settings storage handler for DefaultColumnRegistry.
+- **DefaultColumns.h**: Implementation/definition for DefaultColumns.
+- **DefaultColumnXmlStorage.cpp**: Settings storage handler for DefaultColumnXml.
+- **DefaultColumnXmlStorage.h**: Settings storage handler for DefaultColumnXml.
+- **DefaultSettingsOptionsPage.cpp**: Property page UI for DefaultSettingsOptions.
+- **DefaultSettingsOptionsPage.h**: Property page UI for DefaultSettingsOptions.
+- **DefaultToolbarButtons.h**: Implementation/definition for DefaultToolbarButtons.
+- **DestroyFilesDialog.cpp**: UI dialog implementation/definition for DestroyFiles.
+- **DestroyFilesDialog.h**: UI dialog implementation/definition for DestroyFiles.
+- **DialogConstants.h**: Implementation/definition for DialogConstants.
+- **DialogHelper.cpp**: Implementation/definition for DialogHelper.
+- **DialogHelper.h**: Implementation/definition for DialogHelper.
+- **DialogStorageHelper.cpp**: Implementation/definition for DialogStorageHelper.
+- **DialogStorageHelper.h**: Implementation/definition for DialogStorageHelper.
+- **DirectoryOperationsHelper.cpp**: Implementation/definition for DirectoryOperationsHelper.
+- **DirectoryOperationsHelper.h**: Implementation/definition for DirectoryOperationsHelper.
+- **DirectoryWatcher.h**: Implementation/definition for DirectoryWatcher.
+- **DirectoryWatcherFactory.h**: Implementation/definition for DirectoryWatcherFactory.
+- **DirectoryWatcherFactoryImpl.cpp**: Implementation/definition for DirectoryWatcherFactoryImpl.
+- **DirectoryWatcherFactoryImpl.h**: Implementation/definition for DirectoryWatcherFactoryImpl.
+- **DisplayColoursDialog.cpp**: UI dialog implementation/definition for DisplayColours.
+- **DisplayColoursDialog.h**: UI dialog implementation/definition for DisplayColours.
+- **DisplayWindow.cpp**: Implementation/definition for DisplayWindow.
+- **DisplayWindowDefaults.h**: Implementation/definition for DisplayWindowDefaults.
+- **DriveEnumerator.h**: Implementation/definition for DriveEnumerator.
+- **DriveEnumeratorImpl.cpp**: Implementation/definition for DriveEnumeratorImpl.
+- **DriveEnumeratorImpl.h**: Implementation/definition for DriveEnumeratorImpl.
+- **DriveModel.cpp**: Data model for Drive.
+- **DriveModel.h**: Data model for Drive.
+- **DrivesToolbar.cpp**: Toolbar UI component for Drives.
+- **DrivesToolbar.h**: Toolbar UI component for Drives.
+- **DrivesToolbarView.cpp**: UI view implementation/definition for DrivesToolbar.
+- **DrivesToolbarView.h**: UI view implementation/definition for DrivesToolbar.
+- **DriveWatcher.cpp**: Implementation/definition for DriveWatcher.
+- **DriveWatcher.h**: Implementation/definition for DriveWatcher.
+- **DriveWatcherImpl.cpp**: Implementation/definition for DriveWatcherImpl.
+- **DriveWatcherImpl.h**: Implementation/definition for DriveWatcherImpl.
+- **EventScope.cpp**: Implementation/definition for EventScope.
+- **EventScope.h**: Implementation/definition for EventScope.
+- **EventSwitcher.cpp**: Implementation/definition for EventSwitcher.
+- **EventWindow.cpp**: Implementation/definition for EventWindow.
+- **EventWindow.h**: Implementation/definition for EventWindow.
+- **ExitCode.h**: Implementation/definition for ExitCode.
+- **Feature.h**: Implementation/definition for Feature.
+- **FeatureList.cpp**: Implementation/definition for FeatureList.
+- **FeatureList.h**: Implementation/definition for FeatureList.
+- **FileOperations.cpp**: Implementation/definition for FileOperations.
+- **FileOperations.h**: Implementation/definition for FileOperations.
+- **FileProgressSink.cpp**: Implementation/definition for FileProgressSink.
+- **FileProgressSink.h**: Implementation/definition for FileProgressSink.
+- **FileSelectionTests.cpp**: Implementation/definition for FileSelectionTests.
+- **FilesFoldersOptionsPage.cpp**: Property page UI for FilesFoldersOptions.
+- **FilesFoldersOptionsPage.h**: Property page UI for FilesFoldersOptions.
+- **FileSystemWatcher.cpp**: Implementation/definition for FileSystemWatcher.
+- **FileSystemWatcher.h**: Implementation/definition for FileSystemWatcher.
+- **FilterDialog.cpp**: UI dialog implementation/definition for Filter.
+- **FilterDialog.h**: UI dialog implementation/definition for Filter.
+- **FolderView.cpp**: UI view implementation/definition for Folder.
+- **FolderView.h**: UI view implementation/definition for Folder.
+- **FontHelper.cpp**: Implementation/definition for FontHelper.
+- **FontHelper.h**: Implementation/definition for FontHelper.
+- **FontsOptionsPage.cpp**: Property page UI for FontsOptions.
+- **FontsOptionsPage.h**: Property page UI for FontsOptions.
+- **FrequentLocationsMenu.cpp**: Context or drop-down menu for FrequentLocations.
+- **FrequentLocationsMenu.h**: Context or drop-down menu for FrequentLocations.
+- **FrequentLocationsModel.cpp**: Data model for FrequentLocations.
+- **FrequentLocationsModel.h**: Data model for FrequentLocations.
+- **FrequentLocationsRegistryStorage.cpp**: Settings storage handler for FrequentLocationsRegistry.
+- **FrequentLocationsRegistryStorage.h**: Settings storage handler for FrequentLocationsRegistry.
+- **FrequentLocationsStorageHelper.h**: Implementation/definition for FrequentLocationsStorageHelper.
+- **FrequentLocationsTracker.cpp**: Implementation/definition for FrequentLocationsTracker.
+- **FrequentLocationsTracker.h**: Implementation/definition for FrequentLocationsTracker.
+- **FrequentLocationsXmlStorage.cpp**: Settings storage handler for FrequentLocationsXml.
+- **FrequentLocationsXmlStorage.h**: Settings storage handler for FrequentLocationsXml.
+- **GeneralOptionsPage.cpp**: Property page UI for GeneralOptions.
+- **GeneralOptionsPage.h**: Property page UI for GeneralOptions.
+- **HandleWindowState.cpp**: Implementation/definition for HandleWindowState.
+- **HistoryMenu.cpp**: Context or drop-down menu for History.
+- **HistoryMenu.h**: Context or drop-down menu for History.
+- **HistoryModel.cpp**: Data model for History.
+- **HistoryModel.h**: Data model for History.
+- **HistoryTracker.cpp**: Implementation/definition for HistoryTracker.
+- **HistoryTracker.h**: Implementation/definition for HistoryTracker.
+- **HolderWindow.cpp**: Implementation/definition for HolderWindow.
+- **HolderWindow.h**: Implementation/definition for HolderWindow.
+- **Icon.h**: Implementation/definition for Icon.
+- **IconFetcher.h**: Implementation/definition for IconFetcher.
+- **IconFetcherImpl.cpp**: Implementation/definition for IconFetcherImpl.
+- **IconFetcherImpl.h**: Implementation/definition for IconFetcherImpl.
+- **IconMappings.h**: Implementation/definition for IconMappings.
+- **IconModel.h**: Data model for Icon.
+- **IconSet.h**: Implementation/definition for IconSet.
+- **IconUpdateCallback.h**: Implementation/definition for IconUpdateCallback.
+- **IDropFilesCallback.cpp**: Implementation/definition for IDropFilesCallback.
+- **IDropFilesCallback.h**: Implementation/definition for IDropFilesCallback.
+- **InsertMarkPosition.h**: Implementation/definition for InsertMarkPosition.
+- **ItemStateOp.h**: Implementation/definition for ItemStateOp.
+- **LabelEditHandler.cpp**: Implementation/definition for LabelEditHandler.
+- **LabelEditHandler.h**: Implementation/definition for LabelEditHandler.
+- **LanguageHelper.cpp**: Implementation/definition for LanguageHelper.
+- **LanguageHelper.h**: Implementation/definition for LanguageHelper.
+- **LayoutDefaults.cpp**: Implementation/definition for LayoutDefaults.
+- **LayoutDefaults.h**: Implementation/definition for LayoutDefaults.
+- **ListView.cpp**: UI view implementation/definition for List.
+- **ListView.h**: UI view implementation/definition for List.
+- **ListViewColumn.h**: Implementation/definition for ListViewColumn.
+- **ListViewColumnModel.cpp**: Data model for ListViewColumn.
+- **ListViewColumnModel.h**: Data model for ListViewColumn.
+- **ListViewDelegate.h**: Implementation/definition for ListViewDelegate.
+- **ListViewHandler.cpp**: Implementation/definition for ListViewHandler.
+- **ListViewItem.h**: Implementation/definition for ListViewItem.
+- **ListViewModel.cpp**: Data model for ListView.
+- **ListViewModel.h**: Data model for ListView.
+- **Literals.h**: Implementation/definition for Literals.
+- **LocationVisitInfo.cpp**: Implementation/definition for LocationVisitInfo.
+- **LocationVisitInfo.h**: Implementation/definition for LocationVisitInfo.
+- **MainFontSetter.cpp**: Implementation/definition for MainFontSetter.
+- **MainFontSetter.h**: Implementation/definition for MainFontSetter.
+- **MainMenu.cpp**: Context or drop-down menu for Main.
+- **MainMenuHandler.cpp**: Implementation/definition for MainMenuHandler.
+- **MainMenuSubMenuView.cpp**: UI view implementation/definition for MainMenuSubMenu.
+- **MainMenuSubMenuView.h**: UI view implementation/definition for MainMenuSubMenu.
+- **MainRebar.cpp**: Implementation/definition for MainRebar.
+- **MainRebarRegistryStorage.cpp**: Settings storage handler for MainRebarRegistry.
+- **MainRebarRegistryStorage.h**: Settings storage handler for MainRebarRegistry.
+- **MainRebarStorage.h**: Settings storage handler for MainRebar.
+- **MainRebarView.cpp**: UI view implementation/definition for MainRebar.
+- **MainRebarView.h**: UI view implementation/definition for MainRebar.
+- **MainRebarXmlStorage.cpp**: Settings storage handler for MainRebarXml.
+- **MainRebarXmlStorage.h**: Settings storage handler for MainRebarXml.
+- **MainResource.h**: Implementation/definition for MainResource.
+- **MainTabView.cpp**: UI view implementation/definition for MainTab.
+- **MainTabView.h**: UI view implementation/definition for MainTab.
+- **MainTabViewImageListManager.cpp**: Implementation/definition for MainTabViewImageListManager.
+- **MainTabViewImageListManager.h**: Implementation/definition for MainTabViewImageListManager.
+- **MainToolbar.cpp**: Toolbar UI component for Main.
+- **MainToolbar.h**: Toolbar UI component for Main.
+- **MainToolbarButtons.h**: Implementation/definition for MainToolbarButtons.
+- **MainToolbarStorage.cpp**: Settings storage handler for MainToolbar.
+- **MainToolbarStorage.h**: Settings storage handler for MainToolbar.
+- **MainWindow.cpp**: Implementation/definition for MainWindow.
+- **MainWindow.h**: Implementation/definition for MainWindow.
+- **MainWndSwitch.cpp**: Main application window routing and switching.
+- **MassRenameDialog.cpp**: UI dialog implementation/definition for MassRename.
+- **MassRenameDialog.h**: UI dialog implementation/definition for MassRename.
+- **MenuBase.cpp**: Implementation/definition for MenuBase.
+- **MenuBase.h**: Implementation/definition for MenuBase.
+- **MenuRanges.h**: Implementation/definition for MenuRanges.
+- **MenuView.cpp**: UI view implementation/definition for Menu.
+- **MenuView.h**: UI view implementation/definition for Menu.
+- **MergeFilesDialog.cpp**: UI dialog implementation/definition for MergeFiles.
+- **MergeFilesDialog.h**: UI dialog implementation/definition for MergeFiles.
+- **Misc.cpp**: Implementation/definition for Misc.
+- **ModelessDialogHelper.cpp**: Implementation/definition for ModelessDialogHelper.
+- **ModelessDialogHelper.h**: Implementation/definition for ModelessDialogHelper.
+- **ModelessDialogList.cpp**: Implementation/definition for ModelessDialogList.
+- **ModelessDialogList.h**: Implementation/definition for ModelessDialogList.
+- **MouseEvent.h**: Implementation/definition for MouseEvent.
+- **MsgHandler.cpp**: Implementation/definition for MsgHandler.
+- **NavigationController.h**: Implementation/definition for NavigationController.
+- **NavigationHelper.cpp**: Implementation/definition for NavigationHelper.
+- **NavigationHelper.h**: Implementation/definition for NavigationHelper.
+- **NewMenuClient.cpp**: Implementation/definition for NewMenuClient.
+- **NewMenuClient.h**: Implementation/definition for NewMenuClient.
+- **NoOpMenuHelpTextHost.cpp**: Implementation/definition for NoOpMenuHelpTextHost.
+- **NoOpMenuHelpTextHost.h**: Implementation/definition for NoOpMenuHelpTextHost.
+- **NoTranslationResource.h**: Implementation/definition for NoTranslationResource.
+- **OneShotTimer.cpp**: Implementation/definition for OneShotTimer.
+- **OneShotTimer.h**: Implementation/definition for OneShotTimer.
+- **OneShotTimerManager.cpp**: Implementation/definition for OneShotTimerManager.
+- **OneShotTimerManager.h**: Implementation/definition for OneShotTimerManager.
+- **OpenItemLocationContextMenuDelegate.cpp**: Implementation/definition for OpenItemLocationContextMenuDelegate.
+- **OpenItemLocationContextMenuDelegate.h**: Implementation/definition for OpenItemLocationContextMenuDelegate.
+- **OpenItemsContextMenuDelegate.cpp**: Implementation/definition for OpenItemsContextMenuDelegate.
+- **OpenItemsContextMenuDelegate.h**: Implementation/definition for OpenItemsContextMenuDelegate.
+- **OptionsDialog.cpp**: UI dialog implementation/definition for Options.
+- **OptionsDialog.h**: UI dialog implementation/definition for Options.
+- **OptionsPage.cpp**: Property page UI for Options.
+- **OptionsPage.h**: Property page UI for Options.
+- **PasteSymLinksClient.cpp**: Implementation/definition for PasteSymLinksClient.
+- **PasteSymLinksClient.h**: Implementation/definition for PasteSymLinksClient.
+- **PasteSymLinksServer.cpp**: Implementation/definition for PasteSymLinksServer.
+- **PasteSymLinksServer.h**: Implementation/definition for PasteSymLinksServer.
+- **PasteSymLinksServerClientBase.h**: Implementation/definition for PasteSymLinksServerClientBase.
+- **PidlUpdater.h**: Implementation/definition for PidlUpdater.
+- **PlatformContext.h**: Implementation/definition for PlatformContext.
+- **PlatformContextImpl.cpp**: Implementation/definition for PlatformContextImpl.
+- **PlatformContextImpl.h**: Implementation/definition for PlatformContextImpl.
+- **PluginInitialization.cpp**: Implementation/definition for PluginInitialization.
+- **PluginInterface.cpp**: Implementation/definition for PluginInterface.
+- **PluginInterface.h**: Implementation/definition for PluginInterface.
+- **PopupMenuView.cpp**: UI view implementation/definition for PopupMenu.
+- **PopupMenuView.h**: UI view implementation/definition for PopupMenu.
+- **PreservedTab.cpp**: Implementation/definition for PreservedTab.
+- **PreservedTab.h**: Implementation/definition for PreservedTab.
+- **ProcessManager.cpp**: Implementation/definition for ProcessManager.
+- **ProcessManager.h**: Implementation/definition for ProcessManager.
+- **RebarView.cpp**: UI view implementation/definition for Rebar.
+- **RebarView.h**: UI view implementation/definition for Rebar.
+- **RegistryAppStorage.cpp**: Settings storage handler for RegistryApp.
+- **RegistryAppStorage.h**: Settings storage handler for RegistryApp.
+- **RegistryAppStorageFactory.cpp**: Implementation/definition for RegistryAppStorageFactory.
+- **RegistryAppStorageFactory.h**: Implementation/definition for RegistryAppStorageFactory.
+- **RenameTabDialog.cpp**: UI dialog implementation/definition for RenameTab.
+- **RenameTabDialog.h**: UI dialog implementation/definition for RenameTab.
+- **resource.h**: Implementation/definition for resource.
+- **ResourceHelper.cpp**: Implementation/definition for ResourceHelper.
+- **ResourceHelper.h**: Implementation/definition for ResourceHelper.
+- **ResourceIconModel.cpp**: Data model for ResourceIcon.
+- **ResourceIconModel.h**: Data model for ResourceIcon.
+- **ResourceLoader.h**: Implementation/definition for ResourceLoader.
+- **Runtime.cpp**: Implementation/definition for Runtime.
+- **Runtime.h**: Implementation/definition for Runtime.
+- **RuntimeHelper.cpp**: Implementation/definition for RuntimeHelper.
+- **RuntimeHelper.h**: Implementation/definition for RuntimeHelper.
+- **ScopedBrowserCommandTarget.cpp**: Implementation/definition for ScopedBrowserCommandTarget.
+- **ScopedBrowserCommandTarget.h**: Implementation/definition for ScopedBrowserCommandTarget.
+- **ScriptingDialog.cpp**: UI dialog implementation/definition for Scripting.
+- **ScriptingDialog.h**: UI dialog implementation/definition for Scripting.
+- **SearchDialog.cpp**: UI dialog implementation/definition for Search.
+- **SearchDialog.h**: UI dialog implementation/definition for Search.
+- **SearchTabsDialog.cpp**: UI dialog implementation/definition for SearchTabs.
+- **SearchTabsDialog.h**: UI dialog implementation/definition for SearchTabs.
+- **SearchTabsModel.cpp**: Data model for SearchTabs.
+- **SearchTabsModel.h**: Data model for SearchTabs.
+- **SelectColumnsDialog.cpp**: UI dialog implementation/definition for SelectColumns.
+- **SelectColumnsDialog.h**: UI dialog implementation/definition for SelectColumns.
+- **SelectionType.h**: Implementation/definition for SelectionType.
+- **ServiceProvider.cpp**: Implementation/definition for ServiceProvider.
+- **ServiceProvider.h**: Implementation/definition for ServiceProvider.
+- **SetDefaultColumnsDialog.cpp**: UI dialog implementation/definition for SetDefaultColumns.
+- **SetDefaultColumnsDialog.h**: UI dialog implementation/definition for SetDefaultColumns.
+- **SetFileAttributesDialog.cpp**: UI dialog implementation/definition for SetFileAttributes.
+- **SetFileAttributesDialog.h**: UI dialog implementation/definition for SetFileAttributes.
+- **ShellContext.h**: Implementation/definition for ShellContext.
+- **ShellEntry.cpp**: Implementation/definition for ShellEntry.
+- **ShellEntry.h**: Implementation/definition for ShellEntry.
+- **ShellEntryCollection.cpp**: Implementation/definition for ShellEntryCollection.
+- **ShellEntryCollection.h**: Implementation/definition for ShellEntryCollection.
+- **ShellEnumerator.h**: Implementation/definition for ShellEnumerator.
+- **ShellEnumeratorImpl.cpp**: Implementation/definition for ShellEnumeratorImpl.
+- **ShellEnumeratorImpl.h**: Implementation/definition for ShellEnumeratorImpl.
+- **ShellIconLoader.h**: Implementation/definition for ShellIconLoader.
+- **ShellIconLoaderImpl.cpp**: Implementation/definition for ShellIconLoaderImpl.
+- **ShellIconLoaderImpl.h**: Implementation/definition for ShellIconLoaderImpl.
+- **ShellIconModel.cpp**: Data model for ShellIcon.
+- **ShellIconModel.h**: Data model for ShellIcon.
+- **ShellItemFilter.h**: Implementation/definition for ShellItemFilter.
+- **ShellItemsMenu.cpp**: Context or drop-down menu for ShellItems.
+- **ShellItemsMenu.h**: Context or drop-down menu for ShellItems.
+- **ShellView.cpp**: UI view implementation/definition for Shell.
+- **ShellView.h**: UI view implementation/definition for Shell.
+- **ShellWatcher.cpp**: Implementation/definition for ShellWatcher.
+- **ShellWatcher.h**: Implementation/definition for ShellWatcher.
+- **ShellWatcherManager.cpp**: Implementation/definition for ShellWatcherManager.
+- **ShellWatcherManager.h**: Implementation/definition for ShellWatcherManager.
+- **SortMenuBuilder.cpp**: Implementation/definition for SortMenuBuilder.
+- **SortMenuBuilder.h**: Implementation/definition for SortMenuBuilder.
+- **SortModeMenuMappings.cpp**: Implementation/definition for SortModeMenuMappings.
+- **SortModeMenuMappings.h**: Implementation/definition for SortModeMenuMappings.
+- **SplitFileDialog.cpp**: UI dialog implementation/definition for SplitFile.
+- **SplitFileDialog.h**: UI dialog implementation/definition for SplitFile.
+- **StartupCommandLineProcessor.cpp**: Implementation/definition for StartupCommandLineProcessor.
+- **StartupCommandLineProcessor.h**: Implementation/definition for StartupCommandLineProcessor.
+- **StartupFoldersRegistryStorage.cpp**: Settings storage handler for StartupFoldersRegistry.
+- **StartupFoldersRegistryStorage.h**: Settings storage handler for StartupFoldersRegistry.
+- **StartupFoldersXmlStorage.cpp**: Settings storage handler for StartupFoldersXml.
+- **StartupFoldersXmlStorage.h**: Settings storage handler for StartupFoldersXml.
+- **StartupOptionsPage.cpp**: Property page UI for StartupOptions.
+- **StartupOptionsPage.h**: Property page UI for StartupOptions.
+- **StatusBar.cpp**: Implementation/definition for StatusBar.
+- **StatusBar.h**: Implementation/definition for StatusBar.
+- **StatusBarView.cpp**: UI view implementation/definition for StatusBar.
+- **StatusBarView.h**: UI view implementation/definition for StatusBar.
+- **stdafx.cpp**: Precompiled headers.
+- **stdafx.h**: Precompiled headers.
+- **Storage.cpp**: Settings storage handler for .
+- **Storage.h**: Settings storage handler for .
+- **SystemFontHelper.cpp**: Implementation/definition for SystemFontHelper.
+- **SystemFontHelper.h**: Implementation/definition for SystemFontHelper.
+- **Tab.cpp**: Implementation/definition for Tab.
+- **Tab.h**: Implementation/definition for Tab.
+- **TabBacking.cpp**: Implementation/definition for TabBacking.
+- **TabBacking.h**: Implementation/definition for TabBacking.
+- **TabContainer.cpp**: Implementation/definition for TabContainer.
+- **TabContainer.h**: Implementation/definition for TabContainer.
+- **TabContainerBackgroundContextMenu.cpp**: Context or drop-down menu for TabContainerBackgroundContext.
+- **TabContainerBackgroundContextMenu.h**: Context or drop-down menu for TabContainerBackgroundContext.
+- **TabContextMenu.cpp**: Context or drop-down menu for TabContext.
+- **TabContextMenu.h**: Context or drop-down menu for TabContext.
+- **TabEvents.cpp**: Implementation/definition for TabEvents.
+- **TabEvents.h**: Implementation/definition for TabEvents.
+- **TabHandler.cpp**: Implementation/definition for TabHandler.
+- **TabHistoryMenu.cpp**: Context or drop-down menu for TabHistory.
+- **TabHistoryMenu.h**: Context or drop-down menu for TabHistory.
+- **TabList.cpp**: Implementation/definition for TabList.
+- **TabList.h**: Implementation/definition for TabList.
+- **TabParentItemsMenu.cpp**: Context or drop-down menu for TabParentItems.
+- **TabParentItemsMenu.h**: Context or drop-down menu for TabParentItems.
+- **TabRegistryStorage.cpp**: Settings storage handler for TabRegistry.
+- **TabRegistryStorage.h**: Settings storage handler for TabRegistry.
+- **TabRestorer.cpp**: Implementation/definition for TabRestorer.
+- **TabRestorer.h**: Implementation/definition for TabRestorer.
+- **TabRestorerMenu.cpp**: Context or drop-down menu for TabRestorer.
+- **TabRestorerMenu.h**: Context or drop-down menu for TabRestorer.
+- **TabsOptionsPage.cpp**: Property page UI for TabsOptions.
+- **TabsOptionsPage.h**: Property page UI for TabsOptions.
+- **TabStorage.h**: Settings storage handler for Tab.
+- **TabView.cpp**: UI view implementation/definition for Tab.
+- **TabView.h**: UI view implementation/definition for Tab.
+- **TabViewDelegate.h**: Implementation/definition for TabViewDelegate.
+- **TabXmlStorage.cpp**: Settings storage handler for TabXml.
+- **TabXmlStorage.h**: Settings storage handler for TabXml.
+- **TaskbarThumbnails.cpp**: Implementation/definition for TaskbarThumbnails.
+- **TaskbarThumbnails.h**: Implementation/definition for TaskbarThumbnails.
+- **TestHelper.cpp**: Implementation/definition for TestHelper.
+- **TestHelper.h**: Implementation/definition for TestHelper.
+- **Theme.cpp**: Implementation/definition for Theme.
+- **Theme.h**: Implementation/definition for Theme.
+- **ThemedTabControlPainter.cpp**: Implementation/definition for ThemedTabControlPainter.
+- **ThemedTabControlPainter.h**: Implementation/definition for ThemedTabControlPainter.
+- **ThemeManager.cpp**: Implementation/definition for ThemeManager.
+- **ThemeManager.h**: Implementation/definition for ThemeManager.
+- **ThemeWindowTracker.cpp**: Implementation/definition for ThemeWindowTracker.
+- **ThemeWindowTracker.h**: Implementation/definition for ThemeWindowTracker.
+- **ThirdPartyCreditsDialog.cpp**: UI dialog implementation/definition for ThirdPartyCredits.
+- **ThirdPartyCreditsDialog.h**: UI dialog implementation/definition for ThirdPartyCredits.
+- **ToolbarContextMenu.cpp**: Context or drop-down menu for ToolbarContext.
+- **ToolbarContextMenu.h**: Context or drop-down menu for ToolbarContext.
+- **ToolbarHelper.cpp**: Implementation/definition for ToolbarHelper.
+- **ToolbarHelper.h**: Implementation/definition for ToolbarHelper.
+- **ToolbarView.cpp**: UI view implementation/definition for Toolbar.
+- **ToolbarView.h**: UI view implementation/definition for Toolbar.
+- **TreeView.cpp**: UI view implementation/definition for Tree.
+- **TreeView.h**: UI view implementation/definition for Tree.
+- **TreeViewAdapter.cpp**: Implementation/definition for TreeViewAdapter.
+- **TreeViewAdapter.h**: Implementation/definition for TreeViewAdapter.
+- **TreeViewDelegate.h**: Implementation/definition for TreeViewDelegate.
+- **TreeViewNode.cpp**: Implementation/definition for TreeViewNode.
+- **TreeViewNode.h**: Implementation/definition for TreeViewNode.
+- **UIThreadExecutor.cpp**: Implementation/definition for UIThreadExecutor.
+- **UIThreadExecutor.h**: Implementation/definition for UIThreadExecutor.
+- **UpdateCheckDialog.cpp**: UI dialog implementation/definition for UpdateCheck.
+- **UpdateCheckDialog.h**: UI dialog implementation/definition for UpdateCheck.
+- **ValueWrapper.h**: Implementation/definition for ValueWrapper.
+- **Version.cpp**: Implementation/definition for Version.
+- **Version.h**: Implementation/definition for Version.
+- **VersionConstants.h**: Implementation/definition for VersionConstants.
+- **VersionHelper.cpp**: Implementation/definition for VersionHelper.
+- **VersionHelper.h**: Implementation/definition for VersionHelper.
+- **ViewModeHelper.h**: Implementation/definition for ViewModeHelper.
+- **ViewsMenuBuilder.cpp**: Implementation/definition for ViewsMenuBuilder.
+- **ViewsMenuBuilder.h**: Implementation/definition for ViewsMenuBuilder.
+- **WildcardSelectDialog.cpp**: UI dialog implementation/definition for WildcardSelect.
+- **WildcardSelectDialog.h**: UI dialog implementation/definition for WildcardSelect.
+- **Win32Explorer.args.json**: Implementation/definition for Win32Explorer.args.json.
+- **Win32Explorer.cpp**: Implementation/definition for Win32Explorer.
+- **Win32Explorer.exe.manifest**: Implementation/definition for Win32Explorer.exe.manifest.
+- **Win32Explorer.h**: Implementation/definition for Win32Explorer.
+- **Win32Explorer.rc**: Primary resource script (UI layouts, strings, etc.).
+- **Win32Explorer.vcxproj**: Implementation/definition for Win32Explorer.vcxproj.
+- **Win32Explorer.vcxproj.filters**: Implementation/definition for Win32Explorer.vcxproj.filters.
+- **Win32ExplorerMain.rc**: Implementation/definition for Win32ExplorerMain.rc.
+- **Win32ExplorerVersionInfo.h**: Implementation/definition for Win32ExplorerVersionInfo.
+- **Win32ExplorerVersionInfo.rc**: Implementation/definition for Win32ExplorerVersionInfo.rc.
+- **Win32Explorer_internal.h**: Implementation/definition for Win32Explorer_internal.
+- **Win32Explorer_NoTranslation.rc**: Implementation/definition for Win32Explorer_NoTranslation.rc.
+- **Win32ResourceLoader.cpp**: Implementation/definition for Win32ResourceLoader.
+- **Win32ResourceLoader.h**: Implementation/definition for Win32ResourceLoader.
+- **WindowOptionsPage.cpp**: Property page UI for WindowOptions.
+- **WindowOptionsPage.h**: Property page UI for WindowOptions.
+- **WindowRegistryStorage.cpp**: Settings storage handler for WindowRegistry.
+- **WindowRegistryStorage.h**: Settings storage handler for WindowRegistry.
+- **WindowStorage.cpp**: Settings storage handler for Window.
+- **WindowStorage.h**: Settings storage handler for Window.
+- **WindowXmlStorage.cpp**: Settings storage handler for WindowXml.
+- **WindowXmlStorage.h**: Settings storage handler for WindowXml.
+- **WinMain.cpp**: Implementation/definition for WinMain.
+- **XmlAppStorage.cpp**: Settings storage handler for XmlApp.
+- **XmlAppStorage.h**: Settings storage handler for XmlApp.
+- **XmlAppStorageFactory.cpp**: Implementation/definition for XmlAppStorageFactory.
+- **XmlAppStorageFactory.h**: Implementation/definition for XmlAppStorageFactory.
+

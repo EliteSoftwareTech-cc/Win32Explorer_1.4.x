@@ -59,7 +59,8 @@ struct Config
 	bool showFilePreviews = true;
 	bool allowMultipleInstances = true;
 	bool doubleClickTabClose = true;
-	ValueWrapper<bool> useLargeToolbarIcons = false;
+	ValueWrapper<bool> useLargeToolbarIcons = true;
+	ValueWrapper<bool> showTinyThumbnails = false;
 	bool overwriteExistingFilesConfirmation = true;
 	ValueWrapper<bool> checkBoxSelection = false;
 	bool confirmCloseTabs = false;

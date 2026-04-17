@@ -1,0 +1,57 @@
+﻿# ShellBrowser
+
+## Files:
+- **BrowsingHandler.cpp**: Implementation/definition for BrowsingHandler.
+- **ColumnDataRetrieval.cpp**: Implementation/definition for ColumnDataRetrieval.
+- **ColumnDataRetrieval.h**: Implementation/definition for ColumnDataRetrieval.
+- **ColumnHelper.cpp**: Implementation/definition for ColumnHelper.
+- **ColumnHelper.h**: Implementation/definition for ColumnHelper.
+- **ColumnManager.cpp**: Implementation/definition for ColumnManager.
+- **Columns.h**: Implementation/definition for Columns.
+- **DirectoryModificationHandler.cpp**: Implementation/definition for DirectoryModificationHandler.
+- **DocumentServiceProvider.cpp**: Implementation/definition for DocumentServiceProvider.
+- **DocumentServiceProvider.h**: Implementation/definition for DocumentServiceProvider.
+- **DropTarget.cpp**: Implementation/definition for DropTarget.
+- **Filtering.cpp**: Implementation/definition for Filtering.
+- **FolderSettings.h**: Implementation/definition for FolderSettings.
+- **GroupManager.cpp**: Implementation/definition for GroupManager.
+- **HandleThumbnails.cpp**: Implementation/definition for HandleThumbnails.
+- **HistoryEntry.cpp**: Implementation/definition for HistoryEntry.
+- **HistoryEntry.h**: Implementation/definition for HistoryEntry.
+- **ItemData.h**: Implementation/definition for ItemData.
+- **ListView.cpp**: UI view implementation/definition for List.
+- **NavigateParams.h**: Implementation/definition for NavigateParams.
+- **NavigationEvents.cpp**: Implementation/definition for NavigationEvents.
+- **NavigationEvents.h**: Implementation/definition for NavigationEvents.
+- **NavigationManager.cpp**: Implementation/definition for NavigationManager.
+- **NavigationManager.h**: Implementation/definition for NavigationManager.
+- **NavigationRequest.cpp**: Implementation/definition for NavigationRequest.
+- **NavigationRequest.h**: Implementation/definition for NavigationRequest.
+- **NavigationRequestDelegate.h**: Implementation/definition for NavigationRequestDelegate.
+- **PreservedHistoryEntry.cpp**: Implementation/definition for PreservedHistoryEntry.
+- **PreservedHistoryEntry.h**: Implementation/definition for PreservedHistoryEntry.
+- **PreservedShellBrowser.cpp**: Implementation/definition for PreservedShellBrowser.
+- **PreservedShellBrowser.h**: Implementation/definition for PreservedShellBrowser.
+- **ShellBrowser.cpp**: Implementation/definition for ShellBrowser.
+- **ShellBrowser.h**: Implementation/definition for ShellBrowser.
+- **ShellBrowserContextMenuDelegate.cpp**: Implementation/definition for ShellBrowserContextMenuDelegate.
+- **ShellBrowserContextMenuDelegate.h**: Implementation/definition for ShellBrowserContextMenuDelegate.
+- **ShellBrowserEvents.cpp**: Implementation/definition for ShellBrowserEvents.
+- **ShellBrowserEvents.h**: Implementation/definition for ShellBrowserEvents.
+- **ShellBrowserFactory.h**: Implementation/definition for ShellBrowserFactory.
+- **ShellBrowserFactoryImpl.cpp**: Implementation/definition for ShellBrowserFactoryImpl.
+- **ShellBrowserFactoryImpl.h**: Implementation/definition for ShellBrowserFactoryImpl.
+- **ShellBrowserImpl.cpp**: Main shell browsing window and item view logic.
+- **ShellBrowserImpl.h**: Main shell browsing window and item view logic.
+- **ShellNavigationController.cpp**: Implementation/definition for ShellNavigationController.
+- **ShellNavigationController.h**: Implementation/definition for ShellNavigationController.
+- **SortHelper.cpp**: Implementation/definition for SortHelper.
+- **SortHelper.h**: Implementation/definition for SortHelper.
+- **SortManager.cpp**: Implementation/definition for SortManager.
+- **SortModes.h**: Implementation/definition for SortModes.
+- **TileView.cpp**: UI view implementation/definition for Tile.
+- **ViewModes.cpp**: Implementation/definition for ViewModes.
+- **ViewModes.h**: Implementation/definition for ViewModes.
+- **WebBrowserApp.cpp**: Core application lifecycle and state management.
+- **WebBrowserApp.h**: Core application lifecycle and state management.
+

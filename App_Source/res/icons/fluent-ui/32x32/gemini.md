@@ -1,0 +1,41 @@
+﻿# 32x32
+
+## Files:
+- **add-bookmark.png**: Implementation/definition for add-bookmark.png.
+- **arrow-right.png**: Implementation/definition for arrow-right.png.
+- **back.png**: Implementation/definition for back.png.
+- **bookmarks.png**: Implementation/definition for bookmarks.png.
+- **close-button.png**: Implementation/definition for close-button.png.
+- **close-tab.png**: Implementation/definition for close-tab.png.
+- **command-line-admin.png**: Implementation/definition for command-line-admin.png.
+- **command-line.png**: Implementation/definition for command-line.png.
+- **copy-to.png**: Implementation/definition for copy-to.png.
+- **copy.png**: Implementation/definition for copy.png.
+- **customize-colors.png**: Implementation/definition for customize-colors.png.
+- **cut.png**: Implementation/definition for cut.png.
+- **delete-permanently.png**: Implementation/definition for delete-permanently.png.
+- **delete.png**: Implementation/definition for delete.png.
+- **filter.png**: Implementation/definition for filter.png.
+- **folder-tree.png**: Implementation/definition for folder-tree.png.
+- **folder.png**: Implementation/definition for folder.png.
+- **forward.png**: Implementation/definition for forward.png.
+- **help.png**: Implementation/definition for help.png.
+- **lock.png**: Implementation/definition for lock.png.
+- **mass-rename.png**: Implementation/definition for mass-rename.png.
+- **merge-files.png**: Implementation/definition for merge-files.png.
+- **move-to.png**: Implementation/definition for move-to.png.
+- **new-folder.png**: Implementation/definition for new-folder.png.
+- **new-tab.png**: Implementation/definition for new-tab.png.
+- **options.png**: Implementation/definition for options.png.
+- **paste-shortcut.png**: Implementation/definition for paste-shortcut.png.
+- **paste.png**: Implementation/definition for paste.png.
+- **properties.png**: Implementation/definition for properties.png.
+- **refresh.png**: Implementation/definition for refresh.png.
+- **rename.png**: Implementation/definition for rename.png.
+- **search.png**: Implementation/definition for search.png.
+- **select-columns.png**: Implementation/definition for select-columns.png.
+- **split-files.png**: Implementation/definition for split-files.png.
+- **undo.png**: Implementation/definition for undo.png.
+- **up.png**: Implementation/definition for up.png.
+- **views.png**: Implementation/definition for views.png.
+

@@ -1,0 +1,46 @@
+﻿# UI
+
+## Files:
+- **AddBookmarkDialog.cpp**: UI dialog implementation/definition for AddBookmark.
+- **AddBookmarkDialog.h**: UI dialog implementation/definition for AddBookmark.
+- **BookmarkColumn.h**: Implementation/definition for BookmarkColumn.
+- **BookmarkColumnHelper.cpp**: Implementation/definition for BookmarkColumnHelper.
+- **BookmarkColumnHelper.h**: Implementation/definition for BookmarkColumnHelper.
+- **BookmarkColumnModel.cpp**: Data model for BookmarkColumn.
+- **BookmarkColumnModel.h**: Data model for BookmarkColumn.
+- **BookmarkContextMenu.cpp**: Context or drop-down menu for BookmarkContext.
+- **BookmarkContextMenu.h**: Context or drop-down menu for BookmarkContext.
+- **BookmarkDropTargetWindow.cpp**: Implementation/definition for BookmarkDropTargetWindow.
+- **BookmarkDropTargetWindow.h**: Implementation/definition for BookmarkDropTargetWindow.
+- **BookmarkListPresenter.cpp**: Implementation/definition for BookmarkListPresenter.
+- **BookmarkListPresenter.h**: Implementation/definition for BookmarkListPresenter.
+- **BookmarkListViewItem.cpp**: Implementation/definition for BookmarkListViewItem.
+- **BookmarkListViewItem.h**: Implementation/definition for BookmarkListViewItem.
+- **BookmarkListViewModel.cpp**: Data model for BookmarkListView.
+- **BookmarkListViewModel.h**: Data model for BookmarkListView.
+- **BookmarkMenu.cpp**: Context or drop-down menu for Bookmark.
+- **BookmarkMenu.h**: Context or drop-down menu for Bookmark.
+- **BookmarkMenuBuilder.cpp**: Implementation/definition for BookmarkMenuBuilder.
+- **BookmarkMenuBuilder.h**: Implementation/definition for BookmarkMenuBuilder.
+- **BookmarkMenuController.cpp**: Implementation/definition for BookmarkMenuController.
+- **BookmarkMenuController.h**: Implementation/definition for BookmarkMenuController.
+- **BookmarkMenuDropTarget.cpp**: Implementation/definition for BookmarkMenuDropTarget.
+- **BookmarkMenuDropTarget.h**: Implementation/definition for BookmarkMenuDropTarget.
+- **BookmarksMainMenu.cpp**: Context or drop-down menu for BookmarksMain.
+- **BookmarksMainMenu.h**: Context or drop-down menu for BookmarksMain.
+- **BookmarksToolbar.cpp**: Toolbar UI component for Bookmarks.
+- **BookmarksToolbar.h**: Toolbar UI component for Bookmarks.
+- **BookmarkTreePresenter.cpp**: Implementation/definition for BookmarkTreePresenter.
+- **BookmarkTreePresenter.h**: Implementation/definition for BookmarkTreePresenter.
+- **BookmarkTreeViewAdapter.cpp**: Implementation/definition for BookmarkTreeViewAdapter.
+- **BookmarkTreeViewAdapter.h**: Implementation/definition for BookmarkTreeViewAdapter.
+- **BookmarkTreeViewContextMenu.cpp**: Context or drop-down menu for BookmarkTreeViewContext.
+- **BookmarkTreeViewContextMenu.h**: Context or drop-down menu for BookmarkTreeViewContext.
+- **BookmarkTreeViewNode.cpp**: Implementation/definition for BookmarkTreeViewNode.
+- **BookmarkTreeViewNode.h**: Implementation/definition for BookmarkTreeViewNode.
+- **ManageBookmarksDialog.cpp**: UI dialog implementation/definition for ManageBookmarks.
+- **ManageBookmarksDialog.h**: UI dialog implementation/definition for ManageBookmarks.
+- **OrganizeBookmarksContextMenu.cpp**: Context or drop-down menu for OrganizeBookmarksContext.
+- **OrganizeBookmarksContextMenu.h**: Context or drop-down menu for OrganizeBookmarksContext.
+- **OrganizeBookmarksContextMenuDelegate.h**: Implementation/definition for OrganizeBookmarksContextMenuDelegate.
+

@@ -371,12 +371,6 @@ void ShellBrowserImpl::SetViewModeInternal(ViewMode viewMode)
 		InsertTileViewColumns();
 		break;
 
-	case ViewMode::ExtraLargeIcons:
-	case ViewMode::LargeIcons:
-	case ViewMode::Icons:
-		dwStyle = LV_VIEW_ICON;
-		break;
-
 	case ViewMode::SmallIcons:
 		dwStyle = LV_VIEW_SMALLICON;
 		break;
@@ -390,6 +384,26 @@ void ShellBrowserImpl::SetViewModeInternal(ViewMode viewMode)
 
 		SetUpListViewColumns();
 		ApplyHeaderSortArrow();
+		break;
+
+	case ViewMode::ExtraLargeIcons:
+		dwStyle = LV_VIEW_ICON;
+		if (IsThumbnailsViewMode(viewMode, m_config))
+		{
+			m_thumbnailItemWidth = 256;
+			m_thumbnailItemHeight = 256;
+			SetupThumbnailsView(SHIL_JUMBO);
+		}
+		break;
+
+	case ViewMode::LargeIcons:
+		dwStyle = LV_VIEW_ICON;
+		if (IsThumbnailsViewMode(viewMode, m_config))
+		{
+			m_thumbnailItemWidth = 96;
+			m_thumbnailItemHeight = 96;
+			SetupThumbnailsView(SHIL_EXTRALARGE);
+		}
 		break;
 
 	case ViewMode::ExtraLargeThumbnails:
@@ -406,11 +420,14 @@ void ShellBrowserImpl::SetViewModeInternal(ViewMode viewMode)
 		SetupThumbnailsView(SHIL_EXTRALARGE);
 		break;
 
-	case ViewMode::Thumbnails:
+	case ViewMode::Icons:
 		dwStyle = LV_VIEW_ICON;
-		m_thumbnailItemWidth = 64;
-		m_thumbnailItemHeight = 64;
-		SetupThumbnailsView(SHIL_LARGE);
+		if (IsThumbnailsViewMode(viewMode, m_config))
+		{
+			m_thumbnailItemWidth = 48;
+			m_thumbnailItemHeight = 48;
+			SetupThumbnailsView(SHIL_LARGE);
+		}
 		break;
 
 	default:
