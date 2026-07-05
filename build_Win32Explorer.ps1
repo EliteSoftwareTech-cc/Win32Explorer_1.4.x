@@ -16,7 +16,7 @@ function Log-Message($msg) {
 
 # 1. Locate MSBuild
 Log-Message "Locating MSBuild..."
-$msbuildPath = "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe"
+$msbuildPath = "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe"
 if (-not (Test-Path $msbuildPath)) {
     Log-Message "ERROR: MSBuild.exe not found at $msbuildPath"
     exit 1
@@ -45,7 +45,7 @@ Log-Message "Building $solutionFile ($Configuration|$Platform)..."
 $msbuildArgs = @(
     $solutionFile,
     "/p:Configuration=$Configuration",
-    "/p:Platform=$Platform",
+    "/p:Platform=$Platform", "/t:Win32Explorer",
     "/m", # Parallel build
     "/v:minimal"
 )
@@ -70,30 +70,38 @@ if ($Platform -eq "x64") {
     $exeDir = Join-Path (Get-Location) "App_Source\$Platform\$Configuration"
 }
 
-$parentRoot = (Get-Item (Get-Location)).Parent.FullName
-
-if ($Platform -eq "x64") {
-    $buildOutputDir = Join-Path $parentRoot "BuildOutput"
-} else {
-    $buildOutputDir = Join-Path $parentRoot "BuildOutputx86"
-}
-
-if (-not (Test-Path $buildOutputDir)) {
-    New-Item -ItemType Directory -Path $buildOutputDir | Out-Null
-}
+$root = "C:\Users\Administrator\Desktop\Elite-TaskBar"
 
 # Copy EXE
 $exePath = Join-Path $exeDir "Win32Explorer.exe"
 if (Test-Path $exePath) {
-    Log-Message "Copying $exePath to $buildOutputDir and $parentRoot"
-    Copy-Item -Path $exePath -Destination $buildOutputDir -Force
-    if ($Platform -eq "x64") {
-        Copy-Item -Path $exePath -Destination $parentRoot -Force
+    # Sign the executable before copying using Elite-EasySigner
+    $signerTool = "C:\Users\Administrator\Desktop\Elite-TaskBar\Elite-EasySigner\Elite-EasySigner.exe"
+    
+    if (Test-Path $signerTool) {
+        Log-Message "Signing $exePath using Elite-EasySigner..."
+        & $signerTool $exePath | Out-Null
+    } else {
+        Log-Message "WARNING: Elite-EasySigner not found at $signerTool, skipping sign."
     }
+
+    $targetExe = Join-Path $root "Win32Explorer.exe"
+    $targetOld = Join-Path $root "Win32Explorer.old.bak"
+    
+    if (Test-Path $targetExe) {
+        if (Test-Path $targetOld) {
+            Remove-Item -Path $targetOld -Force -ErrorAction SilentlyContinue
+        }
+        Rename-Item -Path $targetExe -NewName "Win32Explorer.old.bak" -Force -ErrorAction SilentlyContinue
+    }
+
+    Log-Message "Copying $exePath to $root\Win32Explorer.exe"
+    Copy-Item -Path $exePath -Destination $targetExe -Force
 } else {
     Log-Message "WARNING: EXE not found at $exePath"
 }
 
-Log-Message "Build artifacts successfully relocated to BuildOutput and parent root."
+Log-Message "Build artifacts successfully relocated to root."
 Log-Message "Build SUCCESSFUL."
+
 

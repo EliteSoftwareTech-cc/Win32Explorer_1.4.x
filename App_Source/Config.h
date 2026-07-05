@@ -1,4 +1,4 @@
-﻿// Copyright (C) Win32Explorer Project
+// Copyright (C) Win32Explorer Project
 // SPDX-License-Identifier: GPL-3.0-only
 // See LICENSE in the top level directory
 
@@ -62,12 +62,13 @@ struct Config
 	bool openNewTabNextToCurrent = false;
 	bool treeViewDelayEnabled = false;
 	bool treeViewAutoExpandSelected = false;
+	ValueWrapper<bool> showTreeviewHorizontalScrollbar = false;
 	bool showTaskbarThumbnails = false;
 	ValueWrapper<bool> useFullRowSelect = false;
 	bool showFilePreviews = true;
 	bool allowMultipleInstances = true;
 	bool doubleClickTabClose = true;
-	ValueWrapper<bool> useLargeToolbarIcons = false;
+	ValueWrapper<bool> useLargeToolbarIcons = true;
 	bool overwriteExistingFilesConfirmation = true;
 	ValueWrapper<bool> checkBoxSelection = false;
 	bool confirmCloseTabs = false;
@@ -120,6 +121,13 @@ struct Config
 	ValueWrapper<COLORREF> displayWindowSurroundColor = DisplayWindowDefaults::SURROUND_COLOR;
 	ValueWrapper<COLORREF> displayWindowTextColor = DisplayWindowDefaults::TEXT_COLOR;
 	ValueWrapper<LOGFONT> displayWindowFont = DisplayWindowDefaults::FONT;
+
+	// Elite Shell Integration
+	ValueWrapper<bool> enableNativeViewMode = true;
+	ValueWrapper<bool> enableShellBagsSupport = false;
+	ValueWrapper<bool> enableEliteTaskbar = false;
+	ValueWrapper<bool> enableEliteStartMenu = false;
+	ValueWrapper<bool> enablePortableMirror = false;
 
 	// These are settings that are shared between all tabs. It's not
 	// possible to adjust them on a per-tab basis.

@@ -1,4 +1,4 @@
-﻿// Copyright (C) Win32Explorer Project
+// Copyright (C) Win32Explorer Project
 // SPDX-License-Identifier: GPL-3.0-only
 // See LICENSE in the top level directory
 
@@ -179,6 +179,12 @@ void LoadFromNode(IXMLDOMNode *settingsNode, Config &config)
 		config.language = static_cast<LANGID>(language);
 	}
 
+	GetBoolSetting(settingsNode, L"EnableNativeViewMode", config.enableNativeViewMode);
+	GetBoolSetting(settingsNode, L"EnableShellBagsSupport", config.enableShellBagsSupport);
+	GetBoolSetting(settingsNode, L"EnableEliteTaskbar", config.enableEliteTaskbar);
+	GetBoolSetting(settingsNode, L"EnableEliteStartMenu", config.enableEliteStartMenu);
+	GetBoolSetting(settingsNode, L"EnablePortableMirror", config.enablePortableMirror);
+
 	GetBoolSetting(settingsNode, L"LargeToolbarIcons", config.useLargeToolbarIcons);
 	GetBoolSetting(settingsNode, L"LockToolbars", config.lockToolbars);
 	GetBoolSetting(settingsNode, L"NextToCurrent", config.openNewTabNextToCurrent);
@@ -218,6 +224,7 @@ void LoadFromNode(IXMLDOMNode *settingsNode, Config &config)
 	GetBoolSetting(settingsNode, L"TVAutoExpandSelected", config.treeViewAutoExpandSelected);
 	GetBoolSetting(settingsNode, L"UseFullRowSelect", config.useFullRowSelect);
 	GetBoolSetting(settingsNode, L"TreeViewDelayEnabled", config.treeViewDelayEnabled);
+	GetBoolSetting(settingsNode, L"ShowTreeviewHorizontalScrollbar", config.showTreeviewHorizontalScrollbar);
 	GetBetterEnumSetting(settingsNode, L"ViewModeGlobal", config.defaultFolderSettings.viewMode);
 	GetTextSetting(settingsNode, L"NewTabDirectory", config.defaultTabDirectory);
 	GetBetterEnumSetting(settingsNode, L"InfoTipType", config.infoTipType);
@@ -367,6 +374,17 @@ void SaveToNode(IXMLDOMDocument *xmlDocument, IXMLDOMElement *settingsNode, cons
 	XMLSettings::WriteStandardSetting(xmlDocument, settingsNode, SETTING_NODE_NAME, L"Language",
 		XMLSettings::EncodeIntValue(config.language));
 	XMLSettings::WriteStandardSetting(xmlDocument, settingsNode, SETTING_NODE_NAME,
+		L"EnableNativeViewMode", XMLSettings::EncodeBoolValue(config.enableNativeViewMode.get()));
+	XMLSettings::WriteStandardSetting(xmlDocument, settingsNode, SETTING_NODE_NAME,
+		L"EnableShellBagsSupport", XMLSettings::EncodeBoolValue(config.enableShellBagsSupport.get()));
+	XMLSettings::WriteStandardSetting(xmlDocument, settingsNode, SETTING_NODE_NAME,
+		L"EnableEliteTaskbar", XMLSettings::EncodeBoolValue(config.enableEliteTaskbar.get()));
+	XMLSettings::WriteStandardSetting(xmlDocument, settingsNode, SETTING_NODE_NAME,
+		L"EnableEliteStartMenu", XMLSettings::EncodeBoolValue(config.enableEliteStartMenu.get()));
+	XMLSettings::WriteStandardSetting(xmlDocument, settingsNode, SETTING_NODE_NAME,
+		L"EnablePortableMirror", XMLSettings::EncodeBoolValue(config.enablePortableMirror.get()));
+
+	XMLSettings::WriteStandardSetting(xmlDocument, settingsNode, SETTING_NODE_NAME,
 		L"LargeToolbarIcons", XMLSettings::EncodeBoolValue(config.useLargeToolbarIcons.get()));
 	XMLSettings::WriteStandardSetting(xmlDocument, settingsNode, SETTING_NODE_NAME, L"LockToolbars",
 		XMLSettings::EncodeBoolValue(config.lockToolbars.get()));
@@ -453,6 +471,8 @@ void SaveToNode(IXMLDOMDocument *xmlDocument, IXMLDOMElement *settingsNode, cons
 		XMLSettings::EncodeIntValue(config.iconSet));
 	XMLSettings::WriteStandardSetting(xmlDocument, settingsNode, SETTING_NODE_NAME,
 		L"TreeViewDelayEnabled", XMLSettings::EncodeBoolValue(config.treeViewDelayEnabled));
+	XMLSettings::WriteStandardSetting(xmlDocument, settingsNode, SETTING_NODE_NAME,
+		L"ShowTreeviewHorizontalScrollbar", XMLSettings::EncodeBoolValue(config.showTreeviewHorizontalScrollbar.get()));
 	XMLSettings::WriteStandardSetting(xmlDocument, settingsNode, SETTING_NODE_NAME,
 		L"ViewModeGlobal", XMLSettings::EncodeIntValue(config.defaultFolderSettings.viewMode));
 	XMLSettings::WriteStandardSetting(xmlDocument, settingsNode, SETTING_NODE_NAME,

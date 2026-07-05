@@ -1,4 +1,4 @@
-﻿// Copyright (C) Win32Explorer Project
+// Copyright (C) Win32Explorer Project
 // SPDX-License-Identifier: GPL-3.0-only
 // See LICENSE in the top level directory
 
@@ -12,6 +12,7 @@
 #include <wil/result.h>
 #include <cstdlib>
 #include <format>
+#include "EliteTaskbar/TaskbarMain.h"
 
 [[nodiscard]] unique_glog_shutdown_call InitializeLogging();
 void InitializeLocale();
@@ -61,8 +62,41 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		return *exitCode;
 	}
 
-	App app(&commandLineSettings);
-	return app.Run();
+	wchar_t exePath[MAX_PATH];
+	GetModuleFileNameW(NULL, exePath, MAX_PATH);
+	std::wstring exeName = exePath;
+	size_t pos = exeName.find_last_of(L"\\/");
+	if (pos != std::wstring::npos) {
+		exeName = exeName.substr(pos + 1);
+	}
+
+	if (_wcsicmp(exeName.c_str(), L"EliteTaskbar.exe") == 0) {
+		HANDLE hMutex = CreateMutexW(NULL, TRUE, L"EliteTaskbar_SingleInstance_Mutex");
+		if (GetLastError() == ERROR_ALREADY_EXISTS) {
+			CloseHandle(hMutex);
+			return 0;
+		}
+
+		InitializeTaskbar(hInstance);
+		MSG msg;
+		while (GetMessage(&msg, nullptr, 0, 0) > 0) {
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
+		}
+		CleanupTaskbar();
+		CloseHandle(hMutex);
+		return static_cast<int>(msg.wParam);
+	}
+	else {
+		std::wstring taskbarPath = exePath;
+		size_t pos_dir = taskbarPath.find_last_of(L"\\/");
+		if (pos_dir != std::wstring::npos) {
+			taskbarPath = taskbarPath.substr(0, pos_dir + 1) + L"EliteTaskbar.exe";
+			ShellExecuteW(NULL, L"open", taskbarPath.c_str(), NULL, NULL, SW_SHOW);
+		}
+		App app(&commandLineSettings);
+		return app.Run();
+	}
 }
 
 unique_glog_shutdown_call InitializeLogging()

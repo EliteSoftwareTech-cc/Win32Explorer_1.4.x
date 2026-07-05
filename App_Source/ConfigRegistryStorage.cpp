@@ -1,4 +1,4 @@
-﻿// Copyright (C) Win32Explorer Project
+// Copyright (C) Win32Explorer Project
 // SPDX-License-Identifier: GPL-3.0-only
 // See LICENSE in the top level directory
 
@@ -51,6 +51,8 @@ void LoadFromKey(HKEY settingsKey, Config &config)
 	RegistrySettings::Read32BitValueFromRegistry(settingsKey, L"ShowInfoTips", config.showInfoTips);
 	RegistrySettings::Read32BitValueFromRegistry(settingsKey, L"TreeViewDelayEnabled",
 		config.treeViewDelayEnabled);
+	RegistrySettings::Read32BitValueFromRegistry(settingsKey, L"ShowTreeviewHorizontalScrollbar",
+		config.showTreeviewHorizontalScrollbar);
 	RegistrySettings::Read32BitValueFromRegistry(settingsKey, L"LockToolbars", config.lockToolbars);
 	RegistrySettings::Read32BitValueFromRegistry(settingsKey, L"UseFullRowSelect",
 		config.useFullRowSelect);
@@ -114,6 +116,17 @@ void LoadFromKey(HKEY settingsKey, Config &config)
 		config.checkPinnedToNamespaceTreeProperty);
 	RegistrySettings::Read32BitValueFromRegistry(settingsKey, L"ShowQuickAccessInTreeView",
 		config.showQuickAccessInTreeView);
+
+	RegistrySettings::Read32BitValueFromRegistry(settingsKey, L"EnableNativeViewMode",
+		config.enableNativeViewMode);
+	RegistrySettings::Read32BitValueFromRegistry(settingsKey, L"EnableShellBagsSupport",
+		config.enableShellBagsSupport);
+	RegistrySettings::Read32BitValueFromRegistry(settingsKey, L"EnableEliteTaskbar",
+		config.enableEliteTaskbar);
+	RegistrySettings::Read32BitValueFromRegistry(settingsKey, L"EnableEliteStartMenu",
+		config.enableEliteStartMenu);
+	RegistrySettings::Read32BitValueFromRegistry(settingsKey, L"EnablePortableMirror",
+		config.enablePortableMirror);
 
 	auto theme = config.theme.get();
 	res = RegistrySettings::ReadBetterEnumValue(settingsKey, L"Theme", theme);
@@ -259,6 +272,7 @@ void SaveToKey(HKEY settingsKey, const Config &config)
 	RegistrySettings::SaveDword(settingsKey, L"ShowInfoTips", config.showInfoTips);
 	RegistrySettings::SaveDword(settingsKey, L"InfoTipType", config.infoTipType);
 	RegistrySettings::SaveDword(settingsKey, L"TreeViewDelayEnabled", config.treeViewDelayEnabled);
+	RegistrySettings::SaveDword(settingsKey, L"ShowTreeviewHorizontalScrollbar", config.showTreeviewHorizontalScrollbar.get());
 	RegistrySettings::SaveDword(settingsKey, L"LockToolbars", config.lockToolbars.get());
 	RegistrySettings::SaveDword(settingsKey, L"ExtendTabControl", config.extendTabControl.get());
 	RegistrySettings::SaveDword(settingsKey, L"UseFullRowSelect", config.useFullRowSelect.get());
@@ -294,6 +308,17 @@ void SaveToKey(HKEY settingsKey, const Config &config)
 	RegistrySettings::SaveDword(settingsKey, L"ShowQuickAccessInTreeView",
 		config.showQuickAccessInTreeView.get());
 	RegistrySettings::SaveDword(settingsKey, L"Theme", config.theme.get());
+
+	RegistrySettings::SaveDword(settingsKey, L"EnableNativeViewMode",
+		config.enableNativeViewMode.get());
+	RegistrySettings::SaveDword(settingsKey, L"EnableShellBagsSupport",
+		config.enableShellBagsSupport.get());
+	RegistrySettings::SaveDword(settingsKey, L"EnableEliteTaskbar",
+		config.enableEliteTaskbar.get());
+	RegistrySettings::SaveDword(settingsKey, L"EnableEliteStartMenu",
+		config.enableEliteStartMenu.get());
+	RegistrySettings::SaveDword(settingsKey, L"EnablePortableMirror",
+		config.enablePortableMirror.get());
 	RegistrySettings::SaveString(settingsKey, L"NewTabDirectory", config.defaultTabDirectory);
 	RegistrySettings::SaveDword(settingsKey, L"IconTheme", config.iconSet);
 	RegistrySettings::SaveDword(settingsKey, L"Language", config.language);

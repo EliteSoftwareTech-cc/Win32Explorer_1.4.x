@@ -1,4 +1,4 @@
-﻿// Copyright (C) Win32Explorer Project
+// Copyright (C) Win32Explorer Project
 // SPDX-License-Identifier: GPL-3.0-only
 // See LICENSE in the top level directory
 
@@ -61,6 +61,18 @@ std::unique_ptr<ResizableDialogHelper> GeneralOptionsPage::InitializeResizeDialo
 		MovingType::Horizontal, SizingType::None);
 	controls.emplace_back(GetDlgItem(GetDialog(), IDC_STATIC_RESTART_NOTICE), MovingType::None,
 		SizingType::Horizontal);
+
+	controls.emplace_back(GetDlgItem(GetDialog(), IDC_GROUP_ELITESHELL), MovingType::None,
+		SizingType::Horizontal);
+	controls.emplace_back(GetDlgItem(GetDialog(), IDC_OPTION_NATIVEVIEWMODE), MovingType::None,
+		SizingType::Horizontal);
+	controls.emplace_back(GetDlgItem(GetDialog(), IDC_OPTION_SHELLBAGS), MovingType::None,
+		SizingType::Horizontal);
+	controls.emplace_back(GetDlgItem(GetDialog(), IDC_OPTION_ELITETASKBAR), MovingType::None,
+		SizingType::Horizontal);
+	controls.emplace_back(GetDlgItem(GetDialog(), IDC_OPTION_ELITESTARTMENU), MovingType::None,
+		SizingType::Horizontal);
+
 	return std::make_unique<ResizableDialogHelper>(GetDialog(), controls);
 }
 
@@ -73,6 +85,15 @@ void GeneralOptionsPage::InitializeControls()
 	{
 		CheckDlgButton(GetDialog(), IDC_OPTION_XML, BST_CHECKED);
 	}
+
+	if (m_config->enableNativeViewMode.get())
+		CheckDlgButton(GetDialog(), IDC_OPTION_NATIVEVIEWMODE, BST_CHECKED);
+	if (m_config->enableShellBagsSupport.get())
+		CheckDlgButton(GetDialog(), IDC_OPTION_SHELLBAGS, BST_CHECKED);
+	if (m_config->enableEliteTaskbar.get())
+		CheckDlgButton(GetDialog(), IDC_OPTION_ELITETASKBAR, BST_CHECKED);
+	if (m_config->enableEliteStartMenu.get())
+		CheckDlgButton(GetDialog(), IDC_OPTION_ELITESTARTMENU, BST_CHECKED);
 
 	UINT dpi = DpiCompatibility::GetInstance().GetDpiForWindow(GetDialog());
 	m_newTabDirectoryIcon = m_resourceLoader->LoadIconFromPNGForDpi(Icon::Folder, 16, 16, dpi);
@@ -190,6 +211,10 @@ void GeneralOptionsPage::OnCommand(WPARAM wParam, LPARAM lParam)
 		case IDC_OPTION_REPLACEEXPLORER_FILESYSTEM:
 		case IDC_OPTION_REPLACEEXPLORER_ALL:
 		case IDC_OPTION_XML:
+		case IDC_OPTION_NATIVEVIEWMODE:
+		case IDC_OPTION_SHELLBAGS:
+		case IDC_OPTION_ELITETASKBAR:
+		case IDC_OPTION_ELITESTARTMENU:
 			m_settingChangedCallback();
 			break;
 
@@ -286,6 +311,11 @@ void GeneralOptionsPage::SaveSettings()
 	bool savePreferencesToXmlFile =
 		(IsDlgButtonChecked(GetDialog(), IDC_OPTION_XML) == BST_CHECKED);
 	m_app->SetSavePreferencesToXmlFile(savePreferencesToXmlFile);
+
+	m_config->enableNativeViewMode.set(IsDlgButtonChecked(GetDialog(), IDC_OPTION_NATIVEVIEWMODE) == BST_CHECKED);
+	m_config->enableShellBagsSupport.set(IsDlgButtonChecked(GetDialog(), IDC_OPTION_SHELLBAGS) == BST_CHECKED);
+	m_config->enableEliteTaskbar.set(IsDlgButtonChecked(GetDialog(), IDC_OPTION_ELITETASKBAR) == BST_CHECKED);
+	m_config->enableEliteStartMenu.set(IsDlgButtonChecked(GetDialog(), IDC_OPTION_ELITESTARTMENU) == BST_CHECKED);
 
 	HWND hEdit = GetDlgItem(GetDialog(), IDC_DEFAULT_NEWTABDIR_EDIT);
 	std::wstring newTabDir = GetWindowString(hEdit);

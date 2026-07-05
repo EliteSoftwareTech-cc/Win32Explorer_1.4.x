@@ -1,9 +1,11 @@
-﻿// Copyright (C) Win32Explorer Project
+// Copyright (C) Win32Explorer Project
 // SPDX-License-Identifier: GPL-3.0-only
 // See LICENSE in the top level directory
 
 #include "stdafx.h"
 #include "App.h"
+#include "EliteTaskbar/resource.h"
+#define WM_TRAYICON (WM_USER + 200)
 #include "Win32Explorer.h"
 #include "AsyncIconFetcher.h"
 #include "BrowserWindow.h"
@@ -28,6 +30,7 @@
 #include "XmlAppStorageFactory.h"
 #include "../Shared_Libraries/CachedIcons.h"
 #include "../Shared_Libraries/Helper.h"
+#include "EliteTaskbar/TaskbarMain.h"
 #include <fmt/format.h>
 #include <fmt/xchar.h>
 
@@ -79,13 +82,22 @@ App::App(const CommandLine::Settings *commandLineSettings) :
 	{
 		m_config.changeNotifyMode = ChangeNotifyMode::Filesystem;
 	}
+
+	m_eventWindow.windowMessageSignal.AddObserver(std::bind(&App::OnEventWindowMessage, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4));
 }
 
-App::~App() = default;
+App::~App()
+{
+	NOTIFYICONDATAW nid = { 0 };
+	nid.cbSize = sizeof(NOTIFYICONDATAW);
+	nid.hWnd = m_eventWindow.GetHWND();
+	nid.uID = 2;
+	Shell_NotifyIconW(NIM_DELETE, &nid);
+}
 
 void App::OnBrowserRemoved()
 {
-	if (m_browserList.IsEmpty())
+	if (m_browserList.IsEmpty() && !IsEliteTaskbarRunning())
 	{
 		// The last top-level browser window has been closed, so exit the application.
 		PostQuitMessage(EXIT_CODE_NORMAL);
@@ -139,6 +151,16 @@ void App::SetUpSession()
 	SetUpLanguageResourceInstance();
 
 	RestoreSession(windows);
+
+	NOTIFYICONDATAW nid = { 0 };
+	nid.cbSize = sizeof(NOTIFYICONDATAW);
+	nid.hWnd = m_eventWindow.GetHWND();
+	nid.uID = 2;
+	nid.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
+	nid.uCallbackMessage = WM_TRAYICON;
+	nid.hIcon = LoadIconW(GetModuleHandle(nullptr), MAKEINTRESOURCEW(IDI_MAIN_PROGRAM));
+	wcscpy_s(nid.szTip, L"Win32Explorer - Because modern WinUI is just too slow for your heavy lifting.");
+	Shell_NotifyIconW(NIM_ADD, &nid);
 }
 
 void App::LoadSettings(std::vector<WindowStorageData> &windows)
@@ -154,8 +176,31 @@ void App::LoadSettings(std::vector<WindowStorageData> &windows)
 	}
 	else
 	{
+		bool useHKLM = false;
+		HKEY hKey = nullptr;
+		DWORD dwValue = 0;
+		DWORD cbData = sizeof(DWORD);
+		if (RegOpenKeyExW(HKEY_LOCAL_MACHINE, L"Software\\EliteSoftware\\Win32Explorer\\Advanced", 0, KEY_READ, &hKey) == ERROR_SUCCESS)
+		{
+			if (RegQueryValueExW(hKey, L"EnablePortableMirror", NULL, NULL, (LPBYTE)&dwValue, &cbData) == ERROR_SUCCESS && dwValue == 1)
+			{
+				useHKLM = true;
+			}
+			RegCloseKey(hKey);
+		}
+		if (!useHKLM)
+		{
+			if (RegOpenKeyExW(HKEY_CURRENT_USER, L"Software\\EliteSoftware\\Win32Explorer\\Advanced", 0, KEY_READ, &hKey) == ERROR_SUCCESS)
+			{
+				if (RegQueryValueExW(hKey, L"EnablePortableMirror", NULL, NULL, (LPBYTE)&dwValue, &cbData) == ERROR_SUCCESS && dwValue == 1)
+				{
+					useHKLM = true;
+				}
+				RegCloseKey(hKey);
+			}
+		}
 		appStorage = RegistryAppStorageFactory::MaybeCreate(Storage::REGISTRY_APPLICATION_KEY_PATH,
-			Storage::OperationType::Load);
+			Storage::OperationType::Load, useHKLM);
 	}
 
 	if (!appStorage)
@@ -181,24 +226,6 @@ void App::SaveSettings()
 	// already been closed.
 	CHECK(!m_exitStarted);
 
-	std::unique_ptr<AppStorage> appStorage;
-
-	if (m_savePreferencesToXmlFile)
-	{
-		appStorage = XmlAppStorageFactory::MaybeCreate(Storage::GetConfigFilePath(),
-			Storage::OperationType::Save);
-	}
-	else
-	{
-		appStorage = RegistryAppStorageFactory::MaybeCreate(Storage::REGISTRY_APPLICATION_KEY_PATH,
-			Storage::OperationType::Save);
-	}
-
-	if (!appStorage)
-	{
-		return;
-	}
-
 	std::vector<WindowStorageData> windows;
 
 	for (const auto *browser : m_browserList.GetList())
@@ -208,15 +235,63 @@ void App::SaveSettings()
 
 	DCHECK_GE(windows.size(), 1u);
 
-	appStorage->SaveConfig(m_config);
-	appStorage->SaveWindows(windows);
-	appStorage->SaveBookmarks(&m_bookmarkTree);
-	appStorage->SaveApplications(&m_applicationModel);
-	appStorage->SaveDialogStates();
-	appStorage->SaveDefaultColumns(m_config.globalFolderSettings.folderColumns);
-	appStorage->SaveFrequentLocations(&m_frequentLocationsModel);
+	if (m_config.enablePortableMirror.get())
+	{
+		m_savePreferencesToXmlFile = true; // Make sure it persists in future loads
 
-	appStorage->Commit();
+		// Save simultaneously to XML (config.xml)
+		auto xmlStorage = XmlAppStorageFactory::MaybeCreate(Storage::GetConfigFilePath(), Storage::OperationType::Save);
+		if (xmlStorage)
+		{
+			xmlStorage->SaveConfig(m_config);
+			xmlStorage->SaveWindows(windows);
+			xmlStorage->SaveBookmarks(&m_bookmarkTree);
+			xmlStorage->SaveApplications(&m_applicationModel);
+			xmlStorage->SaveDialogStates();
+			xmlStorage->SaveDefaultColumns(m_config.globalFolderSettings.folderColumns);
+			xmlStorage->SaveFrequentLocations(&m_frequentLocationsModel);
+			xmlStorage->Commit();
+		}
+		// Save simultaneously to Registry (HKLM)
+		auto regStorage = RegistryAppStorageFactory::MaybeCreate(Storage::REGISTRY_APPLICATION_KEY_PATH, Storage::OperationType::Save, true);
+		if (regStorage)
+		{
+			regStorage->SaveConfig(m_config);
+			regStorage->SaveWindows(windows);
+			regStorage->SaveBookmarks(&m_bookmarkTree);
+			regStorage->SaveApplications(&m_applicationModel);
+			regStorage->SaveDialogStates();
+			regStorage->SaveDefaultColumns(m_config.globalFolderSettings.folderColumns);
+			regStorage->SaveFrequentLocations(&m_frequentLocationsModel);
+			regStorage->Commit();
+		}
+	}
+	else
+	{
+		std::unique_ptr<AppStorage> appStorage;
+		if (m_savePreferencesToXmlFile)
+		{
+			appStorage = XmlAppStorageFactory::MaybeCreate(Storage::GetConfigFilePath(),
+				Storage::OperationType::Save);
+		}
+		else
+		{
+			appStorage = RegistryAppStorageFactory::MaybeCreate(Storage::REGISTRY_APPLICATION_KEY_PATH,
+				Storage::OperationType::Save, false);
+		}
+
+		if (appStorage)
+		{
+			appStorage->SaveConfig(m_config);
+			appStorage->SaveWindows(windows);
+			appStorage->SaveBookmarks(&m_bookmarkTree);
+			appStorage->SaveApplications(&m_applicationModel);
+			appStorage->SaveDialogStates();
+			appStorage->SaveDefaultColumns(m_config.globalFolderSettings.folderColumns);
+			appStorage->SaveFrequentLocations(&m_frequentLocationsModel);
+			appStorage->Commit();
+		}
+	}
 }
 
 void App::SetUpLanguageResourceInstance()
@@ -250,7 +325,7 @@ void App::RestoreSession(const std::vector<WindowStorageData> &windows)
 		// - If m_config.startupMode is StartupMode::DefaultFolder.
 		//
 		// In each case, a default window should be created.
-		Explorerplusplus::Create(this);
+		Win32Explorer::Create(this);
 	}
 }
 
@@ -258,7 +333,7 @@ void App::RestorePreviousWindows(const std::vector<WindowStorageData> &windows)
 {
 	for (const auto &window : windows)
 	{
-		Explorerplusplus::Create(this, &window);
+		Win32Explorer::Create(this, &window);
 
 		// If this feature isn't enabled, only a single window is supported.
 		if (!m_featureList.IsEnabled(Feature::MultipleWindowsPerSession))
@@ -285,7 +360,7 @@ void App::CreateStartupFolders()
 	WindowStorageData initialData;
 	initialData.tabs = tabs;
 	initialData.selectedTab = 0;
-	Explorerplusplus::Create(this, &initialData);
+	Win32Explorer::Create(this, &initialData);
 }
 
 bool App::IsModelessDialogMessage(MSG *msg)
@@ -463,7 +538,7 @@ DriveModel *App::GetDriveModel()
 
 void App::OnWillRemoveBrowser()
 {
-	if (m_browserList.GetSize() == 1 && !m_exitStarted)
+	if (m_browserList.GetSize() == 1 && !m_exitStarted && !IsEliteTaskbarRunning())
 	{
 		// The last browser window is about to be closed, which indicates that the application is
 		// going to exit. Note that the exit may have already started (e.g. if there were multiple
@@ -562,6 +637,37 @@ void App::SessionEnding()
 
 	SaveSettings();
 }
+
+void App::OnEventWindowMessage(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
+{
+	UNREFERENCED_PARAMETER(wParam);
+	if (msg == WM_TRAYICON)
+	{
+		if (lParam == WM_RBUTTONUP)
+		{
+			POINT pt;
+			GetCursorPos(&pt);
+			HMENU hMenu = CreatePopupMenu();
+			if (hMenu)
+			{
+				AppendMenuW(hMenu, MF_STRING, 1001, L"Open New Window");
+				AppendMenuW(hMenu, MF_STRING, 1002, L"Quit Win32Explorer");
+				SetForegroundWindow(hwnd);
+				int cmd = TrackPopupMenu(hMenu, TPM_LEFTALIGN | TPM_BOTTOMALIGN | TPM_RIGHTBUTTON | TPM_RETURNCMD, pt.x, pt.y, 0, hwnd, NULL);
+				if (cmd == 1001)
+				{
+					Win32Explorer::Create(this);
+				}
+				else if (cmd == 1002)
+				{
+					TryExit();
+				}
+				DestroyMenu(hMenu);
+			}
+		}
+	}
+}
+
 
 
 

@@ -1,4 +1,4 @@
-﻿// Copyright (C) Win32Explorer Project
+// Copyright (C) Win32Explorer Project
 // SPDX-License-Identifier: GPL-3.0-only
 // See LICENSE in the top level directory
 
@@ -14,7 +14,7 @@
 #include "../Shared_Libraries/Helper.h"
 #include "../Shared_Libraries/ShellHelper.h"
 
-void Explorerplusplus::UpdateDisplayWindow(const Tab &tab)
+void Win32Explorer::UpdateDisplayWindow(const Tab &tab)
 {
 	DisplayWindow_ClearTextBuffer(m_displayWindow->GetHWND());
 
@@ -34,7 +34,7 @@ void Explorerplusplus::UpdateDisplayWindow(const Tab &tab)
 	}
 }
 
-void Explorerplusplus::UpdateDisplayWindowForZeroFiles(const Tab &tab)
+void Win32Explorer::UpdateDisplayWindowForZeroFiles(const Tab &tab)
 {
 	/* Clear out any previous data shown in the display window. */
 	DisplayWindow_ClearTextBuffer(m_displayWindow->GetHWND());
@@ -90,7 +90,7 @@ void Explorerplusplus::UpdateDisplayWindowForZeroFiles(const Tab &tab)
 	}
 }
 
-void Explorerplusplus::UpdateDisplayWindowForOneFile(const Tab &tab)
+void Win32Explorer::UpdateDisplayWindowForOneFile(const Tab &tab)
 {
 	WIN32_FIND_DATA wfd;
 	SHFILEINFO shfi;
@@ -178,6 +178,16 @@ void Explorerplusplus::UpdateDisplayWindowForOneFile(const Tab &tab)
 					SHGFI_TYPENAME | SHGFI_USEFILEATTRIBUTES);
 
 				DisplayWindow_BufferText(m_displayWindow->GetHWND(), shfi.szTypeName);
+
+				ULARGE_INTEGER fileSize;
+				fileSize.HighPart = wfd.nFileSizeHigh;
+				fileSize.LowPart = wfd.nFileSizeLow;
+				auto sizeText = FormatSizeString(fileSize.QuadPart);
+				TCHAR szSize[64];
+				LoadString(m_app->GetResourceInstance(), IDS_COLUMN_NAME_SIZE, szSize, std::size(szSize));
+				TCHAR szOutput[256];
+				StringCchPrintf(szOutput, std::size(szOutput), _T("%s: %s"), szSize, sizeText.c_str());
+				DisplayWindow_BufferText(m_displayWindow->GetHWND(), szOutput);
 			}
 
 			CreateFileTimeString(&wfd.ftLastWriteTime, szFileDate, std::size(szFileDate),
@@ -354,7 +364,7 @@ void Explorerplusplus::UpdateDisplayWindowForOneFile(const Tab &tab)
 	}
 }
 
-void Explorerplusplus::UpdateDisplayWindowForMultipleFiles(const Tab &tab)
+void Win32Explorer::UpdateDisplayWindowForMultipleFiles(const Tab &tab)
 {
 	TCHAR szNumSelected[64] = L"";
 	TCHAR szTotalSize[64] = L"";

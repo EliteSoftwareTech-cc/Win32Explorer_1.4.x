@@ -7,7 +7,7 @@
 
 
 
-﻿# Requirements
+?# Requirements
  - always make  backup s prior to building. backup entire project. provide documentation for every single file in the project to custom gemini.md files in each directory and append informaiton going through as you discover files or create them. so every single component of the project is explained you must state its purpose relationship to other files, what it does how it works and anything we have changed and it must be appended like a log with all these separate gemini.md files. 
 - You must log everything you do/change as well and it should always be appended not overwritten.
 - Never remove features, only add more.
@@ -52,7 +52,7 @@ The `TestWin32Explorer` project contains unit tests for the solution as a whole.
 
 Note that the `TestHelper` project is older and is in the process of being removed. It doesn't currently compile and shouldn't be used.
 
-﻿# Pull requests
+?# Pull requests
 
 - When submitting a pull request, only include a single high-level change. Don't include multiple unrelated changes in the same pull request.
 

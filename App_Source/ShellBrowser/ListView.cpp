@@ -1,4 +1,4 @@
-﻿// Copyright (C) Win32Explorer Project
+// Copyright (C) Win32Explorer Project
 // SPDX-License-Identifier: GPL-3.0-only
 // See LICENSE in the top level directory
 
@@ -668,17 +668,18 @@ void ShellBrowserImpl::QueueInfoTipTask(int internalIndex, const std::wstring &e
 	int infoTipResultId = m_infoTipResultIDCounter++;
 
 	BasicItemInfo_t basicItemInfo = getBasicItemInfo(internalIndex);
-	Config configCopy = *m_config;
+	const Config* configPtr = m_config;
 	bool virtualFolder = InVirtualFolder();
+	HINSTANCE resourceInstance = m_app->GetResourceInstance();
 
 	auto result = m_infoTipsThreadPool.push(
-		[this, infoTipResultId, internalIndex, basicItemInfo, configCopy, virtualFolder,
-			existingInfoTip](int id)
+		[this, infoTipResultId, internalIndex, basicItemInfo, configPtr, virtualFolder,
+			existingInfoTip, resourceInstance](int id)
 		{
 			UNREFERENCED_PARAMETER(id);
 
 			auto result = GetInfoTipAsync(m_listView, infoTipResultId, internalIndex, basicItemInfo,
-				configCopy, m_resourceInstance, virtualFolder);
+				*configPtr, resourceInstance, virtualFolder);
 
 			// If the item name is truncated in the listview,
 			// existingInfoTip will contain that value. Therefore, it's

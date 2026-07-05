@@ -1,4 +1,4 @@
-﻿//{{NO_DEPENDENCIES}}
+//{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
 // Used by Win32Explorer.rc
 //
@@ -1050,6 +1050,12 @@
 #define IDM_BACKGROUND_CONTEXT_MENU_CUSTOMIZE 60014
 #define IDM_BACKGROUND_CONTEXT_MENU_PASTE 60015
 #define IDM_BACKGROUND_CONTEXT_MENU_PASTE_SHORTCUT 60016
+#define IDC_OPTION_NATIVEVIEWMODE       1376
+#define IDC_OPTION_SHELLBAGS            1377
+#define IDC_OPTION_ELITETASKBAR         1378
+#define IDC_OPTION_ELITESTARTMENU       1379
+#define IDC_OPTION_TREEVIEW_HSCROLL     1380
+#define IDC_GROUP_ELITESHELL            1380
 
 // Next default values for new objects
 // 
@@ -1061,4 +1067,6 @@
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
+
+
 

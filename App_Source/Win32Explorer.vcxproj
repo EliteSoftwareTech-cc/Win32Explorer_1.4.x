@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug-Asan|ARM64">
@@ -1187,6 +1187,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AboutDialog.cpp" />
+    <ClCompile Include="DisplayColorsDialog.cpp" />
     <ClCompile Include="AcceleratorManager.cpp" />
     <ClCompile Include="AddressBarView.cpp" />
     <ClCompile Include="App.cpp" />
@@ -1251,7 +1252,7 @@
     <ClCompile Include="BrowserCommandController.cpp" />
     <ClCompile Include="BrowserPane.cpp" />
     <ClCompile Include="ClipboardOperations.cpp" />
-                        <ClCompile Include="ColumnRegistryStorage.cpp" />
+    <ClCompile Include="ColumnRegistryStorage.cpp" />
     <ClCompile Include="ColumnStorage.cpp" />
     <ClCompile Include="ColumnXmlStorage.cpp" />
     <ClCompile Include="CommandLineSplitter.cpp" />
@@ -1393,11 +1394,11 @@
     <ClCompile Include="Bookmarks\UI\BookmarkListPresenter.cpp" />
     <ClCompile Include="Bookmarks\UI\BookmarkMenu.cpp" />
     <ClCompile Include="Bookmarks\UI\BookmarkTreePresenter.cpp" />
-        <ClCompile Include="Plugins\CommandApi\Events\CommandInvoked.cpp" />
+    <ClCompile Include="Plugins\CommandApi\Events\CommandInvoked.cpp" />
     <ClCompile Include="CommandLine.cpp" />
-        <ClCompile Include="DestroyFilesDialog.cpp" />
+    <ClCompile Include="DestroyFilesDialog.cpp" />
     <ClCompile Include="DialogStorageHelper.cpp" />
-        <ClCompile Include="DisplayWindow.cpp" />
+    <ClCompile Include="DisplayWindow.cpp" />
     <ClCompile Include="DrivesToolbar.cpp" />
     <ClCompile Include="Plugins\Event.cpp" />
     <ClCompile Include="EventSwitcher.cpp" />
@@ -1514,10 +1515,19 @@
     <ClCompile Include="WinMain.cpp" />
     <ClCompile Include="XmlAppStorage.cpp" />
     <ClCompile Include="XmlAppStorageFactory.cpp" />
+    <ClCompile Include="EliteTaskbar\TaskbarMain.cpp" />
+    <ClCompile Include="EliteTaskbar\ClockWidget.cpp" />
+    <ClCompile Include="EliteTaskbar\DynamicScroll.cpp" />
+    <ClCompile Include="EliteTaskbar\Logger.cpp" />
+    <ClCompile Include="EliteTaskbar\StartButton.cpp" />
+    <ClCompile Include="EliteTaskbar\TaskbarProperties.cpp" />
+    <ClCompile Include="EliteTaskbar\TaskbarWindow.cpp" />
+    <ClCompile Include="EliteTaskbar\TrayIconScraper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Project_Core\targetver.h" />
     <ClInclude Include="AboutDialog.h" />
+    <ClInclude Include="DisplayColorsDialog.h" />
     <ClInclude Include="Accelerator.h" />
     <ClInclude Include="AcceleratorManager.h" />
     <ClInclude Include="AcceleratorMappings.h" />
@@ -1608,7 +1618,7 @@
     <ClInclude Include="BrowserPane.h" />
     <ClInclude Include="BrowserWindow.h" />
     <ClInclude Include="ClipboardOperations.h" />
-                            <ClInclude Include="ColumnRegistryStorage.h" />
+    <ClInclude Include="ColumnRegistryStorage.h" />
     <ClInclude Include="ColumnStorage.h" />
     <ClInclude Include="ColumnXmlStorage.h" />
     <ClInclude Include="CommandLineSplitter.h" />
@@ -1755,14 +1765,14 @@
     <ClInclude Include="Bookmarks\BookmarkTree.h" />
     <ClInclude Include="Bookmarks\UI\BookmarkTreePresenter.h" />
     <ClInclude Include="Bookmarks\BookmarkXmlStorage.h" />
-        <ClInclude Include="Plugins\CommandApi\Events\CommandInvoked.h" />
+    <ClInclude Include="Plugins\CommandApi\Events\CommandInvoked.h" />
     <ClInclude Include="CommandLine.h" />
     <ClInclude Include="CoreInterface.h" />
-        <ClInclude Include="DefaultColumns.h" />
+    <ClInclude Include="DefaultColumns.h" />
     <ClInclude Include="DefaultToolbarButtons.h" />
     <ClInclude Include="DestroyFilesDialog.h" />
     <ClInclude Include="DialogConstants.h" />
-        <ClInclude Include="DisplayWindow\DisplayWindow.h" />
+    <ClInclude Include="DisplayWindow\DisplayWindow.h" />
     <ClInclude Include="DrivesToolbar.h" />
     <ClInclude Include="Plugins\Event.h" />
     <ClInclude Include="Win32Explorer.h" />
@@ -1855,6 +1865,15 @@
     <ClInclude Include="WindowXmlStorage.h" />
     <ClInclude Include="XmlAppStorage.h" />
     <ClInclude Include="XmlAppStorageFactory.h" />
+    <ClInclude Include="EliteTaskbar\ClockWidget.h" />
+    <ClInclude Include="EliteTaskbar\Config.h" />
+    <ClInclude Include="EliteTaskbar\Logger.h" />
+    <ClInclude Include="EliteTaskbar\StartButton.h" />
+    <ClInclude Include="EliteTaskbar\TaskbarMain.h" />
+    <ClInclude Include="EliteTaskbar\TaskbarProperties.h" />
+    <ClInclude Include="EliteTaskbar\TaskbarWindow.h" />
+    <ClInclude Include="EliteTaskbar\TrayIconScraper.h" />
+    <ClInclude Include="EliteTaskbar\resource.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\Display Window.ico" />
@@ -1935,7 +1954,3 @@
     </VisualStudio>
   </ProjectExtensions>
 </Project>
-
-
-
-
