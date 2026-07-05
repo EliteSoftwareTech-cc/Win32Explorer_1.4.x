@@ -70,17 +70,30 @@ if ($Platform -eq "x64") {
     $exeDir = Join-Path (Get-Location) "App_Source\$Platform\$Configuration"
 }
 
-$root = (Get-Location).FullName
+$parentRoot = (Get-Item (Get-Location)).Parent.FullName
+
+if ($Platform -eq "x64") {
+    $buildOutputDir = Join-Path $parentRoot "BuildOutput"
+} else {
+    $buildOutputDir = Join-Path $parentRoot "BuildOutputx86"
+}
+
+if (-not (Test-Path $buildOutputDir)) {
+    New-Item -ItemType Directory -Path $buildOutputDir | Out-Null
+}
 
 # Copy EXE
 $exePath = Join-Path $exeDir "Win32Explorer.exe"
 if (Test-Path $exePath) {
-    Log-Message "Copying $exePath to $root"
-    Copy-Item -Path $exePath -Destination $root -Force
+    Log-Message "Copying $exePath to $buildOutputDir and $parentRoot"
+    Copy-Item -Path $exePath -Destination $buildOutputDir -Force
+    if ($Platform -eq "x64") {
+        Copy-Item -Path $exePath -Destination $parentRoot -Force
+    }
 } else {
     Log-Message "WARNING: EXE not found at $exePath"
 }
 
-Log-Message "Build artifacts successfully relocated to root."
+Log-Message "Build artifacts successfully relocated to BuildOutput and parent root."
 Log-Message "Build SUCCESSFUL."
 
