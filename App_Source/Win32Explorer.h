@@ -295,6 +295,8 @@ private:
 	void UpdateWindowStates(const Tab &tab);
 	void OnTreeViewHolderResized(int newWidth);
 
+	void OnConfigChanged();
+
 	void OpenShortcutItem(PCIDLIST_ABSOLUTE pidlItem, OpenFolderDisposition openFolderDisposition);
 
 	void OpenFolderItem(PCIDLIST_ABSOLUTE pidlItem,

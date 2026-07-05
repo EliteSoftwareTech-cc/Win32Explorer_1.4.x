@@ -26,7 +26,7 @@ AboutDialog::AboutDialog(const ResourceLoader *resourceLoader, HWND hParent) :
 INT_PTR AboutDialog::OnInitDialog()
 {
 	m_icon.reset(reinterpret_cast<HICON>(LoadImage(GetModuleHandle(nullptr),
-		MAKEINTRESOURCE(IDI_MAIN), IMAGE_ICON, 32, 32, LR_VGACOLOR)));
+		MAKEINTRESOURCE(IDI_MAIN), IMAGE_ICON, GetSystemMetrics(SM_CXSMICON), GetSystemMetrics(SM_CYSMICON), LR_DEFAULTCOLOR)));
 
 	SendMessage(m_hDlg, WM_SETICON, ICON_SMALL, reinterpret_cast<LPARAM>(m_icon.get()));
 

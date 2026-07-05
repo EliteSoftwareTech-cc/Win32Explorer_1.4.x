@@ -8,6 +8,8 @@
 #include <string>
 #include <tuple>
 
+#include <vector>
+
 class ResourceLoader;
 
 namespace ToolbarHelper
@@ -15,8 +17,8 @@ namespace ToolbarHelper
 
 static constexpr int CLOSE_TOOLBAR_X_OFFSET = 4;
 
-std::tuple<HWND, wil::unique_himagelist> CreateCloseButtonToolbar(HWND parent, int closeButtonId,
-	const std::wstring &tooltip, const ResourceLoader *resourceLoader);
+std::tuple<HWND, std::vector<wil::unique_himagelist>> CreateCloseButtonToolbar(HWND parent,
+	int closeButtonId, const std::wstring &tooltip, const ResourceLoader *resourceLoader);
 
 }
 

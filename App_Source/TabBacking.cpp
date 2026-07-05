@@ -29,7 +29,7 @@ TabBacking::TabBacking(HWND parent, BrowserWindow *browser, CoreInterface *coreI
 	m_browser(browser),
 	m_coreInterface(coreInterface)
 {
-	std::tie(m_toolbar, m_toolbarImageList) = ToolbarHelper::CreateCloseButtonToolbar(m_hwnd,
+	std::tie(m_toolbar, m_toolbarImageLists) = ToolbarHelper::CreateCloseButtonToolbar(m_hwnd,
 		CLOSE_BUTTON_ID, resourceLoader->LoadString(IDS_TAB_CLOSE_TIP), resourceLoader);
 
 	SIZE toolbarSize;
@@ -52,6 +52,8 @@ TabBacking::TabBacking(HWND parent, BrowserWindow *browser, CoreInterface *coreI
 		std::bind(&TabBacking::UpdateToolbar, this), TabEventScope::ForBrowser(*m_browser)));
 	m_connections.push_back(tabEvents->AddUpdatedObserver(
 		std::bind_front(&TabBacking::OnTabUpdated, this), TabEventScope::ForBrowser(*m_browser)));
+
+	m_tabTheme.reset(OpenThemeData(m_hwnd, L"TAB"));
 
 	m_windowSubclasses.push_back(
 		std::make_unique<WindowSubclass>(m_hwnd, std::bind_front(&TabBacking::WndProc, this)));
@@ -114,6 +116,13 @@ LRESULT TabBacking::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 		OnCommand(wParam, lParam);
 		break;
 
+	case WM_ERASEBKGND:
+		return 1;
+
+	case WM_PAINT:
+		OnPaint();
+		return 0;
+
 	case WM_SIZE:
 		UpdateLayout();
 		break;
@@ -124,6 +133,26 @@ LRESULT TabBacking::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	}
 
 	return DefSubclassProc(hwnd, msg, wParam, lParam);
+}
+
+void TabBacking::OnPaint()
+{
+	PAINTSTRUCT ps;
+	BeginPaint(m_hwnd, &ps);
+
+	RECT clientRect;
+	GetClientRect(m_hwnd, &clientRect);
+
+	if (m_tabTheme)
+	{
+		DrawThemeBackground(m_tabTheme.get(), ps.hdc, TABP_PANE, 0, &clientRect, nullptr);
+	}
+	else
+	{
+		FillRect(ps.hdc, &clientRect, GetSysColorBrush(COLOR_BTNFACE));
+	}
+
+	EndPaint(m_hwnd, &ps);
 }
 
 void TabBacking::OnCommand(WPARAM wParam, LPARAM lParam)

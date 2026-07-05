@@ -37,6 +37,7 @@ private:
 	void UpdateToolbar();
 
 	LRESULT WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam);
+	void OnPaint();
 	void OnCommand(WPARAM wParam, LPARAM lParam);
 	void OnCloseButtonClicked();
 	void UpdateLayout();
@@ -45,8 +46,9 @@ private:
 	const HWND m_hwnd;
 	BrowserWindow *const m_browser;
 	CoreInterface *const m_coreInterface;
+	wil::unique_htheme m_tabTheme;
 	HWND m_toolbar = nullptr;
-	wil::unique_himagelist m_toolbarImageList;
+	std::vector<wil::unique_himagelist> m_toolbarImageLists;
 	std::unique_ptr<MainFontSetter> m_toolbarTooltipFontSetter;
 	std::vector<boost::signals2::scoped_connection> m_connections;
 	std::vector<std::unique_ptr<WindowSubclass>> m_windowSubclasses;

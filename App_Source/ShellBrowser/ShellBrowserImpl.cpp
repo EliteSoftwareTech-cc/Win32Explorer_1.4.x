@@ -934,6 +934,13 @@ const FolderSettings &ShellBrowserImpl::GetFolderSettings() const
 	return m_folderSettings;
 }
 
+void ShellBrowserImpl::UpdateFolderSettings(const FolderSettings &folderSettings)
+{
+	m_folderSettings = folderSettings;
+	UpdateFiltering();
+	SortFolder();
+}
+
 void ShellBrowserImpl::DeleteSelectedItems(bool permanent)
 {
 	std::vector<PCIDLIST_ABSOLUTE> pidls;

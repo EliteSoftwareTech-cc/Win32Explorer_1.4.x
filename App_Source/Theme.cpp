@@ -18,10 +18,6 @@ std::wstring GetThemeText(Theme theme, const ResourceLoader *resourceLoader)
 		stringId = IDS_THEME_LIGHT;
 		break;
 
-	case Theme::Dark:
-		stringId = IDS_THEME_DARK;
-		break;
-
 	case Theme::System:
 		stringId = IDS_THEME_SYSTEM_DEFAULT;
 		break;

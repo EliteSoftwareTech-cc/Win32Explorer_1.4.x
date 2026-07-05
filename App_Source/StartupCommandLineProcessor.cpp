@@ -87,7 +87,7 @@ void OnClearRegistrySettings()
 {
 	LSTATUS lStatus;
 
-	lStatus = SHDeleteKey(HKEY_CURRENT_USER, Storage::REGISTRY_APPLICATION_KEY_PATH);
+	lStatus = SHDeleteKey(HKEY_LOCAL_MACHINE, Storage::REGISTRY_APPLICATION_KEY_PATH);
 
 	if (lStatus == ERROR_SUCCESS)
 	{

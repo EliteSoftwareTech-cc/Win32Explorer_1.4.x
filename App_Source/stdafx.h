@@ -59,6 +59,8 @@
 #include <strsafe.h>
 #include <tchar.h>
 #include <uxtheme.h>
+#include <vsstyle.h>
+#include <vssym32.h>
 #include <vfw.h>
 #include <winbase.h>
 #include <windowsx.h>

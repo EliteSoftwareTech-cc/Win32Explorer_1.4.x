@@ -390,6 +390,8 @@ void OptionsDialog::OnApply()
 		page->SaveSettings();
 	}
 
+	m_config->NotifyChanged();
+
 	EnableWindow(GetDlgItem(m_hDlg, IDAPPLY), false);
 }
 

@@ -19,6 +19,7 @@
 #include "../Shared_Libraries/SetDefaultFileManager.h"
 #include "../Shared_Libraries/ShellHelper.h"
 #include "../Shared_Libraries/StringHelper.h"
+#include <boost/signals2.hpp>
 #include <optional>
 
 // clang-format off
@@ -41,6 +42,13 @@ BETTER_ENUM(StartupMode, int,
 // instead be stored in their associated class.
 struct Config
 {
+	void NotifyChanged()
+	{
+		configChangedSignal();
+	}
+
+	boost::signals2::signal<void()> configChangedSignal;
+
 	LANGID language = LanguageHelper::DEFAULT_LANGUAGE;
 	IconSet iconSet = IconSet::Color;
 	ValueWrapper<Theme> theme = +Theme::Light;

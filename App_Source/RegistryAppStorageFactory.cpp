@@ -22,7 +22,7 @@ std::unique_ptr<RegistryAppStorage> RegistryAppStorageFactory::MaybeCreate(
 		// important to do this to ensure that, when saving a list of items (e.g. a list of tabs or
 		// bookmarks), the existing items are removed before the updated list is stored. Otherwise,
 		// if the list shrinks, some of the previous items won't be removed.
-		SHDeleteKey(HKEY_CURRENT_USER, applicationKeyPath.c_str());
+		SHDeleteKey(HKEY_LOCAL_MACHINE, applicationKeyPath.c_str());
 
 		applicationKey = CreateKeyForSave(applicationKeyPath);
 	}
@@ -38,7 +38,7 @@ std::unique_ptr<RegistryAppStorage> RegistryAppStorageFactory::MaybeCreate(
 wil::unique_hkey RegistryAppStorageFactory::OpenKeyForLoad(const std::wstring &applicationKeyPath)
 {
 	wil::unique_hkey applicationKey;
-	HRESULT hr = wil::reg::open_unique_key_nothrow(HKEY_CURRENT_USER, applicationKeyPath.c_str(),
+	HRESULT hr = wil::reg::open_unique_key_nothrow(HKEY_LOCAL_MACHINE, applicationKeyPath.c_str(),
 		applicationKey, wil::reg::key_access::read);
 
 	if (FAILED(hr))
@@ -52,7 +52,7 @@ wil::unique_hkey RegistryAppStorageFactory::OpenKeyForLoad(const std::wstring &a
 wil::unique_hkey RegistryAppStorageFactory::CreateKeyForSave(const std::wstring &applicationKeyPath)
 {
 	wil::unique_hkey applicationKey;
-	HRESULT hr = wil::reg::create_unique_key_nothrow(HKEY_CURRENT_USER, applicationKeyPath.c_str(),
+	HRESULT hr = wil::reg::create_unique_key_nothrow(HKEY_LOCAL_MACHINE, applicationKeyPath.c_str(),
 		applicationKey, wil::reg::key_access::readwrite);
 
 	if (FAILED(hr))

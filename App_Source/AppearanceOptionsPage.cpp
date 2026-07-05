@@ -81,6 +81,7 @@ void AppearanceOptionsPage::InitializeControls()
 
 	EnableWindow(GetDlgItem(GetDialog(), IDC_OPTIONS_THEME_LABEL), false);
 	EnableWindow(GetDlgItem(GetDialog(), IDC_OPTIONS_THEME), false);
+	EnableWindow(GetDlgItem(GetDialog(), IDC_OPTIONS_ENABLE_DARK_MODE), false);
 }
 
 std::wstring AppearanceOptionsPage::GetIconSetText(IconSet iconSet)

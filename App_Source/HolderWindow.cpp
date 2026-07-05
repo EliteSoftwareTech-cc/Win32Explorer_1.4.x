@@ -41,7 +41,7 @@ HolderWindow::HolderWindow(HWND parent, const std::wstring &caption, DWORD style
 
 	m_font = m_defaultFont.get();
 
-	std::tie(m_toolbar, m_toolbarImageList) = ToolbarHelper::CreateCloseButtonToolbar(m_hwnd,
+	std::tie(m_toolbar, m_toolbarImageLists) = ToolbarHelper::CreateCloseButtonToolbar(m_hwnd,
 		CLOSE_BUTTON_ID, closeButtonTooltip, resourceLoader);
 
 	SIZE toolbarSize;
@@ -55,6 +55,8 @@ HolderWindow::HolderWindow(HWND parent, const std::wstring &caption, DWORD style
 		reinterpret_cast<HWND>(SendMessage(m_toolbar, TB_GETTOOLTIPS, 0, 0)), config);
 
 	m_fontSetter = std::make_unique<MainFontSetter>(m_hwnd, config);
+
+	m_explorerBarTheme.reset(OpenThemeData(m_hwnd, L"ExplorerBar"));
 
 	m_initialized = true;
 }
@@ -221,11 +223,22 @@ void HolderWindow::OnPrintClient(HDC hdc)
 
 void HolderWindow::PerformPaint(const PAINTSTRUCT &ps)
 {
-	HBRUSH backgroundBrush;
+	int captionSectionHeight = GetCaptionSectionHeight();
+	RECT captionRect = { 0, 0, GetRectWidth(&ps.rcPaint), captionSectionHeight };
 
-	backgroundBrush = GetSysColorBrush(COLOR_BTNFACE);
+	if (m_explorerBarTheme)
+	{
+		DrawThemeBackground(m_explorerBarTheme.get(), ps.hdc, EBP_NORMALGROUPHEAD, 0, &captionRect, nullptr);
+	}
+	else
+	{
+		HBRUSH backgroundBrush = GetSysColorBrush(COLOR_BTNFACE);
+		FillRect(ps.hdc, &captionRect, backgroundBrush);
+	}
 
-	FillRect(ps.hdc, &ps.rcPaint, backgroundBrush);
+	RECT contentRect = { 0, captionSectionHeight, GetRectWidth(&ps.rcPaint), GetRectHeight(&ps.rcPaint) };
+	HBRUSH backgroundBrush = GetSysColorBrush(COLOR_WINDOW);
+	FillRect(ps.hdc, &contentRect, backgroundBrush);
 
 	std::wstring caption = GetWindowString(m_hwnd);
 	auto selectFont = wil::SelectObject(ps.hdc, m_font);
@@ -239,7 +252,7 @@ void HolderWindow::PerformPaint(const PAINTSTRUCT &ps)
 	MapWindowPoints(HWND_DESKTOP, m_hwnd, reinterpret_cast<LPPOINT>(&toolbarRect), 2);
 
 	RECT textRect = { CAPTION_SECTION_HORIZONTAL_PADDING, 0, toolbarRect.left,
-		GetCaptionSectionHeight() };
+		captionSectionHeight };
 	DrawText(ps.hdc, caption.c_str(), -1, &textRect, DT_LEFT | DT_VCENTER | DT_SINGLELINE);
 }
 

@@ -121,7 +121,7 @@ void LoadFromKey(HKEY settingsKey, Config &config)
 	if (res != ERROR_SUCCESS)
 	{
 		RegistrySettings::ReadDword(settingsKey, L"EnableDarkMode",
-			[&theme](DWORD value) { theme = value ? Theme::Dark : Theme::Light; });
+			[&theme](DWORD /*value*/) { theme = Theme::Light; });
 	}
 
 	config.theme = theme;

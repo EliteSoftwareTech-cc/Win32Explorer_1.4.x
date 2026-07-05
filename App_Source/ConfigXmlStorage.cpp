@@ -233,7 +233,7 @@ void LoadFromNode(IXMLDOMNode *settingsNode, Config &config)
 		if (bool enableDarkMode;
 			GetBoolSetting(settingsNode, L"EnableDarkMode", enableDarkMode) == S_OK)
 		{
-			theme = enableDarkMode ? Theme::Dark : Theme::Light;
+			theme = Theme::Light;
 		}
 	}
 

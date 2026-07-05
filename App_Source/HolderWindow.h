@@ -80,6 +80,7 @@ private:
 	const HWND m_hwnd;
 	const DarkModeManager *const m_darkModeManager;
 	const DarkModeColorProvider *const m_darkModeColorProvider;
+	wil::unique_htheme m_explorerBarTheme;
 	HWND m_contentChild = nullptr;
 	HFONT m_font = nullptr;
 	wil::unique_hfont m_defaultFont = nullptr;
@@ -88,7 +89,7 @@ private:
 	std::optional<int> m_captionSectionHeight;
 
 	HWND m_toolbar;
-	wil::unique_himagelist m_toolbarImageList;
+	std::vector<wil::unique_himagelist> m_toolbarImageLists;
 
 	HCURSOR m_sizingCursor;
 	bool m_resizing = false;

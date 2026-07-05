@@ -34,6 +34,7 @@ enum class Icon
 	Options,
 	Paste,
 	PasteShortcut,
+	PressedCloseButton,
 	Properties,
 	Refresh,
 	Rename,

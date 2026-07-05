@@ -369,6 +369,30 @@ IDB_CLOSE_BUTTON_32     PNG                     "res\\icons\\color\\32x32\\close
 
 IDB_CLOSE_BUTTON_48     PNG                     "res\\icons\\color\\48x48\\close-button.png"
 
+IDB_PRESSED_CLOSE_BUTTON_16 PNG                     "res\\icons\\color\\16x16\\close-button.png"
+
+IDB_PRESSED_CLOSE_BUTTON_24 PNG                     "res\\icons\\color\\24x24\\pressed-close-button.png"
+
+IDB_PRESSED_CLOSE_BUTTON_32 PNG                     "res\\icons\\color\\32x32\\close-button.png"
+
+IDB_PRESSED_CLOSE_BUTTON_48 PNG                     "res\\icons\\color\\48x48\\close-button.png"
+
+IDB_PRESSED_CLOSE_BUTTON_WINDOWS_10_16 PNG                     "res\\icons\\color\\16x16\\close-button.png"
+
+IDB_PRESSED_CLOSE_BUTTON_WINDOWS_10_24 PNG                     "res\\icons\\color\\24x24\\pressed-close-button.png"
+
+IDB_PRESSED_CLOSE_BUTTON_WINDOWS_10_32 PNG                     "res\\icons\\color\\32x32\\close-button.png"
+
+IDB_PRESSED_CLOSE_BUTTON_WINDOWS_10_48 PNG                     "res\\icons\\color\\48x48\\close-button.png"
+
+IDB_PRESSED_CLOSE_BUTTON_FLUENT_UI_16 PNG                     "res\\icons\\color\\16x16\\close-button.png"
+
+IDB_PRESSED_CLOSE_BUTTON_FLUENT_UI_24 PNG                     "res\\icons\\color\\24x24\\pressed-close-button.png"
+
+IDB_PRESSED_CLOSE_BUTTON_FLUENT_UI_32 PNG                     "res\\icons\\color\\32x32\\close-button.png"
+
+IDB_PRESSED_CLOSE_BUTTON_FLUENT_UI_48 PNG                     "res\\icons\\color\\48x48\\close-button.png"
+
 IDB_CUT_WINDOWS_10_16   PNG                     "res\\icons\\windows-10\\16x16\\cut.png"
 
 IDB_CUT_WINDOWS_10_24   PNG                     "res\\icons\\windows-10\\24x24\\cut.png"

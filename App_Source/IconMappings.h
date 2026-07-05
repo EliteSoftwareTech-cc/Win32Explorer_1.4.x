@@ -49,6 +49,7 @@ using IconMapping = std::unordered_map<Icon, std::map<int, UINT>>;
 	{ Icon::Options, { ICON_SIZE_MAPPINGS(IDB_OPTIONS##SetSuffix) } }, \
 	{ Icon::Paste, { ICON_SIZE_MAPPINGS(IDB_PASTE##SetSuffix) } }, \
 	{ Icon::PasteShortcut, { ICON_SIZE_MAPPINGS(IDB_PASTE_SHORTCUT##SetSuffix) } }, \
+	{ Icon::PressedCloseButton, { ICON_SIZE_MAPPINGS(IDB_PRESSED_CLOSE_BUTTON##SetSuffix) } }, \
 	{ Icon::Properties, { ICON_SIZE_MAPPINGS(IDB_PROPERTIES##SetSuffix) } }, \
 	{ Icon::Refresh, { ICON_SIZE_MAPPINGS(IDB_REFRESH##SetSuffix) } }, \
 	{ Icon::Rename, { ICON_SIZE_MAPPINGS(IDB_RENAME##SetSuffix) } }, \

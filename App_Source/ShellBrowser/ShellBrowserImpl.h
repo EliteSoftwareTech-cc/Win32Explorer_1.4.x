@@ -78,6 +78,7 @@ public:
 
 	// ShellBrowser
 	const FolderSettings &GetFolderSettings() const override;
+	void UpdateFolderSettings(const FolderSettings &folderSettings) override;
 	ShellNavigationController *GetNavigationController() const override;
 	ViewMode GetViewMode() const override;
 	void SetViewMode(ViewMode viewMode) override;
@@ -441,6 +442,7 @@ private:
 	BOOL OnListViewEndLabelEdit(const NMLVDISPINFO *dispInfo);
 	LRESULT OnListViewCustomDraw(NMLVCUSTOMDRAW *listViewCustomDraw);
 	void OnFullRowSelectUpdated(BOOL newValue);
+	void OnColorRulesUpdated();
 	void OnCheckBoxSelectionUpdated(BOOL newValue);
 	void OnShowGridlinesUpdated(BOOL newValue);
 	void OnOneClickActivateUpdated(BOOL newValue);

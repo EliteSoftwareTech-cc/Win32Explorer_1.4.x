@@ -70,6 +70,9 @@ ShellTreeView::ShellTreeView(HWND hParent, App *app, BrowserWindow *browser,
 	m_cachedIcons(app->GetCachedIcons()),
 	m_dropExpandItem(nullptr)
 {
+	SetWindowTheme(m_hTreeView, L"Explorer", nullptr);
+	ShowScrollBar(m_hTreeView, SB_HORZ, FALSE);
+
 	TreeView_SetExtendedStyle(m_hTreeView, TVS_EX_DOUBLEBUFFER, TVS_EX_DOUBLEBUFFER);
 
 	m_windowSubclasses.push_back(std::make_unique<WindowSubclass>(m_hTreeView,
@@ -134,7 +137,7 @@ HWND ShellTreeView::CreateTreeView(HWND parent)
 {
 	return ::CreateTreeView(parent,
 		WS_CHILD | WS_VISIBLE | WS_TABSTOP | TVS_SHOWSELALWAYS | TVS_HASBUTTONS | TVS_EDITLABELS
-			| TVS_HASLINES | TVS_TRACKSELECT);
+			| TVS_TRACKSELECT);
 }
 
 ShellTreeView::~ShellTreeView()

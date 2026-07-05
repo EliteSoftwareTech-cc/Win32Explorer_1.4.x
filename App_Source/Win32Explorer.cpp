@@ -153,6 +153,27 @@ void Explorerplusplus::SetUpControlVisibilityConfigListeners()
 		m_config->showFolders.addObserver(std::bind(&Explorerplusplus::UpdateLayout, this)));
 	m_connections.push_back(
 		m_config->showDisplayWindow.addObserver(std::bind(&Explorerplusplus::UpdateLayout, this)));
+
+	m_connections.push_back(
+		m_config->configChangedSignal.connect(std::bind(&Explorerplusplus::OnConfigChanged, this)));
+}
+
+void Explorerplusplus::OnConfigChanged()
+{
+	UpdateLayout();
+
+	// Additional refresh logic for components that don't use observers.
+	MaybeUpdateTabBarVisibility();
+	
+	// Refresh the active shell browser view mode, grouping, etc.
+	// This ensures that changes like "Show in groups" or "View mode" apply instantly.
+	auto *shellBrowser = GetActiveShellBrowserImpl();
+	if (shellBrowser)
+	{
+		shellBrowser->UpdateFolderSettings(m_config->defaultFolderSettings);
+	}
+
+	InvalidateRect(m_hContainer, nullptr, TRUE);
 }
 
 void Explorerplusplus::Initialize(const WindowStorageData *storageData)

@@ -35,6 +35,7 @@ public:
 	const NavigationRequest *MaybeGetLatestActiveNavigation() const;
 
 	virtual const FolderSettings &GetFolderSettings() const = 0;
+	virtual void UpdateFolderSettings(const FolderSettings &folderSettings) = 0;
 	virtual ShellNavigationController *GetNavigationController() const = 0;
 
 	virtual ViewMode GetViewMode() const = 0;

@@ -12,7 +12,6 @@ class ResourceLoader;
 // clang-format off
 BETTER_ENUM(Theme, int,
 	Light = 0,
-	Dark = 1,
 	System = 2
 )
 // clang-format on
