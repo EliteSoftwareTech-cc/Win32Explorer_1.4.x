@@ -1,20 +1,12 @@
 --- Build Log Start ---
-[2026-07-04 21:38:07] Locating MSBuild...
-[2026-07-04 21:38:07] Found MSBuild: C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe
-[2026-07-04 21:38:07] Building Project_Core\Win32Explorer.sln (Release|Win32)...
+[2026-07-04 21:40:39] Locating MSBuild...
+[2026-07-04 21:40:39] Found MSBuild: C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe
+[2026-07-04 21:40:39] Building Project_Core\Win32Explorer.sln (Release|Win32)...
 MSBuild version 17.14.40+3e7442088 for .NET Framework
 
   Helper.vcxproj -> C:\Users\Administrator\Desktop\Elite-TaskBar\Win32Explorer_26.0.3.0\Project_Core\Win32\Release\Helper.lib
-  TaskbarProperties.cpp
-EliteTaskbar\resource.h(11): warning RC4005: 'IDC_STATIC' : redefinition [C:\Users\Administrator\Desktop\Elite-TaskBar\Win32Explorer_26.0.3.0\App_Source\Win32Explorer.vcxproj]
-  
-Win32Explorer.rc(568): warning RC2182: duplicate dialog control ID 1353 [C:\Users\Administrator\Desktop\Elite-TaskBar\Win32Explorer_26.0.3.0\App_Source\Win32Explorer.vcxproj]
-  
-     Creating library Win32\Release\Win32Explorer.lib and object Win32\Release\Win32Explorer.exp
-  Generating code
-  Finished generating code
   Win32Explorer.vcxproj -> C:\Users\Administrator\Desktop\Elite-TaskBar\Win32Explorer_26.0.3.0\App_Source\Win32\Release\Win32Explorer.exe
-[2026-07-04 21:39:00] Relocating build artifacts to project root...
-[2026-07-04 21:39:00] WARNING: EXE not found at C:\Users\Administrator\Desktop\Elite-TaskBar\Win32Explorer_26.0.3.0\App_Source\Release\Win32Explorer.exe
-[2026-07-04 21:39:00] Build artifacts successfully relocated to root.
-[2026-07-04 21:39:00] Build SUCCESSFUL.
+[2026-07-04 21:40:47] Relocating build artifacts to project root...
+[2026-07-04 21:40:47] WARNING: EXE not found at C:\Users\Administrator\Desktop\Elite-TaskBar\Win32Explorer_26.0.3.0\App_Source\Release\Win32Explorer.exe
+[2026-07-04 21:40:47] Build artifacts successfully relocated to root.
+[2026-07-04 21:40:47] Build SUCCESSFUL.
