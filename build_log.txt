@@ -1,12 +1,12 @@
 --- Build Log Start ---
-[2026-07-04 21:45:14] Locating MSBuild...
-[2026-07-04 21:45:14] Found MSBuild: C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe
-[2026-07-04 21:45:14] Building Project_Core\Win32Explorer.sln (Release|Win32)...
+[2026-07-04 21:52:17] Locating MSBuild...
+[2026-07-04 21:52:17] Found MSBuild: C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe
+[2026-07-04 21:52:17] Building Project_Core\Win32Explorer.sln (Release|Win32)...
 MSBuild version 17.14.40+3e7442088 for .NET Framework
 
   Helper.vcxproj -> C:\Users\Administrator\Desktop\Elite-TaskBar\Win32Explorer_26.0.3.0\Project_Core\Win32\Release\Helper.lib
   Win32Explorer.vcxproj -> C:\Users\Administrator\Desktop\Elite-TaskBar\Win32Explorer_26.0.3.0\App_Source\Win32\Release\Win32Explorer.exe
-[2026-07-04 21:45:21] Relocating build artifacts to project root...
-[2026-07-04 21:45:21] WARNING: EXE not found at C:\Users\Administrator\Desktop\Elite-TaskBar\Win32Explorer_26.0.3.0\App_Source\Release\Win32Explorer.exe
-[2026-07-04 21:45:21] Build artifacts successfully relocated to root.
-[2026-07-04 21:45:21] Build SUCCESSFUL.
+[2026-07-04 21:52:24] Relocating build artifacts to project root...
+[2026-07-04 21:52:24] WARNING: EXE not found at C:\Users\Administrator\Desktop\Elite-TaskBar\Win32Explorer_26.0.3.0\App_Source\Release\Win32Explorer.exe
+[2026-07-04 21:52:24] Build artifacts successfully relocated to root.
+[2026-07-04 21:52:24] Build SUCCESSFUL.
